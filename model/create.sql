@@ -1,3 +1,15 @@
+CREATE TABLE categorie
+(
+  idCategorie integer primary key,
+  libelle varchar()
+
+)
+
+CREATE TABLE format(
+  idFormat integer primary key,
+  libelle varchar()
+)
+
 CREATE TABLE livre
 (
   ISBN char(13) primary key,
@@ -9,14 +21,23 @@ CREATE TABLE livre
   editeur varchar,
   nb_pages integer,
   date_parution date
+  idCategorie integer references categorie(idCategorie),
+  idFormat integer references format(idFormat)
 
 )
 
-CREATE TABLE categorie
-(
-  idCategorie integer,
-  libelle varchar()
-
+CREATE TABLE magasin(
+  idMagasin integer primary key,
+  nom varchar,
+  adresse varchar,
+  departement varchar(5),
+  ville varchar
 )
 
-CREATE TABLE format
+CREATE TABLE disponibilite(
+  idMagasin integer references magasin(idMagasin),
+  ISBN varchar(13) references livre(ISBN),
+  nbExemplaires integer default 0,
+  primary key(idMagasin,ISBN)
+
+)
