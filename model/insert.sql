@@ -18,16 +18,21 @@ INSERT INTO categorie VALUES (7,"Adolescent");
 INSERT INTO livre VALUES ("1000000000011","Fondation","La base de la SF!",7.25,"photo_fondation","Isaac Asimov","Gallimard",256,'1957-01-01',1,1);
 INSERT INTO livre VALUES ("1000000000012","Le Transperceneige","bd de SF",25.00,"photo_Transperceneige","Jacques Lob","casterman",100,'1990-01-01',1,2);
 INSERT INTO livre VALUES ("1000000000013","Gunnm","manga de SF",7.90,"photo_Gunnm","Yukito Kishiro","Glénat",100,'1990-01-01',1,3);
+INSERT INTO livre VALUES ("1000000000014","Felicidad","Ce roman va vous surprendre !",7.25,"photo_felicidad","Jean Molas","Gallimard",100,'1999-01-01',1,1);
 
 /*Table Livre Fantastique*/
 INSERT INTO livre VALUES ("1000000000021","Les fiancés de l'hivers","Le meilleur roman fantastique de l'histoire!",18.0,"photo_FinancesDeLHivers","Christelle Dabos","Gallimard",528,'2013-06-06',2,1);
 INSERT INTO livre VALUES ("1000000000022","Les naufragés d'Ythaq Tome 1","Bande dessinnée fanastique ",14.50,"photo_NaufragesYthaq","Christophe Arleston","Soleil",62,'2005-07-01',2,2);
 INSERT INTO livre VALUES ("1000000000023","Radiant Tome 1","manga fantastique",7.16,"photo_Radiant","Tony Valente","Ankama",174,'2013-0704',2,3);
+INSERT INTO livre VALUES ("1000000000024","Harry Potter et la pierre philosophale","L'incontournable'",18.0,"photo_HP","JK Rowling","Gallimard",220,'1999-01-01',2,1);
+
 
 /*Table Livre Histoire*/
 INSERT INTO livre VALUES ("1000000000031"," Tous les secrets du IIIe Reich ","Roman historique!",25.0,"photo_SecretReichIII","François Kersaudy","Perrin",480,'2017-01-20',3,1);
 INSERT INTO livre VALUES ("1000000000032","Alix Senator Tome 1","Bande dessinnée historique ",13.95,"photo_AlixSenator","Valérie Mangin","Casterman",148,'2018-11-21',3,2);
 INSERT INTO livre VALUES ("1000000000033","Save me pythie Tome 1","manga historique",7.16,"photo_SaveMePythie","Elsa BRANTS","Global Manga",102,'2013-07-04',3,3);
+INSERT INTO livre VALUES ("1000000000034"," Tous les secrets du IIIe Reich ","Roman historique!",25.0,"photo_SecretReichIII","François Kersaudy","Perrin",480,'2017-01-20',3,1);
+
 
 /*Table Livre Policier*/
 INSERT INTO livre VALUES ("1000000000041","  Le Signal  ","Roman Policier!",23.90,"photo_Signal","Maxime Chattam","Albin Michel",150,'2018-10-24',4,1);
