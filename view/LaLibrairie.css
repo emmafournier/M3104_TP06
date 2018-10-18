@@ -1,1 +1,48 @@
-c
+body
+{
+  color: black;
+  font-family: Arial, sans-serif;
+  width:90%;
+  margin: auto;
+}
+
+header{
+  padding: 1em 2em 1em 2em;
+  display: flex;
+}
+
+
+ul{
+  width : 90%;
+  list-style-type : none;
+  display: flex;
+  flex-direction: row;
+}
+
+a:link {
+  padding: 1em 4em 1em 4em;
+  display : block;
+  font-style: normal;
+  background-color: #c2e3f3;
+  color : #a11f16;
+  text-decoration: none;
+
+}
+
+a:hover{
+  background-color: #6894A9;
+  color : white;
+
+}
+
+.sous-menu{
+  display: none;
+}
+
+nav li:hover .sous-menu{
+  display: flex;
+  flex-direction: column;;
+  margin: 0px;
+  padding :0px;
+  background-color: white;
+}
