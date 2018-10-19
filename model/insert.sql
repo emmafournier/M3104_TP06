@@ -14,24 +14,47 @@ INSERT INTO categorie VALUES (6,"Thriller");
 INSERT INTO categorie VALUES (7,"Adolescent");
 
 /*Table Livre */
-/*Table Livre Science-Fiction */
 INSERT INTO livre VALUES ("1000000000011","Fondation","La base de la SF!",7.25,"photo_fondation","Isaac Asimov","Gallimard",256,'1957-01-01',1,1);
-INSERT INTO livre VALUES ("1000000000012","Le Transperceneige","bd de SF",25.00,"photo_Transperceneige","Jacques Lob","casterman",100,'1990-01-01',1,2);
-INSERT INTO livre VALUES ("1000000000013","Gunnm","manga de SF",7.90,"photo_Gunnm","Yukito Kishiro","Glénat",100,'1990-01-01',1,3);
-INSERT INTO livre VALUES ("1000000000014","Felicidad","Ce roman va vous surprendre !",7.25,"photo_felicidad","Jean Molas","Gallimard",100,'1999-01-01',1,1);
+INSERT INTO livre VALUES ("1000000000012","Felicidad","Ce roman va vous surprendre !",7.25,"photo_felicidad","Jean Molas","Gallimard",100,'1999-01-01',1,1);
+
+
+INSERT INTO livre VALUES ("1000000000014","Le Transperceneige","bd de SF",25.00,"photo_Transperceneige","Jacques Lob","casterman",100,'1990-01-01',1,2);
+INSERT INTO livre VALUES ("1000000000015","CyberWar Tome 1","bd de SF",14.50,"photo_CyberWar","CyberWar","Delcourt",48,'2018-10-17',1,2);
+INSERT INTO livre VALUES ("1000000000016","Renaissance Tome 1","bd de SF",14.00,"photo_Renaissance","Fred Duval","Dargaud",100,'2018-10-05',1,2);
+
+INSERT INTO livre VALUES ("1000000000017","Gunnm","manga de SF",7.90,"photo_Gunnm","Yukito Kishiro","Glénat",100,'1990-01-01',1,3);
+INSERT INTO livre VALUES ("1000000000018","Akira","manga de SF",13.25,"photo_Akira","Otomo Katsuhiro","Glénat",106,'1982-01-01',1,3);
+INSERT INTO livre VALUES ("1000000000019","Pluto","manga de SF",8.00,"photo_Pluto","Tezuka Osamu","Kana",128,'2004-01-01',1,3);
+
+
+
 
 /*Table Livre Fantastique*/
 INSERT INTO livre VALUES ("1000000000021","Les fiancés de l'hivers","Le meilleur roman fantastique de l'histoire!",18.0,"photo_FinancesDeLHivers","Christelle Dabos","Gallimard",528,'2013-06-06',2,1);
-INSERT INTO livre VALUES ("1000000000022","Les naufragés d'Ythaq Tome 1","Bande dessinnée fanastique ",14.50,"photo_NaufragesYthaq","Christophe Arleston","Soleil",62,'2005-07-01',2,2);
-INSERT INTO livre VALUES ("1000000000023","Radiant Tome 1","manga fantastique",7.16,"photo_Radiant","Tony Valente","Ankama",174,'2013-0704',2,3);
-INSERT INTO livre VALUES ("1000000000024","Harry Potter et la pierre philosophale","L'incontournable'",18.0,"photo_HP","JK Rowling","Gallimard",220,'1999-01-01',2,1);
+INSERT INTO livre VALUES ("1000000000022","Harry Potter et la pierre philosophale","L'incontournable'",18.0,"photo_HP","JK Rowling","Gallimard",220,'1999-01-01',2,1);
+INSERT INTO livre VALUES ("1000000000023","Percy Jackson Tome 1","Le classique",14.90,"photo_PErcyJackson","Rick Riordan","Albin Michel",432,'2013-07-03',2,1);
+
+INSERT INTO livre VALUES ("1000000000024","Les naufragés d'Ythaq Tome 1","Bande dessinnée fanastique ",14.50,"photo_NaufragesYthaq","Christophe Arleston","Soleil",62,'2005-07-01',2,2);
+INSERT INTO livre VALUES ("1000000000025","Océane, La fée des houles Tome 1","Bande dessinnée fanastique ",14.90,"photo_Oceane","Eric Le Berre","GUYMIC",102,'2018-10-19',2,2);
+INSERT INTO livre VALUES ("1000000000026","Brocéliande Tome 1","Bande dessinnée fanastique ",14.95,"photo_Broceliande","Olivier Peru","Soleil",62,'2017-06-07',2,2);
+
+INSERT INTO livre VALUES ("1000000000027","Radiant Tome 1","manga fantastique",7.16,"photo_Radiant","Tony Valente","Ankama",174,'2013-07-04',2,3);
+INSERT INTO livre VALUES ("1000000000028","Fairy Tail Tome 1","manga fantastique",6.95,"photo_FairyTail","Hiro Mashima","Pika",136,'2006-01-01',2,3);
+INSERT INTO livre VALUES ("1000000000029","Seven deadly sins Tome 1","manga fantastique",6.95,"photo_Nanatsu","Suzuki Nakaba","Pika",143,'2012-01-01',2,3);
 
 
 /*Table Livre Histoire*/
 INSERT INTO livre VALUES ("1000000000031"," Tous les secrets du IIIe Reich ","Roman historique!",25.0,"photo_SecretReichIII","François Kersaudy","Perrin",480,'2017-01-20',3,1);
-INSERT INTO livre VALUES ("1000000000032","Alix Senator Tome 1","Bande dessinnée historique ",13.95,"photo_AlixSenator","Valérie Mangin","Casterman",148,'2018-11-21',3,2);
-INSERT INTO livre VALUES ("1000000000033","Save me pythie Tome 1","manga historique",7.16,"photo_SaveMePythie","Elsa BRANTS","Global Manga",102,'2013-07-04',3,3);
-INSERT INTO livre VALUES ("1000000000034"," Tous les secrets du IIIe Reich ","Roman historique!",25.0,"photo_SecretReichIII","François Kersaudy","Perrin",480,'2017-01-20',3,1);
+INSERT INTO livre VALUES ("1000000000032","Azteca","Roman historique!",10.0,"photo_Azteca","Garry Jennings","Le Livre de Poche",1050,'1991-01-01',3,1);
+INSERT INTO livre VALUES ("1000000000033","La guerre et la paix ","Roman historique!",9.40,"photo_GuerreEtPaix","Leon Tolstoi","Gallimard",800,'2002-07-01',3,1);
+
+INSERT INTO livre VALUES ("1000000000034","Alix Senator Tome 1","Bande dessinnée historique ",13.95,"photo_AlixSenator","Valérie Mangin","Casterman",148,'2018-11-21',3,2);
+INSERT INTO livre VALUES ("1000000000035","Alix Senator Tome 1","Bande dessinnée historique ",13.95,"photo_AlixSenator","Valérie Mangin","Casterman",148,'2018-11-21',3,2);
+INSERT INTO livre VALUES ("1000000000036","Alix Senator Tome 1","Bande dessinnée historique ",13.95,"photo_AlixSenator","Valérie Mangin","Casterman",148,'2018-11-21',3,2);
+
+INSERT INTO livre VALUES ("1000000000037","Save me pythie Tome 1","manga historique",7.16,"photo_SaveMePythie","Elsa BRANTS","Global Manga",102,'2013-07-04',3,3);
+INSERT INTO livre VALUES ("1000000000038","Innocent Tome 1","manga historique",7.99,"photo_Innocent","Sakamoto Shinichi","Delcourt",156,'2013-01-04',3,3);
+INSERT INTO livre VALUES ("1000000000039","Innocent Rouge Tome 1","manga historique",7.99,"photo_InnocentRouge","Sakamoto Shinichi","Delcourt",176,'2015-01-04',3,3);
 
 
 /*Table Livre Policier*/
@@ -91,17 +114,153 @@ INSERT INTO livre VALUES ("1000000000077","Chocola et Vanilla - Tome 2","Un shoj
 INSERT INTO livre VALUES ("1000000000078","Chocola et Vanilla - Tome 3","Un shojo adorable",6.60,"photo_Chocola_Vanilla3","Moyoco Anno","Kurokawa",208,'2009-04-01',7,3);
 
 
+/*Table Livre */
+INSERT INTO magasin VALUES (1,"La Librairie","1 allée des tilleuls","38240","Saint Martin d'Hères");
+INSERT INTO magasin VALUES (2,"La Librairie","91 rue du Coteau","38000","Grenoble");
+INSERT INTO magasin VALUES (3,"La Librairie","18 route de Monestier","73000","Chambery");
+INSERT INTO magasin VALUES (4,"La Librairie","12 rue Hector Berlioz","73100","Aix-les-bains");
+INSERT INTO magasin VALUES (5,"La Librairie","11 rue Jean Marietta","69000","Lyon");
+INSERT INTO magasin VALUES (6,"La Librairie","30 route de Savoie","69100","Villeurbanne");
+INSERT INTO magasin VALUES (7,"La Librairie","72 rue Jean Jaures","38130","Echirolles");
+INSERT INTO magasin VALUES (8,"La Librairie","12 rue des champs","73100","Aix-les-bains");
+INSERT INTO magasin VALUES (9,"La Librairie","14 rue du théatre","38000","Grenoble");
+INSERT INTO magasin VALUES (10,"La Librairie","5 rue de l'amitié","69000","Lyon");
 
+/*Table disponibilite */
 
+INSERT INTO disponibilite VALUES (1,"1000000000011",4);
+INSERT INTO disponibilite VALUES (2,"1000000000011",3);
+INSERT INTO disponibilite VALUES (3,"1000000000012",4);
+INSERT INTO disponibilite VALUES (4,"1000000000012",3);
+INSERT INTO disponibilite VALUES (5,"1000000000014",4);
+INSERT INTO disponibilite VALUES (6,"1000000000014",3);
+INSERT INTO disponibilite VALUES (7,"1000000000015",4);
+INSERT INTO disponibilite VALUES (8,"1000000000015",3);
+INSERT INTO disponibilite VALUES (9,"1000000000016",4);
 
-ISBN char(13) primary key,
-titre varchar,
-comp_info varchar,
-prix numeric,
-photo varchar,
-auteur varchar,
-editeur varchar,
-nb_pages integer,
-date_parution date
-idCategorie integer references categorie(idCategorie),
-idFormat integer references format(idFormat)
+INSERT INTO disponibilite VALUES (1,"1000000000016",4);
+INSERT INTO disponibilite VALUES (2,"1000000000017",3);
+INSERT INTO disponibilite VALUES (3,"1000000000017",4);
+INSERT INTO disponibilite VALUES (4,"1000000000018",3);
+INSERT INTO disponibilite VALUES (5,"1000000000018",4);
+INSERT INTO disponibilite VALUES (6,"1000000000019",3);
+INSERT INTO disponibilite VALUES (7,"1000000000019",4);
+INSERT INTO disponibilite VALUES (8,"1000000000021",3);
+INSERT INTO disponibilite VALUES (9,"1000000000021",3);
+
+INSERT INTO disponibilite VALUES (1,"1000000000022",4);
+INSERT INTO disponibilite VALUES (2,"1000000000022",3);
+INSERT INTO disponibilite VALUES (3,"1000000000023",4);
+INSERT INTO disponibilite VALUES (4,"1000000000023",3);
+INSERT INTO disponibilite VALUES (5,"1000000000024",4);
+INSERT INTO disponibilite VALUES (6,"1000000000024",3);
+INSERT INTO disponibilite VALUES (7,"1000000000025",4);
+INSERT INTO disponibilite VALUES (8,"1000000000025",3);
+INSERT INTO disponibilite VALUES (9,"1000000000026",3);
+
+INSERT INTO disponibilite VALUES (1,"1000000000026",4);
+INSERT INTO disponibilite VALUES (2,"1000000000027",3);
+INSERT INTO disponibilite VALUES (3,"1000000000027",4);
+INSERT INTO disponibilite VALUES (4,"1000000000028",3);
+INSERT INTO disponibilite VALUES (5,"1000000000028",4);
+INSERT INTO disponibilite VALUES (6,"1000000000029",3);
+INSERT INTO disponibilite VALUES (7,"1000000000029",4);
+INSERT INTO disponibilite VALUES (8,"1000000000031",3);
+INSERT INTO disponibilite VALUES (9,"1000000000031",3);
+
+INSERT INTO disponibilite VALUES (1,"1000000000032",4);
+INSERT INTO disponibilite VALUES (2,"1000000000032",3);
+INSERT INTO disponibilite VALUES (3,"1000000000033",4);
+INSERT INTO disponibilite VALUES (4,"1000000000033",3);
+INSERT INTO disponibilite VALUES (5,"1000000000034",4);
+INSERT INTO disponibilite VALUES (6,"1000000000034",3);
+INSERT INTO disponibilite VALUES (7,"1000000000035",4);
+INSERT INTO disponibilite VALUES (8,"1000000000035",3);
+INSERT INTO disponibilite VALUES (9,"1000000000036",3);
+
+INSERT INTO disponibilite VALUES (1,"1000000000036",4);
+INSERT INTO disponibilite VALUES (2,"1000000000037",3);
+INSERT INTO disponibilite VALUES (3,"1000000000037",4);
+INSERT INTO disponibilite VALUES (4,"1000000000038",3);
+INSERT INTO disponibilite VALUES (5,"1000000000038",4);
+INSERT INTO disponibilite VALUES (6,"1000000000039",3);
+INSERT INTO disponibilite VALUES (7,"1000000000039",4);
+INSERT INTO disponibilite VALUES (8,"1000000000041",3);
+INSERT INTO disponibilite VALUES (9,"1000000000041",3);
+
+INSERT INTO disponibilite VALUES (1,"1000000000042",4);
+INSERT INTO disponibilite VALUES (2,"1000000000042",3);
+INSERT INTO disponibilite VALUES (3,"1000000000043",4);
+INSERT INTO disponibilite VALUES (4,"1000000000043",3);
+INSERT INTO disponibilite VALUES (5,"1000000000044",4);
+INSERT INTO disponibilite VALUES (6,"1000000000044",3);
+INSERT INTO disponibilite VALUES (7,"1000000000045",4);
+INSERT INTO disponibilite VALUES (8,"1000000000045",3);
+INSERT INTO disponibilite VALUES (9,"1000000000046",3);
+
+INSERT INTO disponibilite VALUES (1,"1000000000046",4);
+INSERT INTO disponibilite VALUES (2,"1000000000047",3);
+INSERT INTO disponibilite VALUES (3,"1000000000047",4);
+INSERT INTO disponibilite VALUES (4,"1000000000048",3);
+INSERT INTO disponibilite VALUES (5,"1000000000048",4);
+INSERT INTO disponibilite VALUES (6,"1000000000049",3);
+INSERT INTO disponibilite VALUES (7,"1000000000049",4);
+INSERT INTO disponibilite VALUES (8,"1000000000050",3);
+INSERT INTO disponibilite VALUES (9,"1000000000050",3);
+
+INSERT INTO disponibilite VALUES (1,"1000000000051",4);
+INSERT INTO disponibilite VALUES (2,"1000000000051",3);
+INSERT INTO disponibilite VALUES (3,"1000000000052",4);
+INSERT INTO disponibilite VALUES (4,"1000000000052",3);
+INSERT INTO disponibilite VALUES (5,"1000000000053",4);
+INSERT INTO disponibilite VALUES (6,"1000000000053",3);
+INSERT INTO disponibilite VALUES (7,"1000000000054",4);
+INSERT INTO disponibilite VALUES (8,"1000000000054",3);
+INSERT INTO disponibilite VALUES (9,"1000000000055",3);
+
+INSERT INTO disponibilite VALUES (1,"1000000000055",4);
+INSERT INTO disponibilite VALUES (2,"1000000000056",3);
+INSERT INTO disponibilite VALUES (3,"1000000000056",4);
+INSERT INTO disponibilite VALUES (4,"1000000000057",3);
+INSERT INTO disponibilite VALUES (5,"1000000000057",4);
+INSERT INTO disponibilite VALUES (6,"1000000000058",3);
+INSERT INTO disponibilite VALUES (7,"1000000000058",4);
+INSERT INTO disponibilite VALUES (8,"1000000000060",3);
+INSERT INTO disponibilite VALUES (9,"1000000000060",3);
+
+INSERT INTO disponibilite VALUES (1,"1000000000061",4);
+INSERT INTO disponibilite VALUES (2,"1000000000061",3);
+INSERT INTO disponibilite VALUES (3,"1000000000062",4);
+INSERT INTO disponibilite VALUES (4,"1000000000062",3);
+INSERT INTO disponibilite VALUES (5,"1000000000063",4);
+INSERT INTO disponibilite VALUES (6,"1000000000063",3);
+INSERT INTO disponibilite VALUES (7,"1000000000064",4);
+INSERT INTO disponibilite VALUES (8,"1000000000064",3);
+INSERT INTO disponibilite VALUES (9,"1000000000065",3);
+
+INSERT INTO disponibilite VALUES (1,"1000000000065",4);
+INSERT INTO disponibilite VALUES (2,"1000000000066",3);
+INSERT INTO disponibilite VALUES (3,"1000000000066",4);
+INSERT INTO disponibilite VALUES (4,"1000000000067",3);
+INSERT INTO disponibilite VALUES (5,"1000000000067",4);
+INSERT INTO disponibilite VALUES (6,"1000000000068",3);
+INSERT INTO disponibilite VALUES (7,"1000000000068",4);
+INSERT INTO disponibilite VALUES (8,"1000000000070",3);
+INSERT INTO disponibilite VALUES (9,"1000000000070",3);
+
+INSERT INTO disponibilite VALUES (1,"1000000000071",4);
+INSERT INTO disponibilite VALUES (2,"1000000000071",3);
+INSERT INTO disponibilite VALUES (3,"1000000000072",4);
+INSERT INTO disponibilite VALUES (4,"1000000000073",3);
+INSERT INTO disponibilite VALUES (5,"1000000000073",4);
+INSERT INTO disponibilite VALUES (6,"1000000000074",3);
+INSERT INTO disponibilite VALUES (7,"1000000000074",4);
+INSERT INTO disponibilite VALUES (8,"1000000000075",3);
+INSERT INTO disponibilite VALUES (9,"1000000000075",3);
+
+INSERT INTO disponibilite VALUES (1,"1000000000076",4);
+INSERT INTO disponibilite VALUES (2,"1000000000076",3);
+INSERT INTO disponibilite VALUES (3,"1000000000077",4);
+INSERT INTO disponibilite VALUES (4,"1000000000077",3);
+INSERT INTO disponibilite VALUES (5,"1000000000078",4);
+INSERT INTO disponibilite VALUES (6,"1000000000078",3);
