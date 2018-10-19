@@ -16,22 +16,47 @@ INSERT INTO categorie VALUES (7,"Adolescent");
 /*Table Livre */
 /*Table Livre Science-Fiction */
 INSERT INTO livre VALUES ("1000000000011","Fondation","La base de la SF!",7.25,"photo_fondation","Isaac Asimov","Gallimard",256,'1957-01-01',1,1);
-INSERT INTO livre VALUES ("1000000000012","Le Transperceneige","bd de SF",25.00,"photo_Transperceneige","Jacques Lob","casterman",100,'1990-01-01',1,2);
-INSERT INTO livre VALUES ("1000000000013","Gunnm","manga de SF",7.90,"photo_Gunnm","Yukito Kishiro","Glénat",100,'1990-01-01',1,3);
-INSERT INTO livre VALUES ("1000000000014","Felicidad","Ce roman va vous surprendre !",7.25,"photo_felicidad","Jean Molas","Gallimard",100,'1999-01-01',1,1);
+INSERT INTO livre VALUES ("1000000000012","Felicidad","Ce roman va vous surprendre !",7.25,"photo_felicidad","Jean Molas","Gallimard",100,'1999-01-01',1,1);
+INSERT INTO livre VALUES ("1000000000013","Felicidad","Ce roman va vous surprendre !",7.25,"photo_felicidad","Jean Molas","Gallimard",100,'1999-01-01',1,1);
+
+
+INSERT INTO livre VALUES ("1000000000014","Le Transperceneige","bd de SF",25.00,"photo_Transperceneige","Jacques Lob","casterman",100,'1990-01-01',1,2);
+INSERT INTO livre VALUES ("1000000000015","CyberWar Tome 1","bd de SF",14.50,"photo_CyberWar","CyberWar","Delcourt",48,'2018-10-17',1,2);
+INSERT INTO livre VALUES ("1000000000016","Renaissance Tome 1","bd de SF",14.00,"photo_Renaissance","Fred Duval","Dargaud",100,'2018-10-05',1,2);
+
+INSERT INTO livre VALUES ("1000000000017","Gunnm","manga de SF",7.90,"photo_Gunnm","Yukito Kishiro","Glénat",100,'1990-01-01',1,3);
+INSERT INTO livre VALUES ("1000000000018","Akira","manga de SF",13.25,"photo_Akira","Otomo Katsuhiro","Glénat",106,'1982-01-01',1,3);
+INSERT INTO livre VALUES ("1000000000019","Pluto","manga de SF",8.00,"photo_Pluto","Tezuka Osamu","Kana",128,'2004-01-01',1,3);
+
+
+
 
 /*Table Livre Fantastique*/
 INSERT INTO livre VALUES ("1000000000021","Les fiancés de l'hivers","Le meilleur roman fantastique de l'histoire!",18.0,"photo_FinancesDeLHivers","Christelle Dabos","Gallimard",528,'2013-06-06',2,1);
-INSERT INTO livre VALUES ("1000000000022","Les naufragés d'Ythaq Tome 1","Bande dessinnée fanastique ",14.50,"photo_NaufragesYthaq","Christophe Arleston","Soleil",62,'2005-07-01',2,2);
-INSERT INTO livre VALUES ("1000000000023","Radiant Tome 1","manga fantastique",7.16,"photo_Radiant","Tony Valente","Ankama",174,'2013-0704',2,3);
-INSERT INTO livre VALUES ("1000000000024","Harry Potter et la pierre philosophale","L'incontournable'",18.0,"photo_HP","JK Rowling","Gallimard",220,'1999-01-01',2,1);
+INSERT INTO livre VALUES ("1000000000022","Harry Potter et la pierre philosophale","L'incontournable'",18.0,"photo_HP","JK Rowling","Gallimard",220,'1999-01-01',2,1);
+INSERT INTO livre VALUES ("1000000000023","Percy Jackson Tome 1","Le classique",14.90,"photo_PErcyJackson","Rick Riordan","Albin Michel",432,'2013-07-03',2,1);
+
+INSERT INTO livre VALUES ("1000000000024","Les naufragés d'Ythaq Tome 1","Bande dessinnée fanastique ",14.50,"photo_NaufragesYthaq","Christophe Arleston","Soleil",62,'2005-07-01',2,2);
+INSERT INTO livre VALUES ("1000000000025","Océane, La fée des houles Tome 1","Bande dessinnée fanastique ",14.90,"photo_Oceane","Eric Le Berre","GUYMIC",102,'2018-10-19',2,2);
+INSERT INTO livre VALUES ("1000000000026","Brocéliande Tome 1","Bande dessinnée fanastique ",14.95,"photo_Broceliande","Olivier Peru","Soleil",62,'2017-06-07',2,2);
+
+INSERT INTO livre VALUES ("1000000000027","Radiant Tome 1","manga fantastique",7.16,"photo_Radiant","Tony Valente","Ankama",174,'2013-07-04',2,3);
+INSERT INTO livre VALUES ("1000000000028","Fairy Tail Tome 1","manga fantastique",6.95,"photo_FairyTail","Hiro Mashima","Pika",136,'2006-01-01',2,3);
+INSERT INTO livre VALUES ("1000000000029","Seven deadly sins Tome 1","manga fantastique",6.95,"photo_Nanatsu","Suzuki Nakaba","Pika",143,'2012-01-01',2,3);
 
 
 /*Table Livre Histoire*/
 INSERT INTO livre VALUES ("1000000000031"," Tous les secrets du IIIe Reich ","Roman historique!",25.0,"photo_SecretReichIII","François Kersaudy","Perrin",480,'2017-01-20',3,1);
-INSERT INTO livre VALUES ("1000000000032","Alix Senator Tome 1","Bande dessinnée historique ",13.95,"photo_AlixSenator","Valérie Mangin","Casterman",148,'2018-11-21',3,2);
-INSERT INTO livre VALUES ("1000000000033","Save me pythie Tome 1","manga historique",7.16,"photo_SaveMePythie","Elsa BRANTS","Global Manga",102,'2013-07-04',3,3);
-INSERT INTO livre VALUES ("1000000000034"," Tous les secrets du IIIe Reich ","Roman historique!",25.0,"photo_SecretReichIII","François Kersaudy","Perrin",480,'2017-01-20',3,1);
+INSERT INTO livre VALUES ("1000000000032","Azteca","Roman historique!",10.0,"photo_Azteca","Garry Jennings","Le Livre de Poche",1050,'1991-01-01',3,1);
+INSERT INTO livre VALUES ("1000000000033","La guerre et la paix ","Roman historique!",9.40,"photo_GuerreEtPaix","Leon Tolstoi","Gallimard",800,'2002-07-01',3,1);
+
+INSERT INTO livre VALUES ("1000000000034","Alix Senator Tome 1","Bande dessinnée historique ",13.95,"photo_AlixSenator","Valérie Mangin","Casterman",148,'2018-11-21',3,2);
+INSERT INTO livre VALUES ("1000000000035","Alix Senator Tome 1","Bande dessinnée historique ",13.95,"photo_AlixSenator","Valérie Mangin","Casterman",148,'2018-11-21',3,2);
+INSERT INTO livre VALUES ("1000000000036","Alix Senator Tome 1","Bande dessinnée historique ",13.95,"photo_AlixSenator","Valérie Mangin","Casterman",148,'2018-11-21',3,2);
+
+INSERT INTO livre VALUES ("1000000000037","Save me pythie Tome 1","manga historique",7.16,"photo_SaveMePythie","Elsa BRANTS","Global Manga",102,'2013-07-04',3,3);
+INSERT INTO livre VALUES ("1000000000038","Innocent Tome 1","manga historique",7.99,"photo_Innocent","Sakamoto Shinichi","Delcourt",156,'2013-01-04',3,3);
+INSERT INTO livre VALUES ("1000000000039","Innocent Rouge Tome 1","manga historique",7.99,"photo_InnocentRouge","Sakamoto Shinichi","Delcourt",176,'2015-01-04',3,3);
 
 
 /*Table Livre Policier*/
