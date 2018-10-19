@@ -47,13 +47,35 @@ INSERT INTO livre VALUES ("1000000000052","Food War","manga de cuisine!",7.90,"p
 
 /* Table Livre Thriller */
 INSERT INTO livre VALUES ("1000000000060","Intimidation","Nouveau roman de Coben!",7.90,"photo_inimidation","Harlan Coben","pocket",432,'2017-10-05',6,1);
-INSERT INTO livre VALUES ("1000000000061","Prophecy - tome 1","manga thriller",20.90,"photo_Prophecy","Tetsuya Tsutsui","Kioon",218,'2012-06-28',6,3);
-INSERT INTO livre VALUES ("1000000000062","Le pouvoir des Innocents","thriller sanglant!",37.90,"photo_Pouvoir_Innocents","Hirn Brunschwig","Delcourt",62,'1992-01-01',6,2);
+INSERT INTO livre VALUES ("1000000000061","La fille du train","Un voyage effrayant !",7.90,"photo_train","Paula Hawkins","pocket",245,'2013-10-05',6,1);
+INSERT INTO livre VALUES ("1000000000062","Millénium - Les hommes qui n'aiment pas les femmes","Un pour délice!",15.90,"photo_millenium1","Stieg Larson","Albin Michel",432,'2005-10-05',6,1);
+
+INSERT INTO livre VALUES ("1000000000063","Prophecy - tome 1","manga thriller",20.90,"photo_Prophecy1","Tetsuya Tsutsui","Kioon",218,'2012-06-28',6,3);
+INSERT INTO livre VALUES ("1000000000064","Prophecy - tome 2","manga thriller",20.90,"photo_Prophecy2","Tetsuya Tsutsui","Kioon",218,'2013-06-28',6,3);
+INSERT INTO livre VALUES ("1000000000065","Prophecy - tome 3","manga thriller",20.90,"photo_Prophecy3","Tetsuya Tsutsui","Kioon",218,'2014-06-28',6,3);
+
+INSERT INTO livre VALUES ("1000000000066","Le pouvoir des Innocents","thriller sanglant!",37.90,"photo_Pouvoir_Innocents","Hirn Brunschwig","Delcourt",62,'1992-01-01',6,2);
+INSERT INTO livre VALUES ("1000000000067","Le pouvoir des innocents - Tome 2 - Amy","Palpitant !",12.90,"photo_amy","Luc Brunchwig","Delcourt",30,'1994-10-05',6,2);
+INSERT INTO livre VALUES ("1000000000068","Le pouvoir des innocents - Tome 1 - Joshua","Palpitant !",12.90,"photo_joshuan","Luc Brunchwig","Delcourt",31,'1992-10-05',6,2);
+
+
 
 /* Table Livre Adolescent */
-INSERT INTO livre VALUES ("1000000000070","Hunger Games","Best-seller! ",7.90,"photo_Hunger_Games","Suzanne Colins","Pocket Jeunesse",432,'2015-06-04',7,1);
-INSERT INTO livre VALUES ("1000000000071","Tom-Tom et Nana - Subliiiimes","petite db pour enfant",9.95,"photo_Tomtom_Nana","Catherine Viansson Ponte","Bayard Jeunesse",90,'2017-03-08',7,2);
-INSERT INTO livre VALUES ("1000000000072","Chocola et Vanilla","Un shojo adorable",6.60,"photo_Chocola_Vanilla","Moyoco Anno","Kurokawa",208,'2007-04-01',7,3);
+INSERT INTO livre VALUES ("1000000000070","Hunger Games - Tome 1","Best-seller! ",7.90,"photo_Hunger_Games1","Suzanne Colins","Pocket Jeunesse",432,'2015-06-04',7,1);
+INSERT INTO livre VALUES ("1000000000071","Hunger Games - Tome 2 - L'embrasement","Best-seller! ",7.90,"photo_Hunger_Games2","Suzanne Colins","Pocket Jeunesse",456,'2016-06-04',7,1);
+INSERT INTO livre VALUES ("1000000000072","Hunger Games - Tome 3 - La révolte","Best-seller! ",7.90,"photo_Hunger_Games3","Suzanne Colins","Pocket Jeunesse",500,'2017-06-04',7,1);
+
+
+INSERT INTO livre VALUES ("1000000000073","Tom-Tom et Nana - Subliiiimes","petite BD pour enfant",9.95,"photo_Tomtom_Nana","Catherine Viansson Ponte","Bayard Jeunesse",90,'2017-03-08',7,2);
+INSERT INTO livre VALUES ("1000000000074","Seuls - Tome 1 - La disparition","une BD parfaite pour votre ado !",9.95,"photo_seuls1","Fabien Vehlmann","Bayard Jeunesse",90,'2010-03-08',7,2);
+
+INSERT INTO livre VALUES ("1000000000074","Seuls - Tome 2 - Le Maitre des couteaux","une BD parfaite pour votre ado !",9.95,"photo_seuls2","Fabien Vehlmann","Bayard Jeunesse",90,'2010-03-08',7,2);
+
+
+INSERT INTO livre VALUES ("1000000000072","Chocola et Vanilla - Tome 1","Un shojo adorable",6.60,"photo_Chocola_Vanilla1","Moyoco Anno","Kurokawa",208,'2007-04-01',7,3);
+INSERT INTO livre VALUES ("1000000000072","Chocola et Vanilla - Tome 2","Un shojo adorable",6.60,"photo_Chocola_Vanilla2","Moyoco Anno","Kurokawa",208,'2008-04-01',7,3);
+INSERT INTO livre VALUES ("1000000000072","Chocola et Vanilla - Tome 3","Un shojo adorable",6.60,"photo_Chocola_Vanilla3","Moyoco Anno","Kurokawa",208,'2009-04-01',7,3);
+
 
 
 
