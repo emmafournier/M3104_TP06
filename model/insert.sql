@@ -83,12 +83,12 @@ INSERT INTO livre VALUES ("1000000000072","Hunger Games - Tome 3 - La révolte",
 INSERT INTO livre VALUES ("1000000000073","Tom-Tom et Nana - Subliiiimes","petite BD pour enfant",9.95,"photo_Tomtom_Nana","Catherine Viansson Ponte","Bayard Jeunesse",90,'2017-03-08',7,2);
 INSERT INTO livre VALUES ("1000000000074","Seuls - Tome 1 - La disparition","une BD parfaite pour votre ado !",9.95,"photo_seuls1","Fabien Vehlmann","Bayard Jeunesse",90,'2010-03-08',7,2);
 
-INSERT INTO livre VALUES ("1000000000074","Seuls - Tome 2 - Le Maitre des couteaux","une BD parfaite pour votre ado !",9.95,"photo_seuls2","Fabien Vehlmann","Bayard Jeunesse",90,'2010-03-08',7,2);
+INSERT INTO livre VALUES ("1000000000075","Seuls - Tome 2 - Le Maitre des couteaux","une BD parfaite pour votre ado !",9.95,"photo_seuls2","Fabien Vehlmann","Bayard Jeunesse",90,'2010-03-08',7,2);
 
 
-INSERT INTO livre VALUES ("1000000000072","Chocola et Vanilla - Tome 1","Un shojo adorable",6.60,"photo_Chocola_Vanilla1","Moyoco Anno","Kurokawa",208,'2007-04-01',7,3);
-INSERT INTO livre VALUES ("1000000000072","Chocola et Vanilla - Tome 2","Un shojo adorable",6.60,"photo_Chocola_Vanilla2","Moyoco Anno","Kurokawa",208,'2008-04-01',7,3);
-INSERT INTO livre VALUES ("1000000000072","Chocola et Vanilla - Tome 3","Un shojo adorable",6.60,"photo_Chocola_Vanilla3","Moyoco Anno","Kurokawa",208,'2009-04-01',7,3);
+INSERT INTO livre VALUES ("1000000000076","Chocola et Vanilla - Tome 1","Un shojo adorable",6.60,"photo_Chocola_Vanilla1","Moyoco Anno","Kurokawa",208,'2007-04-01',7,3);
+INSERT INTO livre VALUES ("1000000000077","Chocola et Vanilla - Tome 2","Un shojo adorable",6.60,"photo_Chocola_Vanilla2","Moyoco Anno","Kurokawa",208,'2008-04-01',7,3);
+INSERT INTO livre VALUES ("1000000000078","Chocola et Vanilla - Tome 3","Un shojo adorable",6.60,"photo_Chocola_Vanilla3","Moyoco Anno","Kurokawa",208,'2009-04-01',7,3);
 
 
 
