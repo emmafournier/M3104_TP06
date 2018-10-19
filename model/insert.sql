@@ -39,11 +39,25 @@ INSERT INTO livre VALUES ("1000000000041","  Le Signal  ","Roman Policier!",23.9
 INSERT INTO livre VALUES ("1000000000042","Lazarus","Bande dessinnée Policière ",14.95,"photo_Lazarus","Greg Rucka","Glenat",112,'2018-08-19',4,2);
 INSERT INTO livre VALUES ("1000000000043","Blue heaven","manga Policier",6.28,"photo_BlueEven","Tsutomu","Panini",192,'2005-03-01',4,3);
 
+INSERT INTO livre VALUES ("1000000000044","Le crime de l'Orient Express","Un classique de la litterature policière",8.50,"photo_Crime_Orient","Agatha Christie","Pocket",243,'1974-03-21',4,1);
+INSERT INTO livre VALUES ("1000000000045","Le chien des Baskerville","Une aventure de Sherlock Holmes!",6.20,"photo_Chien","Arthur Conan Doyle","Poche",270,'1895-06-09',4,1);
+INSERT INTO livre VALUES ("1000000000046","Detective Conan","On suit Conan, le petit détective!",7.90,"photo_Conan","Gyosho Aoyama","Kana",150,'1994-03-01',4,3);
+INSERT INTO livre VALUES ("1000000000047","Border","manga Policier ! ",7.90,"photo_Border","Yua Tokegawa","Kana",184,'2013-08-02',4,3);
+INSERT INTO livre VALUES ("1000000000048","Chateau Bordeaux","BD Policiere",13.50,"photo_Bordeau","Corbeyan","Glénat",96,'2018-09-26',4,2);
+INSERT INTO livre VALUES ("1000000000049","L'art du crime","BD Policiere tres bien",13.90,"photo_Art_Crime","Olivier Berlion","Glénat",82,'2018-05-30',4,2);
+
 
 /* Table Livre Cuisine */
-INSERT INTO livre VALUES ("1000000000050","Gastronogeek","Livre de recette geek!",22.50,"photo_gastronogeek","Thibaud Villanova","Hachette",144,'2016-10-11',5,1);
+INSERT INTO livre VALUES ("1000000000050","Gastronogeek","Livre de recette geek!",24.50,"photo_gastronogeek","Thibaud Villanova","Hachette",144,'2016-10-11',5,1);
 INSERT INTO livre VALUES ("1000000000051","Dans les cuisines de l'histoire","bd de cuisine",17.95,"photo_Dans_Cuisine","Isabelle Bauthian","Le Lombard",120,'2017-04-14',5,2);
 INSERT INTO livre VALUES ("1000000000052","Food War","manga de cuisine!",7.90,"photo_Food_War","Shun Saeki","Delcourt",244,'2014-09-10',5,3);
+
+INSERT INTO livre VALUES ("1000000000053","La cuisine des Sorciers","Livre de recette pour sorciers",22.50,"photo_cuisine_sorcier","Aurelia Beaupommier","Solar",144,'2015-10-11',5,1);
+INSERT INTO livre VALUES ("1000000000054","Geek & pastry","recette de patisseries geek!",24.90,"photo_Geek_Pastry","Thibaud Villanova","Hachette",120,'2017-12-14',5,1);
+INSERT INTO livre VALUES ("1000000000055","Artiste : un chef d'exception","On suit l'histoire d'un chef de cuisine",7.90,"photo_Artiste","Taro Sadoemo","Glénat",134,'2007-09-10',5,3);
+INSERT INTO livre VALUES ("1000000000056","Toriko","Toriko le chef! ",7.80,"photo_Toriko","Mitsutoki Shimabukuro","Karé",143,'2005-10-11',5,3);
+INSERT INTO livre VALUES ("1000000000057","La cuisine de Mamette","bd de cuisine avec Mamette",15.95,"photo_Mamette","Nob","Glénat",128,'2017-04-14',5,2);
+INSERT INTO livre VALUES ("1000000000058","Comment nourir un régiment","bd de cuisine ",17.90,"photo_Regiment","Etienne Gendrin","Casterman",204,'2012-09-10',5,2);
 
 /* Table Livre Thriller */
 INSERT INTO livre VALUES ("1000000000060","Intimidation","Nouveau roman de Coben!",7.90,"photo_inimidation","Harlan Coben","pocket",432,'2017-10-05',6,1);
