@@ -50,7 +50,7 @@ INSERT INTO livre VALUES ("1000000000049","L'art du crime","BD Policiere tres bi
 /* Table Livre Cuisine */
 INSERT INTO livre VALUES ("1000000000050","Gastronogeek","Livre de recette geek!",24.50,"photo_gastronogeek","Thibaud Villanova","Hachette",144,'2016-10-11',5,1);
 INSERT INTO livre VALUES ("1000000000051","Dans les cuisines de l'histoire","bd de cuisine",17.95,"photo_Dans_Cuisine","Isabelle Bauthian","Le Lombard",120,'2017-04-14',5,2);
-INSERT INTO livre VALUES ("1000000000052","Food War","manga de cuisine!",7.90,"photo_Food_War","Shun Saeki","Delcourt",244,'2014-09-10',5,3);
+INSERT INTO livre VALUES ("1000000000052","Food War","manga de cuisine!",7.99,"photo_Food_War","Shun Saeki","Delcourt",244,'2014-09-10',5,3);
 
 INSERT INTO livre VALUES ("1000000000053","La cuisine des Sorciers","Livre de recette pour sorciers",22.50,"photo_cuisine_sorcier","Aurelia Beaupommier","Solar",144,'2015-10-11',5,1);
 INSERT INTO livre VALUES ("1000000000054","Geek & pastry","recette de patisseries geek!",24.90,"photo_Geek_Pastry","Thibaud Villanova","Hachette",120,'2017-12-14',5,1);
