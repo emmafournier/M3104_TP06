@@ -1,17 +1,15 @@
-CREATE TABLE categorie
-(
+CREATE TABLE categorie(
   idCategorie integer primary key,
-  libelle varchar()
+  libelle varchar
 
-)
+);
 
 CREATE TABLE format(
   idFormat integer primary key,
-  libelle varchar()
-)
+  libelle varchar
+);
 
-CREATE TABLE livre
-(
+CREATE TABLE livre(
   ISBN char(13) primary key,
   titre varchar,
   comp_info varchar,
@@ -20,11 +18,11 @@ CREATE TABLE livre
   auteur varchar,
   editeur varchar,
   nb_pages integer,
-  date_parution date
+  date_parution date,
   idCategorie integer references categorie(idCategorie),
   idFormat integer references format(idFormat)
 
-)
+);
 
 CREATE TABLE magasin(
   idMagasin integer primary key,
@@ -32,7 +30,7 @@ CREATE TABLE magasin(
   adresse varchar,
   departement varchar(5),
   ville varchar
-)
+);
 
 CREATE TABLE disponibilite(
   idMagasin integer references magasin(idMagasin),
@@ -40,4 +38,4 @@ CREATE TABLE disponibilite(
   nbExemplaires integer default 0,
   primary key(idMagasin,ISBN)
 
-)
+);

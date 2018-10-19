@@ -112,19 +112,3 @@ INSERT INTO livre VALUES ("1000000000075","Seuls - Tome 2 - Le Maitre des coutea
 INSERT INTO livre VALUES ("1000000000076","Chocola et Vanilla - Tome 1","Un shojo adorable",6.60,"photo_Chocola_Vanilla1","Moyoco Anno","Kurokawa",208,'2007-04-01',7,3);
 INSERT INTO livre VALUES ("1000000000077","Chocola et Vanilla - Tome 2","Un shojo adorable",6.60,"photo_Chocola_Vanilla2","Moyoco Anno","Kurokawa",208,'2008-04-01',7,3);
 INSERT INTO livre VALUES ("1000000000078","Chocola et Vanilla - Tome 3","Un shojo adorable",6.60,"photo_Chocola_Vanilla3","Moyoco Anno","Kurokawa",208,'2009-04-01',7,3);
-
-
-
-
-
-ISBN char(13) primary key,
-titre varchar,
-comp_info varchar,
-prix numeric,
-photo varchar,
-auteur varchar,
-editeur varchar,
-nb_pages integer,
-date_parution date
-idCategorie integer references categorie(idCategorie),
-idFormat integer references format(idFormat)
