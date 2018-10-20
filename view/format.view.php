@@ -56,6 +56,15 @@
 
         <?php endforeach; ?>
       </section>
+      <section>
+				<?php if (count($pred) > 0): ?>
+					<a href="?idFormat=<?=$idFormat?>&ISBN=<?=$pred[0]->__get("ISBN")?>"><input type="button" name="btnPred" value="<="></a>
+				<?php endif; ?>
+				<?php if (count($next) > 0): ?>
+					<a href="?idFormat=<?=$idFormat?>&ISBN=<?=$next[0]->__get("ISBN")?>"><input type="button" name="btnSuiv" value="=>"></a>
+				<?php endif; ?>
+
+			</section>
 
 
   </body>
