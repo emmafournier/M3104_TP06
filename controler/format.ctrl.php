@@ -24,6 +24,9 @@
  $format = $dao->getFormat($idFormat);
  $livres = $dao->getNFormat($isbn,$nbLivres,$idFormat);
 
+ $next = $dao->getNFormat($dao->next(end($livres)->__get("ISBN")),$nbLivres,$idFormat);
+ $pred = $dao->prevNFormat($livres[0]->__get("ISBN"),$nbLivres,$idFormat);
+
  include("../view/format.view.php");
 
 ?>
