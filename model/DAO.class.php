@@ -217,7 +217,18 @@
         }
 
 
-        // Un livre possède un magasin?
+        function getMagaDepartement(string $departement){
+          $req = "SELECT * FROM Magasin WHERE departement = $departement";
+          $lignereq =($this->db)->query($req);
+          if($lignereq){
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Magasin');
+            return $result;
+          }
+          else{
+            return array();
+          }
+
+        }
 
 
     }
