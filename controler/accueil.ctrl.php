@@ -8,13 +8,12 @@
     $isbn = $_GET['ISBN'];
   }
   else{
-    $isbn = (string)$dao->firstN(1)[0]->__get("isbn");
+    $isbn = (string)$dao->firstN(1)[0]->__get("ISBN");
   }
 
   $livres = $dao->getN($isbn,$nbLivres);
-
-  $next = $dao->getN(next(end($livres)->__get["isbn"]),$nbLivres);
-  $pred = $dao->prevN($livres[0],$nbLivres);
+  $next = $dao->getN($dao->next(end($livres)->__get("ISBN")),$nbLivres);
+  $pred = $dao->prevN($livres[0]->__get("ISBN"),$nbLivres);
 
   include("../view/acceuil.view.php");
 
