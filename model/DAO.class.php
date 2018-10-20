@@ -15,7 +15,7 @@
         // L'objet local PDO de la base de donnée
         private $db;
         // Le type, le chemin et le nom de la base de donnée
-        private $database = 'sqlite:../data/book.db';
+        private $database = 'sqlite:../model/data/book.db';
 
         // la base s'appelle book !
 
