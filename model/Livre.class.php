@@ -15,19 +15,10 @@
         private $dateParution; // date de parution du livre
         private $resume;       // Nom du fichier image
 
-        public function __construct($isbn,$titre,$infos,$prix,$image,$categorie,$format,$auteur,$editeur,$nbPages,$dateParution,$resume){
-          $this->isbn = $isbn;
-          $this->titre = $titre;
-          $this->infos = $infos;
-          $this->prix = $prix;
-          $this->image = $image;
-          $this->categorie = $categorie;
-          $this->format = $format;
-          $this->auteur = $auteur;
-          $this->editeur = $editeur;
-          $this->nbPages = $nbPages;
-          $this->dateParution = $dateParution;
-          $this->resume = $resume;
+        public function __construct(array $tab = null){
+          foreach ($tab as $key => $value) {
+            $this->$key = $value;
+          }
         }
 
         public function __get($carac) {
