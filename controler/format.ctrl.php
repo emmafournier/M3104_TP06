@@ -1,12 +1,28 @@
 <?php
   include_once("../model/DAO.class.php");
 
-  if (!empty($_GET['format'])) {
-    $isbn = 0+ $_GET['isbn'];
-    $idFormat = 0+$_GET['format'];
-    $format = $dao->getFormat($idFormat);
-    $articles = $dao->getNFormat($isbn,5,$format->idFormat);
+  $nbLivres = 5;
+  $categories = $dao->getAllCat();
+  $formats = $dao->getAllFormat();
+
+  if (isset($_GET['idFormat'])) {
+
+    $idFormat = $_GET['idFormat'];
+
  }
+ else{
+    $idFormat = 1;
+ }
+
+ if(isset($_GET['ISBN'])){
+   $isbn = $_GET['ISBN'];
+ }
+ else{
+   $isbn = $dao->firstNFormat(1,$idFormat)[0]->__get('ISBN');
+ }
+
+ $format = $dao->getFormat($idFormat);
+ $livres = $dao->getNFormat($isbn,$nbLivres,$idFormat);
 
  include("../view/format.view.php");
 
