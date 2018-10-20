@@ -57,6 +57,19 @@
         </ul>
       </nav>
 
+			<section>
+				<?php foreach ($variable as $value): ?>
+					<article class="">
+						<h2><?=$value->__get("titre")?></h2>
+						<a href="livre.ctrl.php?ISBN=<?=$value->__get("isbn")?>">
+							<img src="<?=$value->__get("image")?>" alt="<?=$value->__get("image")?>">
+						</a>
+						<p><?=$value->__get("prix")?></p>
+					</article>
+
+				<?php endforeach; ?>
+			</section>
+
   </body>
   <footer></footer>
 </html>
