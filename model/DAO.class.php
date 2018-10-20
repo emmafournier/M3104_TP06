@@ -127,6 +127,39 @@
             return $result;
         }
 
+        function firstNCateg(int $n, int $idCategorie) : array {
+          try{
+            $req = "SELECT * FROM livre WHERE idCategorie = $idCategorie ORDER BY ISBN ASC LIMIT $n";
+            $lignereq =($this->db)->query($req);
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
+          }
+          catch(PDOException $e){
+            return array();
+          }
+
+            return $result;
+        }
+
+        function nextCateg(string $isbn,int $idCategorie) : string {
+
+            $req = "SELECT * FROM livre WHERE ISBN>$isbn AND idCategorie=$idCategorie ORDER BY ISBN LIMIT 1";
+            $lignereq =($this->db)->query($req);
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
+            if ($result[0] == NULL){
+              return 0;
+            }else{
+              return ($result[0]->__get('ISBN'));
+            }
+        }
+
+        // Acces aux n livres de catégorie->id=$idCategorie qui précèdent de $n l'isbn $isbn dans l'ordre des isbn
+        function prevNCateg(string $isbn,int $n,int $idCategorie): array {
+
+            $req = "SELECT * FROM (SELECT * FROM livre WHERE ISBN<$isbn AND idCategorie=$idCategorie ORDER BY ISBN DESC LIMIT $n) ORDER BY ISBN";
+            $lignereq =($this->db)->query($req);
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
+            return $result;
+        }
         //======================================================================
         // Format
         //======================================================================
