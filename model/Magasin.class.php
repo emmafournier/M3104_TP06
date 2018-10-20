@@ -6,11 +6,12 @@
         public $adresse; // adresse de la boutique
         public $livres; // liste des livres
 
-        public function __construct($id,$nom,$adresse,$livres){
-          $this->id = $id;
-          $this->nom = $nom;
-          $this->adresse = $adresse;
-          $this->$livres = $livres;
+        public function __construct(array $tab = NULL){
+          if($tab != NULL){
+            foreach ($tab as $key => $value) {
+              $this->$key = $value;
+            }
+          }
         }
 
         public function __get($carac) {
