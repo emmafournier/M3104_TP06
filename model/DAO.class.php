@@ -39,10 +39,15 @@
         // Cette méthode retourne un tableau contenant les n permier livres de
         // la base sous la forme d'objets de la classe Livre.
         function firstN(int $n) : array {
-
+          try{
             $req = "SELECT * FROM livre ORDER BY ISBN ASC LIMIT $n";
             $lignereq =($this->db)->query($req);
             $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
+          }
+          catch(PDOException $e){
+            return array();
+          }
+
             return $result;
         }
 
@@ -51,10 +56,16 @@
         // la base sous la forme d'objets de la classe Livre.
         function getN(string $isbn,int $n) : array {
 
+          try{
             $req = "SELECT * FROM livre WHERE ISBN>=$isbn ORDER BY ISBN LIMIT $n";
             $lignereq =($this->db)->query($req);
             $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
             return $result;
+          }
+          catch(PDOException $e){
+            return array();
+          }
+
 
         }
 
