@@ -2,18 +2,17 @@
 
     // Un article en vente
     class Livre {
-        private $isbn;         // Référence unique
+        private $ISBN;         // Référence unique
         private $titre;        // titre du livre
-        private $infos;        // petit commentaire sur le livre
         private $prix;         // prix du livre
-        private $image;        // nom de l'image du livre
-        private $categorie;    // objet Categorie du Livre
-        private $format;       // objet Format du Livre
+        private $photo;        // nom de l'image du livre
+        private $idCategorie;    // objet Categorie du Livre
+        private $idFormat;       // objet Format du Livre
         private $auteur;       // auteur du livre
         private $editeur;      // editeur du Livre
-        private $nbPages;      // Nom du fichier image
-        private $dateParution; // date de parution du livre
-        private $resume;       // Nom du fichier image
+        private $nb_pages;      // Nom du fichier image
+        private $date_parution; // date de parution du livre
+        private $comp_info;       // Nom du fichier image
 
         public function __construct(array $tab = NULL){
           if($tab != NULL){
