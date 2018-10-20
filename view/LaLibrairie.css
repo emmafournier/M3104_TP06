@@ -51,5 +51,15 @@ section{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+input{
+  background-color:  #6894A9;
+  color : white;
+}
+
+h2{
+  color : #6894A9;
+  font-size: 0.9 em;
 }
