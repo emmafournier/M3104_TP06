@@ -57,7 +57,7 @@
         function getN(string $isbn,int $n) : array {
 
           try{
-            $req = "SELECT * FROM livre WHERE ISBN>=$isbn ORDER BY ISBN LIMIT $n";
+            $req = "SELECT * FROM livre ORDER BY ISBN LIMIT $n";
             $lignereq =($this->db)->query($req);
             $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
             return $result;
