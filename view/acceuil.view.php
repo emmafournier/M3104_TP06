@@ -14,7 +14,7 @@
   <body>
       <nav>
        	<ul id="menu_horizontale">
-          <li class="menu_accueil"> <a href="#">Accueil</a></li>
+          <li class="menu_acceuil"> <a href="accueil.ctrl.php">Accueil</a></li>
 
 
 
@@ -32,21 +32,13 @@
 						<a href="#">Format</a>
 						<ul class="sous-menu">
 							<?php foreach ($formats as $value): ?>
-								<li> <a href="categorie.ctrl.php?categorie=<?=$value->__get('idFormat')?>"><?=$value->__get('libelle')?></a> </li>
+								<li> <a href="format.ctrl.php?categorie=<?=$value->__get('idFormat')?>"><?=$value->__get('libelle')?></a> </li>
 							<?php endforeach; ?>
             </ul>
 					</li>
 
           <li class="menu_magasin">
-						<a href="#">Nos Magasins</a>
-						<ul class="sous-menu">
-              <?php
-								// on parcourt la liste des magasins
-							?>
-							<li> <a href="#">Test 1</a> </li>
-							<li> <a href="#">Test 2</a> </li>
-							<li> <a href="#">Test 3</a> </li>
-            </ul>
+						<a href="magasin.ctrl.php">Nos Magasins</a>
 					</li>
 
         </ul>
