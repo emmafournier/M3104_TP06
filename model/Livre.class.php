@@ -15,9 +15,11 @@
         private $dateParution; // date de parution du livre
         private $resume;       // Nom du fichier image
 
-        public function __construct(array $tab = null){
-          foreach ($tab as $key => $value) {
-            $this->$key = $value;
+        public function __construct(array $tab = NULL){
+          if($tab != NULL){
+            foreach ($tab as $key => $value) {
+              $this->$key = $value;
+            }
           }
         }
 
