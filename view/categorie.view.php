@@ -12,6 +12,8 @@
   </header>
 
   <body>
+
+		<!-- MENU ----------------------------------------------------------------->
       <nav>
        	<ul id="menu_horizontale">
           <li class="menu_acceuil"> <a href="accueil.ctrl.php">Accueil</a></li>
@@ -43,6 +45,35 @@
 
         </ul>
       </nav>
+
+			<!-- FIN MENU ----------------------------------------------------------->
+
+			<!-- VUE PAR CATEGORIE -------------------------------------------------->
+
+			<h2><?=$categorie->libelle?></h2>
+			<section>
+				<?php foreach ($livres as $value): ?>
+					<article class="">
+						<h3><?=$value->__get("titre")?></h3>
+						<a href="livre.ctrl.php?ISBN=<?=$value->__get("ISBN")?>">
+							<img src="<?=$value->__get("photo")?>" alt="<?=$value->__get("photo")?>">
+						</a>
+						<p><?=$value->__get("prix")?></p>
+					</article>
+
+				<?php endforeach; ?>
+			</section>
+			<section>
+				<?php if (count($pred) > 0): ?>
+					<a href="?idCategorie=<?=$idCategorie?>&ISBN=<?=$pred[0]->__get("ISBN")?>"><input type="button" name="btnPred" value="<="></a>
+				<?php endif; ?>
+				<?php if (count($next) > 0): ?>
+					<a href="?idCategorie=<?=$idCategorie?>&ISBN=<?=$next[0]->__get("ISBN")?>"><input type="button" name="btnSuiv" value="=>"></a>
+				<?php endif; ?>
+
+			</section>
+
+			<!-- FIN VUE PAR CATEGORIE ---------------------------------------------->
 
   </body>
 </html>
