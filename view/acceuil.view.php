@@ -58,7 +58,7 @@
       </nav>
 
 			<section>
-				<?php foreach ($variable as $value): ?>
+				<?php foreach ($livres as $value): ?>
 					<article class="">
 						<h2><?=$value->__get("titre")?></h2>
 						<a href="livre.ctrl.php?ISBN=<?=$value->__get("isbn")?>">
