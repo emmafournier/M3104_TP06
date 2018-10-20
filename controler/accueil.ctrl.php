@@ -5,7 +5,7 @@
   $nbLivres = 5;
   $categories = $dao->getAllCat();
   $formats = $dao->getAllFormat();
-  //$magasins = $dao->getAllMaga();
+  $magasins = $dao->getAllMaga();
 
   if(isset($_GET['ISBN'])){
     $isbn = $_GET['ISBN'];
