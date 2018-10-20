@@ -1,21 +1,62 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title> LaLibrairie </title>
+		<link rel="stylesheet" type="text/css" href="../view/LaLibrairie.css" />
+
+	</head>
+  <header>
+    <img src="../view/logo-passerelles.png	" alt="Logo_Librairie">
+    <h1>La Librairie.com</h1>
+  </header>
+
   <body>
-    <h2><?php echo "$format->libelle\n";?></h2>
-    <?php
-    foreach ($livres as $obj) {
-    ?>
-    <article>
-      <h2><?php echo "$obj->titre\n";?></h2> <br>
-      <a href="?isbn=<?php echo $isbn;?>&format=<?php echo $obj->idFormat?>">
-          <img src="<?php echo "$obj->photo" ?>" alt="">
-      </a>
-      <p><?php echo "$obj->prix\n"; ?></p> 
-        </article>
-    <?php } ?>
+      <nav>
+       	<ul id="menu_horizontale">
+          <li class="menu_acceuil"> <a href="accueil.ctrl.php">Accueil</a></li>
+
+
+
+          <li class="menu_categorie"> <a href="#">Catégorie</a>
+            <ul class="sous-menu">
+							<?php foreach ($categories as $value): ?>
+								<li> <a href="categorie.ctrl.php?idCategorie=<?=$value->__get('idCategorie')?>"><?=$value->__get('libelle')?></a> </li>
+							<?php endforeach; ?>
+
+            </ul>
+					</li>
+
+
+          <li class="menu_format">
+						<a href="#">Format</a>
+						<ul class="sous-menu">
+							<?php foreach ($formats as $value): ?>
+								<li> <a href="format.ctrl.php?idFormat=<?=$value->__get('idFormat')?>"><?=$value->__get('libelle')?></a> </li>
+							<?php endforeach; ?>
+            </ul>
+					</li>
+
+          <li class="menu_magasin">
+						<a href="magasin.ctrl.php">Nos Magasins</a>
+					</li>
+
+        </ul>
+      </nav>
+      <h2><?=$format->libelle?></h2>
+      <section>
+        <?php foreach ($livres as $value): ?>
+          <article class="">
+            <h3><?=$value->__get("titre")?></h3>
+            <a href="livre.ctrl.php?ISBN=<?=$value->__get("ISBN")?>">
+              <img src="<?=$value->__get("photo")?>" alt="<?=$value->__get("photo")?>">
+            </a>
+            <p><?=$value->__get("prix")?></p>
+          </article>
+
+        <?php endforeach; ?>
+      </section>
+
+
   </body>
 </html>
