@@ -61,8 +61,8 @@
 				<?php foreach ($livres as $value): ?>
 					<article class="">
 						<h2><?=$value->__get("titre")?></h2>
-						<a href="livre.ctrl.php?ISBN=<?=$value->__get("isbn")?>">
-							<img src="<?=$value->__get("image")?>" alt="<?=$value->__get("image")?>">
+						<a href="livre.ctrl.php?ISBN=<?=$value->__get("ISBN")?>">
+							<img src="<?=$value->__get("photo")?>" alt="<?=$value->__get("photo")?>">
 						</a>
 						<p><?=$value->__get("prix")?></p>
 					</article>
@@ -71,10 +71,10 @@
 			</section>
 			<section>
 				<?php if (count($pred) > 0): ?>
-					<a href="?ISBN=<?=$pred[0]->__get("isbn")?>"><input type="button" name="btnPred" value="<="></a>
+					<a href="?ISBN=<?=$pred[0]->__get("ISBN")?>"><input type="button" name="btnPred" value="<="></a>
 				<?php endif; ?>
 				<?php if (count($next) > 0): ?>
-					<a href="?ISBN=<?=$next[0]->__get("isbn")?>"><input type="button" name="btnSuiv" value="=>"></a>
+					<a href="?ISBN=<?=$next[0]->__get("ISBN")?>"><input type="button" name="btnSuiv" value="=>"></a>
 				<?php endif; ?>
 
 			</section>
