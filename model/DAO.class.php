@@ -160,6 +160,19 @@
             return $result;
         }
 
+        function firstNFormat(int $n, int $idFormat) : array {
+          try{
+            $req = "SELECT * FROM livre WHERE idFormat = $idFormat ORDER BY ISBN ASC LIMIT $n";
+            $lignereq =($this->db)->query($req);
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
+          }
+          catch(PDOException $e){
+            return array();
+          }
+
+            return $result;
+        }
+
         //======================================================================
         // Magasin
         //======================================================================
