@@ -20,12 +20,10 @@
 
           <li class="menu_categorie"> <a href="#">Catégorie</a>
             <ul class="sous-menu">
-              <?php
-								// on parcourt la liste des categories
-							?>
-							<li> <a href="#">Test 1</a> </li>
-							<li> <a href="#">Test 2</a> </li>
-							<li> <a href="#">Test 3</a> </li>
+							<?php foreach ($categories as $value): ?>
+								<li> <a href="categorie.ctrl.php?categorie=<?=$value->__get('idCategorie')?>"><?=$value->__get('libelle')?></a> </li>
+							<?php endforeach; ?>
+
             </ul>
 					</li>
 
@@ -33,12 +31,9 @@
           <li class="menu_format">
 						<a href="#">Format</a>
 						<ul class="sous-menu">
-              <?php
-								// on parcourt la liste des formats
-							?>
-							<li> <a href="#">Test 1</a> </li>
-							<li> <a href="#">Test 2</a> </li>
-							<li> <a href="#">Test 3</a> </li>
+							<?php foreach ($formats as $value): ?>
+								<li> <a href="categorie.ctrl.php?categorie=<?=$value->__get('idFormat')?>"><?=$value->__get('libelle')?></a> </li>
+							<?php endforeach; ?>
             </ul>
 					</li>
 
