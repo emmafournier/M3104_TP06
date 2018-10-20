@@ -85,7 +85,7 @@
         // Acces aux n livres qui précèdent de $n l'isbn $isbn dans l'ordre des isbn
         function prevN(string $isbn,int $n): array {
 
-            $req = "SELECT * FROM livre WHERE ISBN<$isbn ORDER BY ISBN DESC LIMIT $n";
+            $req = "SELECT * FROM (SELECT * FROM livre WHERE ISBN<$isbn ORDER BY ISBN DESC LIMIT $n) ORDER BY ISBN";
             $lignereq =($this->db)->query($req);
             $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
             return $result;
@@ -170,6 +170,27 @@
             return array();
           }
 
+            return $result;
+        }
+
+        function nextFormat(string $isbn,int $idFormat) : string {
+
+            $req = "SELECT * FROM livre WHERE ISBN>$isbn AND idFormat=$idFormat ORDER BY ISBN LIMIT 1";
+            $lignereq =($this->db)->query($req);
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
+            if ($result[0] == NULL){
+              return 0;
+            }else{
+              return ($result[0]->__get('ISBN'));
+            }
+        }
+
+        // Acces aux n livres qui précèdent de $n l'isbn $isbn dans l'ordre des isbn
+        function prevNFormat(string $isbn,int $n,int $idFormat): array {
+
+            $req = "SELECT * FROM (SELECT * FROM livre WHERE ISBN<$isbn AND idFormat=$idFormat ORDER BY ISBN DESC LIMIT $n) ORDER BY ISBN";
+            $lignereq =($this->db)->query($req);
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
             return $result;
         }
 
