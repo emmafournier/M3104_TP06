@@ -74,8 +74,8 @@
 
             $req = "SELECT * FROM livre WHERE ISBN>$isbn ORDER BY ISBN LIMIT 1";
             $lignereq =($this->db)->query($req);
-            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
-            if ($result[0] == NULL){
+            $result = $lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
+            if (count($result)==0){
               return 0;
             }else{
               return ($result[0]->__get('ISBN'));
