@@ -21,7 +21,7 @@
           <li class="menu_categorie"> <a href="#">Catégorie</a>
             <ul class="sous-menu">
 							<?php foreach ($categories as $value): ?>
-								<li> <a href="categorie.ctrl.php?categorie=<?=$value->__get('idCategorie')?>"><?=$value->__get('libelle')?></a> </li>
+								<li> <a href="categorie.ctrl.php?idCategorie=<?=$value->__get('idCategorie')?>"><?=$value->__get('libelle')?></a> </li>
 							<?php endforeach; ?>
 
             </ul>
@@ -32,7 +32,7 @@
 						<a href="#">Format</a>
 						<ul class="sous-menu">
 							<?php foreach ($formats as $value): ?>
-								<li> <a href="format.ctrl.php?categorie=<?=$value->__get('idFormat')?>"><?=$value->__get('libelle')?></a> </li>
+								<li> <a href="format.ctrl.php?idFormat=<?=$value->__get('idFormat')?>"><?=$value->__get('libelle')?></a> </li>
 							<?php endforeach; ?>
             </ul>
 					</li>
@@ -47,7 +47,7 @@
 			<section>
 				<?php foreach ($livres as $value): ?>
 					<article class="">
-						<h2><?=$value->__get("titre")?></h2>
+						<h3><?=$value->__get("titre")?></h3>
 						<a href="livre.ctrl.php?ISBN=<?=$value->__get("ISBN")?>">
 							<img src="<?=$value->__get("photo")?>" alt="<?=$value->__get("photo")?>">
 						</a>
