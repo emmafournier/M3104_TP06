@@ -1,10 +1,11 @@
 <?php
 
     class Magasin {
-        public $id;   // Identifiant
+        public $idMagasin;   // Identifiant
         public $nom;  // nom du Magasin
-        public $adresse; // adresse de la boutique
-        public $livres; // liste des livres
+        public $adresse;
+        public $departement;
+        public $ville;  // adresse de la boutique
 
         public function __construct(array $tab = NULL){
           if($tab != NULL){
