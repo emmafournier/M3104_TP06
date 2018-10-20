@@ -3,11 +3,11 @@
 	<head>
 		<meta charset="utf-8">
 		<title> LaLibrairie </title>
-		<link rel="stylesheet" type="text/css" href="LaLibrairie.css" />
+		<link rel="stylesheet" type="text/css" href="../view/LaLibrairie.css" />
 
 	</head>
   <header>
-    <img src="./logo-passerelles.png	" alt="Logo_Librairie">
+    <img src="../view/logo-passerelles.png	" alt="Logo_Librairie">
     <h1>La Librairie.com</h1>
   </header>
 
@@ -68,6 +68,15 @@
 					</article>
 
 				<?php endforeach; ?>
+			</section>
+			<section>
+				<?php if (count($pred) > 0): ?>
+					<a href="?ISBN=<?=$pred[0]->__get("isbn")?>"><input type="button" name="btnPred" value="<="></a>
+				<?php endif; ?>
+				<?php if (count($next) > 0): ?>
+					<a href="?ISBN=<?=$next[0]->__get("isbn")?>"><input type="button" name="btnSuiv" value="=>"></a>
+				<?php endif; ?>
+
 			</section>
 
   </body>
