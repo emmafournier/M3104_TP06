@@ -29,6 +29,7 @@ else if(isset($_GET['idCategorie'])){
 
 }else{
    $query = "accueil.ctrl.php";
+   $valBouton = "Retour à l'accueil";
 }
 
 
