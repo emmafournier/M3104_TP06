@@ -16,6 +16,17 @@ else{
  echo "Erreur : livre inconnu";
 }
 
+if(isset($_GET['idFormat'])){
+ $idFormatQuery = $_GET['idFormat'];
+ $query = "format.ctrl.php?idFormat=".$idFormatQuery;
+}
+
+if(isset($_GET['idCategorie'])){
+ $idCatQuery = $_GET['idCategorie'];
+ $query = "categorie.ctrl.php?idCategorie=".$idCatQuery;
+}
+
+
 $livre = $dao->getLivre($isbn);
 
 $idCatLivre = $livre->__get("idCategorie");

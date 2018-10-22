@@ -62,10 +62,8 @@
             <p><?=$livre->__get("date_parution")?></p>
             <p><?=$livre->__get("comp_info")?></p>
 
-            <a href="accueil.ctrl.php?ISBN=<?=$pred[0]->__get("ISBN")?>"><input type="button" name="btnPred" value="<="></a>
-
-
           </article>
+          <a href="<?=$query ?>"><input type="button" name="btnRetour" value="<="></a>
     </section>
 
     </body>
