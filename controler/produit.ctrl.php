@@ -22,9 +22,7 @@ if(isset($_GET['idFormat'])){
 
  $valBouton = "Retour au format";
 }
-
-
-}else if(isset($_GET['idCategorie'])){
+else if(isset($_GET['idCategorie'])){
  $idCatQuery = $_GET['idCategorie'];
  $query = "categorie.ctrl.php?idCategorie=".$idCatQuery;
  $valBouton = "Retour à la categorie";
