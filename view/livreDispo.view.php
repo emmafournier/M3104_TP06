@@ -15,8 +15,7 @@
         <?php foreach ($livres as $value): ?>
 
           <h3><?=$value->__get('titre')?></h3>
-          <img src="../view/images/<?=$value->__get('photo')?>" alt="">
-
+          <a href="produit.ctrl.php?ISBN=<?=$value->__get('ISBN')?>"><img src="../view/images/<?=$value->__get('photo')?>" alt=""></a>
           <p><<?=$value->__get('auteur')?>/p>
           <p>Nombre d'exemplaires : <?=$nbDispo[$value->__get('ISBN')]?></p>
 
