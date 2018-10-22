@@ -53,6 +53,10 @@
             <h3><?=$livre->__get("titre")?></h3>
 
             <img src="../view/images/<?=$livre->__get("photo")?>" alt="<?=$livre->__get("photo")?>">
+<<<<<<< HEAD
+=======
+
+>>>>>>> aae4a71696aaa006adfabce24b95e0ed96d68832
             <p>Prix : <?=$livre->__get("prix")?></p>
             <p>Categorie : <?=$catLivre->__get("libelle")?></p>
             <p>Format : <?=$formatLivre->__get("libelle")?></p>
@@ -64,9 +68,16 @@
 
             <a href="disponibilite.ctrl.php?ISBN=<?=$livre->__get("ISBN")?>"><input type="button" name="btnPred" value="Voir les disponibilités : <?=$nbExemplaire?> exemplaires disponibles"></a>
 
+<<<<<<< HEAD
 
           </article>
           <a href="<?=$query?>"><input type="button" name="btnRetour" value="<="></a>
+=======
+
+
+          </article>
+          <a href="<?=$query ?>"><input type="button" name="btnRetour" value="<?=$valBouton?>"></a>
+>>>>>>> aae4a71696aaa006adfabce24b95e0ed96d68832
     </section>
 
     </body>

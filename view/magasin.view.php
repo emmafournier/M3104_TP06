@@ -51,12 +51,13 @@
       </form>
       <article>
 				<?php if (isset($departement) && $departement == 0): ?>
-					<p>Département non trouvé : tous nos magasins sont affichés</p>
+					<p>Code postal non trouvé : tous nos magasins sont affichés</p>
 				<?php endif; ?>
         <?php foreach ($magasins as $value): ?>
           <p>
             <h3><?=$value->__get('nom')?></h3>
             <p><?=$value->__get('adresse')?> <?=$value->__get('departement')?> <?=$value->__get('ville')?></p>
+						<p> <a href="livreDispo.ctrl.php?idMagasin=<?=$value->__get('idMagasin')?>"><input type="button" name="btnDispo" value="Voir les livres disponibles"></a> </p>
 
           </p>
           <hr>
