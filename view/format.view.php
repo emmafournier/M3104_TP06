@@ -43,6 +43,7 @@
 
         </ul>
       </nav>
+
       <h2><?=$format->libelle?></h2>
       <section>
         <?php foreach ($livres as $value): ?>
