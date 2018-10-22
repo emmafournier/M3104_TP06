@@ -48,32 +48,25 @@
 
 			<!-- FIN MENU ----------------------------------------------------------->
 
-			<!-- VUE PAR CATEGORIE -------------------------------------------------->
+      <section>
+        <article class="">
+            <h3><?=$livre->__get("titre")?></h3>
 
-			<h2><?=$categorie->libelle?></h2>
-			<section>
-				<?php foreach ($livres as $value): ?>
-					<article class="">
-						<h3><?=$value->__get("titre")?></h3>
-						<a href="produit.ctrl.php?ISBN=<?=$value->__get("ISBN")?>">
-							<img src="../view/images/<?=$value->__get("photo")?>" alt="<?=$value->__get("photo")?>">
-						</a>
-						<p><?=$value->__get("prix")?></p>
-					</article>
+            <img src="../view/images/<?=$livre->__get("photo")?>" alt="<?=$livre->__get("photo")?>">
+            <p><?=$livre->__get("prix")?></p>
+            <p><?=$catLivre->__get("libelle")?></p>
+            <p><?=$formatLivre->__get("libelle")?></p>
+            <p><?=$livre->__get("auteur")?></p>
+            <p><?=$livre->__get("editeur")?></p>
+            <p><?=$livre->__get("nb_pages")?></p>
+            <p><?=$livre->__get("date_parution")?></p>
+            <p><?=$livre->__get("comp_info")?></p>
 
-				<?php endforeach; ?>
-			</section>
-			<section>
-				<?php if (count($pred) > 0): ?>
-					<a href="?idCategorie=<?=$idCategorie?>&ISBN=<?=$pred[0]->__get("ISBN")?>"><input type="button" name="btnPred" value="<="></a>
-				<?php endif; ?>
-				<?php if (count($next) > 0): ?>
-					<a href="?idCategorie=<?=$idCategorie?>&ISBN=<?=$next[0]->__get("ISBN")?>"><input type="button" name="btnSuiv" value="=>"></a>
-				<?php endif; ?>
+            <a href="accueil.ctrl.php?ISBN=<?=$pred[0]->__get("ISBN")?>"><input type="button" name="btnPred" value="<="></a>
 
-			</section>
 
-			<!-- FIN VUE PAR CATEGORIE ---------------------------------------------->
+          </article>
+    </section>
 
-  </body>
+    </body>
 </html>

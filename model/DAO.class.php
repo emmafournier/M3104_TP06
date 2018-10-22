@@ -51,6 +51,7 @@
             return $result;
         }
 
+
         // Acces au n livres à partir de la reférence $isbn
         // Cette méthode retourne un tableau contenant n  livres de
         // la base sous la forme d'objets de la classe Livre.
@@ -89,6 +90,19 @@
             $lignereq =($this->db)->query($req);
             $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
             return $result;
+        }
+
+        //-------------------------CHANGEMENT-----------------------------------
+        function getLivre(int $isbn) : Livre {
+          try{
+            $req = "SELECT * FROM livre WHERE ISBN=$isbn";
+            $lignereq =($this->db)->query($req);
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
+          }
+          catch(PDOException $e){
+            return NULL;
+          }
+            return $result[0];
         }
 
         //======================================================================
