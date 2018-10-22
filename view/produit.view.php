@@ -70,6 +70,9 @@
           </article>
 
           <a href="<?=$query ?>"><input type="button" name="btnRetour" value="<?=$valBouton?>"></a>
+					<?php if (isset($_GET['idMagasin'])): ?>
+						  <a href="livreDispo.ctrl.php?idMagasin=<?=$_GET['idMagasin']?>"><input type="button" name="btnRetour" value="Retour au magasin"></a>
+					<?php endif; ?>
 
     	</section>
 
