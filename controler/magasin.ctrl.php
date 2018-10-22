@@ -6,7 +6,18 @@ $nbLivres = 5;
 $categories = $dao->getAllCat();
 $formats = $dao->getAllFormat();
 
-$magasins = $dao->getAllMaga();
+if(isset($_GET['departement'])){
+  $departement = $_GET['departement'];
+  $magasins = $dao->getMagaDepartement($departement);
+  if(count($magasins) == 0){
+    $magasins = $dao->getAllMaga();
+  }
+}
+else{
+  $magasins = $dao->getAllMaga();
+}
+
+
 
 include("../view/magasin.view.php");
 ?>
