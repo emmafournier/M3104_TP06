@@ -28,6 +28,7 @@ if(isset($_GET['idCategorie'])){
 
 
 $livre = $dao->getLivre($isbn);
+$nbExemplaire = $dao->nbDisponibilite($isbn);
 
 $idCatLivre = $livre->__get("idCategorie");
 $catLivre = $dao->getCat($idCatLivre);

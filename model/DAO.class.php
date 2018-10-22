@@ -255,7 +255,7 @@
 
         // Acces à un format
         // Retourne un objet de la classe Format connaissant son identifiant
-        function getMaga(int $id): Magasin {
+        function getMaga(string $id): Magasin {
 
             $req = "SELECT * FROM Magasin WHERE idMagasin=$id";
             $lignereq =($this->db)->query($req);
@@ -264,7 +264,7 @@
         }
 
 
-        function getMagaDepartement(string $departement){
+        function getMagaDepartement(string $departement) : array{
           $req = "SELECT * FROM Magasin WHERE departement = $departement";
           $lignereq =($this->db)->query($req);
           if($lignereq){
@@ -277,6 +277,44 @@
 
         }
 
+        //======================================================================
+        // Disponibilité
+        //======================================================================
+        function nbDisponibilite(string $isbn) : int{
+            $req = "SELECT count(*) FROM Disponibilite WHERE ISBN = $isbn";
+            $lignereq =($this->db)->query($req);
+            if($lignereq){
+              $result =$lignereq->fetchAll(PDO::FETCH_COLUMN,0);
+              return $result[0];
+            }
+            else{
+              return 0;
+            }
+        }
+
+        function listeMagDispo(string $isbn) : array {
+          $req = "SELECT idMagasin FROM Disponibilite WHERE ISBN = $isbn";
+          $lignereq =($this->db)->query($req);
+          if($lignereq){
+            $result =$lignereq->fetchAll(PDO::FETCH_COLUMN,0);
+            return $result;
+          }
+          else{
+            return array();
+          }
+        }
+
+        function nbExemplaireMag(string $isbn, int $idMag){
+          $req = "SELECT count(*) FROM Disponibilite WHERE ISBN = $isbn AND idMagasin = $idMag";
+          $lignereq =($this->db)->query($req);
+          if($lignereq){
+            $result =$lignereq->fetchAll(PDO::FETCH_COLUMN,0);
+            return $result[0];
+          }
+          else{
+            return 0;
+          }
+        }
 
     }
 

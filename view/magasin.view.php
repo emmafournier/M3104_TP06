@@ -50,6 +50,9 @@
         <input type="submit" name="btnVal" value="Valider">
       </form>
       <article>
+				<?php if (isset($departement) && $departement == 0): ?>
+					<p>Département non trouvé : tous nos magasins sont affichés</p>
+				<?php endif; ?>
         <?php foreach ($magasins as $value): ?>
           <p>
             <h3><?=$value->__get('nom')?></h3>
