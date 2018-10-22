@@ -5,13 +5,13 @@
 
 
   if(isset($_GET['ISBN'])){
-    $ibsn = $_GET['ISBN'];
+    $isbn = $_GET['ISBN'];
   }
   else{
     $isbn = $isbn = (string)$dao->firstN(1)[0]->__get("ISBN");
   }
 
-  //livre = $dao->getLivre($isbn);
+  $livre = $dao->getLivre($isbn);
 
   $idMagasins = $dao->listeMagDispo($isbn);
   $magasins = array();
