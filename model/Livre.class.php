@@ -12,7 +12,7 @@
         private $editeur;      // editeur du Livre
         private $nb_pages;      // Nom du fichier image
         private $date_parution; // date de parution du livre
-        private $comp_info;       // Nom du fichier image
+        private $comp_info;       // complément d'information
 
         public function __construct(array $tab = NULL){
           if($tab != NULL){

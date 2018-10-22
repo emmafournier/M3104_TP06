@@ -43,39 +43,26 @@
 
         </ul>
       </nav>
+      <h2>Nos Magasins</h2>
+      <form class="" action="magasin.ctrl.php" method="get">
+        <label for="idDep">Choisir un code postal : </label>
+        <input type="text" name="departement" value="38000" id="idDep">
+        <input type="submit" name="btnVal" value="Valider">
+      </form>
+      <article>
+				<?php if (isset($departement) && $departement == 0): ?>
+					<p>Code postal non trouvé : tous nos magasins sont affichés</p>
+				<?php endif; ?>
+        <?php foreach ($magasins as $value): ?>
+          <p>
+            <h3><?=$value->__get('nom')?></h3>
+            <p><?=$value->__get('adresse')?> <?=$value->__get('departement')?> <?=$value->__get('ville')?></p>
+						<p> <a href="livreDispo.ctrl.php?idMagasin=<?=$value->__get('idMagasin')?>"><input type="button" name="btnDispo" value="Voir les livres disponibles"></a> </p>
 
-      <h2><?=$format->libelle?></h2>
-      <section>
-        <?php foreach ($livres as $value): ?>
-          <article class="livres">
-            <h3><?=$value->__get("titre")?></h3>
-            <a href="produit.ctrl.php?ISBN=<?=$value->__get("ISBN")?>&idFormat=<?=$value->__get("idFormat")?>">
-              <img src="../view/images/<?=$value->__get("photo")?>" alt="<?=$value->__get("photo")?>">
-            </a>
-            <p><?=$value->__get("prix")?></p>
-          </article>
-
+          </p>
+          <hr>
         <?php endforeach; ?>
-      </section>
-      <section>
-				<?php if (count($pred) > 0): ?>
-					<a href="?idFormat=<?=$idFormat?>&ISBN=<?=$pred[0]->__get("ISBN")?>"><input type="button" name="btnPred" value="<="></a>
-				<?php endif; ?>
-				<?php if (count($next) > 0): ?>
-					<a href="?idFormat=<?=$idFormat?>&ISBN=<?=$next[0]->__get("ISBN")?>"><input type="button" name="btnSuiv" value="=>"></a>
-				<?php endif; ?>
-
-			</section>
-
-			<!-- ==================== AFFICHAGE Total=============================== -->
-				<section>
-
-						<a href="?total=true"><input type="button" name="btnTotalFormat" value="Tout Afficher"></a>
-
-				</section>
-
-			<!-- ================ FIN AFFICHAGE Total ============================== -->
-
+      </article>
 
   </body>
 </html>

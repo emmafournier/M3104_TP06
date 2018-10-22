@@ -51,6 +51,7 @@
             return $result;
         }
 
+
         // Acces au n livres à partir de la reférence $isbn
         // Cette méthode retourne un tableau contenant n  livres de
         // la base sous la forme d'objets de la classe Livre.
@@ -74,8 +75,8 @@
 
             $req = "SELECT * FROM livre WHERE ISBN>$isbn ORDER BY ISBN LIMIT 1";
             $lignereq =($this->db)->query($req);
-            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
-            if ($result[0] == NULL){
+            $result = $lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
+            if (count($result)==0){
               return 0;
             }else{
               return ($result[0]->__get('ISBN'));
@@ -89,6 +90,36 @@
             $lignereq =($this->db)->query($req);
             $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
             return $result;
+        }
+
+        function getLivre(int $isbn) : Livre {
+          try{
+            $req = "SELECT * FROM livre WHERE ISBN=$isbn";
+            $lignereq =($this->db)->query($req);
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
+          }
+          catch(PDOException $e){
+            return NULL;
+          }
+            return $result[0];
+        }
+
+        //-------------------------CHANGEMENT-----------------------------------
+
+        function getNBLivre() : int {
+          try{
+            $req = "SELECT * FROM livre";
+            $lignereq =($this->db)->query($req);
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
+          }
+          catch(PDOException $e){
+            return NULL;
+          }
+          $som = 0;
+          foreach ($result as $livre) {
+            $som += 1;
+          }
+            return $som;
         }
 
         //======================================================================
@@ -127,7 +158,10 @@
             return $result;
         }
 
+<<<<<<< HEAD
 //---------------------------CHANGEMENT-----------------------------------------
+=======
+>>>>>>> 4e4c4b939c254269f9b7fea2237c477acea30d2e
         function firstNCateg(int $n, int $idCategorie) : array {
           try{
             $req = "SELECT * FROM livre WHERE idCategorie = $idCategorie ORDER BY ISBN ASC LIMIT $n";
@@ -162,8 +196,28 @@
             return $result;
         }
 
+<<<<<<< HEAD
         //------------------FIN CHANGEMENT--------------------------------------
 
+=======
+        //-------------------------CHANGEMENT-----------------------------------
+
+        function getNBLivreCat(int $idCategorie) : int {
+          try{
+            $req = "SELECT * FROM livre WHERE idCategorie=$idCategorie";
+            $lignereq =($this->db)->query($req);
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
+          }
+          catch(PDOException $e){
+            return NULL;
+          }
+          $som = 0;
+          foreach ($result as $livre) {
+            $som += 1;
+          }
+            return $som;
+        }
+>>>>>>> 4e4c4b939c254269f9b7fea2237c477acea30d2e
         //======================================================================
         // Format
         //======================================================================
@@ -231,6 +285,24 @@
             return $result;
         }
 
+        //-------------------------CHANGEMENT-----------------------------------
+
+        function getNBLivreFormat(int $idFormat) : int {
+          try{
+            $req = "SELECT * FROM livre WHERE idFormat=$idFormat";
+            $lignereq =($this->db)->query($req);
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
+          }
+          catch(PDOException $e){
+            return NULL;
+          }
+          $som = 0;
+          foreach ($result as $livre) {
+            $som += 1;
+          }
+            return $som;
+        }
+
         //======================================================================
         // Magasin
         //======================================================================
@@ -245,7 +317,7 @@
 
         // Acces à un format
         // Retourne un objet de la classe Format connaissant son identifiant
-        function getMaga(int $id): Magasin {
+        function getMaga(string $id): Magasin {
 
             $req = "SELECT * FROM Magasin WHERE idMagasin=$id";
             $lignereq =($this->db)->query($req);
@@ -254,8 +326,69 @@
         }
 
 
-        // Un livre possède un magasin?
+        function getMagaDepartement(string $departement) : array{
+          $req = "SELECT * FROM Magasin WHERE departement = $departement";
+          $lignereq =($this->db)->query($req);
+          if($lignereq){
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Magasin');
+            return $result;
+          }
+          else{
+            return array();
+          }
 
+        }
+
+        //======================================================================
+        // Disponibilité
+        //======================================================================
+        function nbDisponibilite(string $isbn) : int{
+            $req = "SELECT count(*) FROM Disponibilite WHERE ISBN = $isbn";
+            $lignereq =($this->db)->query($req);
+            if($lignereq){
+              $result =$lignereq->fetchAll(PDO::FETCH_COLUMN,0);
+              return $result[0];
+            }
+            else{
+              return 0;
+            }
+        }
+
+        function listeMagDispo(string $isbn) : array {
+          $req = "SELECT idMagasin FROM Disponibilite WHERE ISBN = $isbn";
+          $lignereq =($this->db)->query($req);
+          if($lignereq){
+            $result =$lignereq->fetchAll(PDO::FETCH_COLUMN,0);
+            return $result;
+          }
+          else{
+            return array();
+          }
+        }
+
+        function nbExemplaireMag(string $isbn, int $idMag) : int{
+          $req = "SELECT count(*) FROM Disponibilite WHERE ISBN = $isbn AND idMagasin = $idMag";
+          $lignereq =($this->db)->query($req);
+          if($lignereq){
+            $result =$lignereq->fetchAll(PDO::FETCH_COLUMN,0);
+            return $result[0];
+          }
+          else{
+            return 0;
+          }
+        }
+
+        function listeLivreDispo(string $idMagasin) : array{
+          $req = "SELECT ISBN FROM Disponibilite WHERE idMagasin = $idMagasin";
+          $lignereq =($this->db)->query($req);
+          if($lignereq){
+            $result =$lignereq->fetchAll(PDO::FETCH_COLUMN,0);
+            return $result;
+          }
+          else{
+            return array();
+          }
+        }
 
     }
 

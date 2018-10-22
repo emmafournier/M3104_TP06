@@ -12,6 +12,7 @@
   </header>
 
   <body>
+		<!-- ======================== MENU ===================================== -->
       <nav>
        	<ul id="menu_horizontale">
           <li class="menu_acceuil"> <a href="accueil.ctrl.php">Accueil</a></li>
@@ -44,27 +45,50 @@
         </ul>
       </nav>
 
+		<!-- ======================== FIN MENU ================================= -->
+
+		<!-- ======================== AFFICHAGE DES LIVRES ===================== -->
+
 			<section>
 				<?php foreach ($livres as $value): ?>
-					<article class="">
+					<article class="livres">
 						<h3><?=$value->__get("titre")?></h3>
-						<a href="livre.ctrl.php?ISBN=<?=$value->__get("ISBN")?>">
-							<img src="<?=$value->__get("photo")?>" alt="<?=$value->__get("photo")?>">
+						<a href="produit.ctrl.php?ISBN=<?=$value->__get("ISBN")?>">
+							<img src="../view/images/<?=$value->__get("photo")?>" alt="<?=$value->__get("photo")?>">
 						</a>
 						<p><?=$value->__get("prix")?></p>
 					</article>
 
 				<?php endforeach; ?>
 			</section>
+
+		<!-- ==================== FIN AFFICHAGE DES LIVRES ===================== -->
+
+		<!-- ==================== AFFICHAGE FLECHES============================= -->
 			<section>
-				<?php if (count($pred) > 0): ?>
+
+				<?php if ($total==false){ ?>
+					<?php if (count($pred) > 0): ?>
 					<a href="?ISBN=<?=$pred[0]->__get("ISBN")?>"><input type="button" name="btnPred" value="<="></a>
-				<?php endif; ?>
-				<?php if (count($next) > 0): ?>
+					<?php endif; ?>
+					<?php if (count($next) > 0): ?>
 					<a href="?ISBN=<?=$next[0]->__get("ISBN")?>"><input type="button" name="btnSuiv" value="=>"></a>
-				<?php endif; ?>
+					<?php endif;
+				}?>
+
 
 			</section>
+
+		<!-- ================ FIN AFFICHAGE FLECHES============================= -->
+
+		<!-- ==================== AFFICHAGE Total=============================== -->
+			<section>
+
+					<a href="?total=true"><input type="button" name="btnTotalAccueil" value="Tout Afficher"></a>
+
+			</section>
+
+		<!-- ================ FIN AFFICHAGE Total ============================== -->
 
   </body>
   <footer></footer>

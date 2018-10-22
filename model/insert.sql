@@ -16,6 +16,7 @@ INSERT INTO categorie VALUES (7,"Adolescent");
 /*Table Livre */
 INSERT INTO livre VALUES ("1000000000011","Fondation","La base de la SF!",7.25,"photo_fondation","Isaac Asimov","Gallimard",256,'1957-01-01',1,1);
 INSERT INTO livre VALUES ("1000000000012","Felicidad","Ce roman va vous surprendre !",7.25,"photo_felicidad","Jean Molas","Gallimard",100,'1999-01-01',1,1);
+INSERT INTO livre VALUES ("1000000000013","La zone du Dehors","Ce roman va vous transporter !"18.0"photo_ZoneDuDehors","Alain Damasio","La volte",493,'2014-06-01',1,1);
 
 
 INSERT INTO livre VALUES ("1000000000014","Le Transperceneige","bd de SF",25.00,"photo_Transperceneige","Jacques Lob","casterman",100,'1990-01-01',1,2);
@@ -48,9 +49,9 @@ INSERT INTO livre VALUES ("1000000000031"," Tous les secrets du IIIe Reich ","Ro
 INSERT INTO livre VALUES ("1000000000032","Azteca","Roman historique!",10.0,"photo_Azteca","Garry Jennings","Le Livre de Poche",1050,'1991-01-01',3,1);
 INSERT INTO livre VALUES ("1000000000033","La guerre et la paix ","Roman historique!",9.40,"photo_GuerreEtPaix","Leon Tolstoi","Gallimard",800,'2002-07-01',3,1);
 
-INSERT INTO livre VALUES ("1000000000034","Alix Senator Tome 1","Bande dessinnée historique ",13.95,"photo_AlixSenator","Valérie Mangin","Casterman",148,'2018-11-21',3,2);
-INSERT INTO livre VALUES ("1000000000035","Alix Senator Tome 1","Bande dessinnée historique ",13.95,"photo_AlixSenator","Valérie Mangin","Casterman",148,'2018-11-21',3,2);
-INSERT INTO livre VALUES ("1000000000036","Alix Senator Tome 1","Bande dessinnée historique ",13.95,"photo_AlixSenator","Valérie Mangin","Casterman",148,'2018-11-21',3,2);
+INSERT INTO livre VALUES ("1000000000034","Alix Senator Tome 1","Bande dessinnée historique ",13.95,"photo_AlixSenator","Valérie Mangin","Casterman",148,'2017-11-21',3,2);
+INSERT INTO livre VALUES ("1000000000035","14-18 La lune en héritage","Bande dessinnée historique ",14.55,"photo_1418","Loic Chevallier","Delcourt",56,'2018-10-10',3,2);
+INSERT INTO livre VALUES ("1000000000036","Les révolutionnaires","Bande dessinnée historique ",19.95,"photo_Revo","Benoist Simmat","Hachette",136,'2018-10-10',3,2);
 
 INSERT INTO livre VALUES ("1000000000037","Save me pythie Tome 1","manga historique",7.16,"photo_SaveMePythie","Elsa BRANTS","Global Manga",102,'2013-07-04',3,3);
 INSERT INTO livre VALUES ("1000000000038","Innocent Tome 1","manga historique",7.99,"photo_Innocent","Sakamoto Shinichi","Delcourt",156,'2013-01-04',3,3);
