@@ -43,29 +43,29 @@
 
         </ul>
       </nav>
+      <h2><?=$format->libelle?></h2>
+      <section>
+        <?php foreach ($livres as $value): ?>
+          <article class="">
+            <h3><?=$value->__get("titre")?></h3>
+            <a href="livre.ctrl.php?ISBN=<?=$value->__get("ISBN")?>">
+              <img src="<?=$value->__get("photo")?>" alt="<?=$value->__get("photo")?>">
+            </a>
+            <p><?=$value->__get("prix")?></p>
+          </article>
 
-			<section>
-				<?php foreach ($livres as $value): ?>
-					<article class="">
-						<h3><?=$value->__get("titre")?></h3>
-						<a href="livre.ctrl.php?ISBN=<?=$value->__get("ISBN")?>">
-							<img src="<?=$value->__get("photo")?>" alt="<?=$value->__get("photo")?>">
-						</a>
-						<p><?=$value->__get("prix")?></p>
-					</article>
-
-				<?php endforeach; ?>
-			</section>
-			<section>
+        <?php endforeach; ?>
+      </section>
+      <section>
 				<?php if (count($pred) > 0): ?>
-					<a href="?ISBN=<?=$pred[0]->__get("ISBN")?>"><input type="button" name="btnPred" value="<="></a>
+					<a href="?idFormat=<?=$idFormat?>&ISBN=<?=$pred[0]->__get("ISBN")?>"><input type="button" name="btnPred" value="<="></a>
 				<?php endif; ?>
 				<?php if (count($next) > 0): ?>
-					<a href="?ISBN=<?=$next[0]->__get("ISBN")?>"><input type="button" name="btnSuiv" value="=>"></a>
+					<a href="?idFormat=<?=$idFormat?>&ISBN=<?=$next[0]->__get("ISBN")?>"><input type="button" name="btnSuiv" value="=>"></a>
 				<?php endif; ?>
 
 			</section>
 
+
   </body>
-  <footer></footer>
 </html>

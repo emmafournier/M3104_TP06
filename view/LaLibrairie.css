@@ -19,7 +19,7 @@ ul{
   flex-direction: row;
 }
 
-a:link {
+nav li a:link {
   padding: 1em 4em 1em 4em;
   display : block;
   font-style: normal;
@@ -29,7 +29,7 @@ a:link {
 
 }
 
-a:hover{
+nav li a:hover{
   background-color: #6894A9;
   color : white;
 
@@ -41,8 +41,25 @@ a:hover{
 
 nav li:hover .sous-menu{
   display: flex;
-  flex-direction: column;;
+  flex-direction: column;
   margin: 0px;
   padding :0px;
   background-color: white;
+}
+
+section{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+input{
+  background-color:  #6894A9;
+  color : white;
+}
+
+h2{
+  color : #6894A9;
+  font-size: 0.9 em;
 }

@@ -15,7 +15,7 @@
         // L'objet local PDO de la base de donnée
         private $db;
         // Le type, le chemin et le nom de la base de donnée
-        private $database = 'sqlite:../data/db/book.db';
+        private $database = 'sqlite:../model/data/book.db';
 
         // la base s'appelle book !
 
@@ -39,10 +39,15 @@
         // Cette méthode retourne un tableau contenant les n permier livres de
         // la base sous la forme d'objets de la classe Livre.
         function firstN(int $n) : array {
-
-            $req = "SELECT * FROM livre ORDER BY isbn ASC LIMIT $n";
+          try{
+            $req = "SELECT * FROM livre ORDER BY ISBN ASC LIMIT $n";
             $lignereq =($this->db)->query($req);
             $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
+          }
+          catch(PDOException $e){
+            return array();
+          }
+
             return $result;
         }
 
@@ -51,30 +56,36 @@
         // la base sous la forme d'objets de la classe Livre.
         function getN(string $isbn,int $n) : array {
 
-            $req = "SELECT * FROM livre WHERE isbn>=$isbn ORDER BY isbn LIMIT $n";
+          try{
+            $req = "SELECT * FROM livre WHERE ISBN >= $isbn ORDER BY ISBN LIMIT $n";
             $lignereq =($this->db)->query($req);
             $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
             return $result;
+          }
+          catch(PDOException $e){
+            return array();
+          }
+
 
         }
 
         // Acces à l'isbn qui suit l'isbn $isbn dans l'ordre des isbn
         function next(string $isbn) : string {
 
-            $req = "SELECT * FROM livre WHERE isbn>$isbn ORDER BY isbn LIMIT 1";
+            $req = "SELECT * FROM livre WHERE ISBN>$isbn ORDER BY ISBN LIMIT 1";
             $lignereq =($this->db)->query($req);
             $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
             if ($result[0] == NULL){
               return 0;
             }else{
-              return ($result[0]->isbn);
+              return ($result[0]->__get('ISBN'));
             }
         }
 
         // Acces aux n livres qui précèdent de $n l'isbn $isbn dans l'ordre des isbn
         function prevN(string $isbn,int $n): array {
 
-            $req = "SELECT * FROM livre WHERE isbn<$isbn ORDER BY isbn DESC LIMIT $n";
+            $req = "SELECT * FROM (SELECT * FROM livre WHERE ISBN<$isbn ORDER BY ISBN DESC LIMIT $n) ORDER BY ISBN";
             $lignereq =($this->db)->query($req);
             $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
             return $result;
@@ -98,7 +109,7 @@
         // Retourne un objet de la classe Categorie connaissant son identifiant
         function getCat(int $id): Categorie {
 
-            $req = "SELECT * FROM categorie WHERE id=$id";
+            $req = "SELECT * FROM categorie WHERE idCategorie=$id";
             $lignereq =($this->db)->query($req);
             $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Categorie');
             return $result[0];
@@ -110,7 +121,7 @@
         function getNCateg(string $isbn,int $n,int $categorie) : array {
           // changement : j'ai défini en int => identifiant
 
-            $req = "SELECT * FROM livre WHERE isbn>=$isbn AND categorie=$categorie ORDER BY isbn ASC LIMIT $n ";
+            $req = "SELECT * FROM livre WHERE ISBN>=$isbn AND idCategorie=$categorie ORDER BY ISBN ASC LIMIT $n ";
             $lignereq =($this->db)->query($req);
             $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
             return $result;
@@ -120,11 +131,18 @@
         // Format
         //======================================================================
 
+        function getAllFormat() : array {
+
+            $req = "SELECT * FROM format";
+            $lignereq =($this->db)->query($req);
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Format');
+            return $result;
+        }
         // Acces à un format
         // Retourne un objet de la classe Format connaissant son identifiant
         function getFormat(int $id): Format {
 
-            $req = "SELECT * FROM format WHERE id=$id";
+            $req = "SELECT * FROM format WHERE idFormat=$id";
             $lignereq =($this->db)->query($req);
             $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Format');
             return $result[0];
@@ -136,7 +154,41 @@
         function getNFormat(string $isbn,int $n,int $idFormat) : array {
           // changement : j'ai défini en int => identifiant
 
-            $req = "SELECT * FROM livre WHERE isbn>=$isbn AND format=$format ORDER BY isbn ASC LIMIT $n ";
+            $req = "SELECT * FROM livre WHERE ISBN>=$isbn AND idFormat=$idFormat ORDER BY ISBN ASC LIMIT $n ";
+            $lignereq =($this->db)->query($req);
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
+            return $result;
+        }
+
+        function firstNFormat(int $n, int $idFormat) : array {
+          try{
+            $req = "SELECT * FROM livre WHERE idFormat = $idFormat ORDER BY ISBN ASC LIMIT $n";
+            $lignereq =($this->db)->query($req);
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
+          }
+          catch(PDOException $e){
+            return array();
+          }
+
+            return $result;
+        }
+
+        function nextFormat(string $isbn,int $idFormat) : string {
+
+            $req = "SELECT * FROM livre WHERE ISBN>$isbn AND idFormat=$idFormat ORDER BY ISBN LIMIT 1";
+            $lignereq =($this->db)->query($req);
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
+            if ($result[0] == NULL){
+              return 0;
+            }else{
+              return ($result[0]->__get('ISBN'));
+            }
+        }
+
+        // Acces aux n livres qui précèdent de $n l'isbn $isbn dans l'ordre des isbn
+        function prevNFormat(string $isbn,int $n,int $idFormat): array {
+
+            $req = "SELECT * FROM (SELECT * FROM livre WHERE ISBN<$isbn AND idFormat=$idFormat ORDER BY ISBN DESC LIMIT $n) ORDER BY ISBN";
             $lignereq =($this->db)->query($req);
             $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
             return $result;
@@ -146,15 +198,24 @@
         // Magasin
         //======================================================================
 
+        function getAllMaga() : array {
+
+            $req = "SELECT * FROM magasin";
+            $lignereq =($this->db)->query($req);
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Magasin');
+            return $result;
+        }
+
         // Acces à un format
         // Retourne un objet de la classe Format connaissant son identifiant
         function getMaga(int $id): Magasin {
 
-            $req = "SELECT * FROM Magasin WHERE id=$id";
+            $req = "SELECT * FROM Magasin WHERE idMagasin=$id";
             $lignereq =($this->db)->query($req);
             $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Magasin');
             return $result[0];
         }
+
 
         // Un livre possède un magasin?
 
