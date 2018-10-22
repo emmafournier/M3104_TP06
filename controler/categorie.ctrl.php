@@ -2,7 +2,7 @@
 
 include_once("../model/DAO.class.php");
 
-$nbLivres = 5;
+
 $categories = $dao->getAllCat();
 $formats = $dao->getAllFormat();
 
@@ -22,6 +22,15 @@ if(isset($_GET['ISBN'])){
 }
 else{
  $isbn = $dao->firstNCateg(1,$idCategorie)[0]->__get('ISBN');
+}
+
+if(isset($_GET['total'])){
+  $nbLivres = $dao->getNBLivreCat($idCategorie);
+  $total = true;
+}
+else{
+  $nbLivres = 5;
+  $total = false;
 }
 
 $categorie = $dao->getCat($idCategorie);

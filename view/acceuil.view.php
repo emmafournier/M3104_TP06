@@ -66,16 +66,29 @@
 
 		<!-- ==================== AFFICHAGE FLECHES============================= -->
 			<section>
-				<?php if (count($pred) > 0): ?>
+
+				<?php if ($total==false){ ?>
+					<?php if (count($pred) > 0): ?>
 					<a href="?ISBN=<?=$pred[0]->__get("ISBN")?>"><input type="button" name="btnPred" value="<="></a>
-				<?php endif; ?>
-				<?php if (count($next) > 0): ?>
+					<?php endif; ?>
+					<?php if (count($next) > 0): ?>
 					<a href="?ISBN=<?=$next[0]->__get("ISBN")?>"><input type="button" name="btnSuiv" value="=>"></a>
-				<?php endif; ?>
+					<?php endif;
+				}?>
+
 
 			</section>
 
 		<!-- ================ FIN AFFICHAGE FLECHES============================= -->
+
+		<!-- ==================== AFFICHAGE Total=============================== -->
+			<section>
+
+					<a href="?total=true"><input type="button" name="btnTotalAccueil" value="Tout Afficher"></a>
+
+			</section>
+
+		<!-- ================ FIN AFFICHAGE Total ============================== -->
 
   </body>
   <footer></footer>

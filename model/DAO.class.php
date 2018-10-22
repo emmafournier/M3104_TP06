@@ -92,7 +92,6 @@
             return $result;
         }
 
-        //-------------------------CHANGEMENT-----------------------------------
         function getLivre(int $isbn) : Livre {
           try{
             $req = "SELECT * FROM livre WHERE ISBN=$isbn";
@@ -103,6 +102,24 @@
             return NULL;
           }
             return $result[0];
+        }
+
+        //-------------------------CHANGEMENT-----------------------------------
+
+        function getNBLivre() : int {
+          try{
+            $req = "SELECT * FROM livre";
+            $lignereq =($this->db)->query($req);
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
+          }
+          catch(PDOException $e){
+            return NULL;
+          }
+          $som = 0;
+          foreach ($result as $livre) {
+            $som += 1;
+          }
+            return $som;
         }
 
         //======================================================================
@@ -174,6 +191,24 @@
             $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
             return $result;
         }
+
+        //-------------------------CHANGEMENT-----------------------------------
+
+        function getNBLivreCat(int $idCategorie) : int {
+          try{
+            $req = "SELECT * FROM livre WHERE idCategorie=$idCategorie";
+            $lignereq =($this->db)->query($req);
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
+          }
+          catch(PDOException $e){
+            return NULL;
+          }
+          $som = 0;
+          foreach ($result as $livre) {
+            $som += 1;
+          }
+            return $som;
+        }
         //======================================================================
         // Format
         //======================================================================
@@ -239,6 +274,24 @@
             $lignereq =($this->db)->query($req);
             $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
             return $result;
+        }
+
+        //-------------------------CHANGEMENT-----------------------------------
+
+        function getNBLivreFormat(int $idFormat) : int {
+          try{
+            $req = "SELECT * FROM livre WHERE idFormat=$idFormat";
+            $lignereq =($this->db)->query($req);
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Livre');
+          }
+          catch(PDOException $e){
+            return NULL;
+          }
+          $som = 0;
+          foreach ($result as $livre) {
+            $som += 1;
+          }
+            return $som;
         }
 
         //======================================================================

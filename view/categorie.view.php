@@ -75,5 +75,14 @@
 
 			<!-- FIN VUE PAR CATEGORIE ---------------------------------------------->
 
+			<!-- ==================== AFFICHAGE Total=============================== -->
+				<section>
+
+						<a href="?total=true"><input type="button" name="btnTotalCat" value="Tout Afficher"></a>
+
+				</section>
+
+			<!-- ================ FIN AFFICHAGE Total ============================== -->
+
   </body>
 </html>

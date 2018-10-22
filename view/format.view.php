@@ -66,6 +66,15 @@
 
 			</section>
 
+			<!-- ==================== AFFICHAGE Total=============================== -->
+				<section>
+
+						<a href="?total=true"><input type="button" name="btnTotalFormat" value="Tout Afficher"></a>
+
+				</section>
+
+			<!-- ================ FIN AFFICHAGE Total ============================== -->
+
 
   </body>
 </html>
