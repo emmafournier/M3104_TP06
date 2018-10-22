@@ -19,22 +19,18 @@ else{
 if(isset($_GET['idFormat'])){
  $idFormatQuery = $_GET['idFormat'];
  $query = "format.ctrl.php?idFormat=".$idFormatQuery;
-<<<<<<< HEAD
-=======
+
  $valBouton = "Retour au format";
 }
->>>>>>> aae4a71696aaa006adfabce24b95e0ed96d68832
+
 
 }else if(isset($_GET['idCategorie'])){
  $idCatQuery = $_GET['idCategorie'];
  $query = "categorie.ctrl.php?idCategorie=".$idCatQuery;
-<<<<<<< HEAD
+ $valBouton = "Retour à la categorie";
 
 }else{
    $query = "accueil.ctrl.php";
-=======
- $valBouton = "Retour à la categorie";
->>>>>>> aae4a71696aaa006adfabce24b95e0ed96d68832
 }
 
 
