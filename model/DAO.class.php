@@ -304,7 +304,7 @@
           }
         }
 
-        function nbExemplaireMag(string $isbn, int $idMag){
+        function nbExemplaireMag(string $isbn, int $idMag) : int{
           $req = "SELECT count(*) FROM Disponibilite WHERE ISBN = $isbn AND idMagasin = $idMag";
           $lignereq =($this->db)->query($req);
           if($lignereq){
@@ -313,6 +313,18 @@
           }
           else{
             return 0;
+          }
+        }
+
+        function listeLivreDispo(string $idMagasin) : array{
+          $req = "SELECT ISBN FROM Disponibilite WHERE idMagasin = $idMagasin";
+          $lignereq =($this->db)->query($req);
+          if($lignereq){
+            $result =$lignereq->fetchAll(PDO::FETCH_COLUMN,0);
+            return $result;
+          }
+          else{
+            return array();
           }
         }
 

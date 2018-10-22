@@ -19,11 +19,13 @@ else{
 if(isset($_GET['idFormat'])){
  $idFormatQuery = $_GET['idFormat'];
  $query = "format.ctrl.php?idFormat=".$idFormatQuery;
+ $valBouton = "Retour au format";
 }
 
 if(isset($_GET['idCategorie'])){
  $idCatQuery = $_GET['idCategorie'];
  $query = "categorie.ctrl.php?idCategorie=".$idCatQuery;
+ $valBouton = "Retour à la categorie";
 }
 
 
