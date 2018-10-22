@@ -39,9 +39,13 @@ nav li a:hover{
   display: none;
 }
 
+
+
 nav li:hover .sous-menu{
   display: flex;
   flex-direction: column;
+  position: absolute;
+  width: 180px;
   margin: 0px;
   padding :0px;
   background-color: white;

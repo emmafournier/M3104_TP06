@@ -11,6 +11,7 @@ if(isset($_GET['departement'])){
   $magasins = $dao->getMagaDepartement($departement);
   if(count($magasins) == 0){
     $magasins = $dao->getAllMaga();
+    $departement = 0;
   }
 }
 else{
