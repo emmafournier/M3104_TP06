@@ -93,7 +93,7 @@
             return $result;
         }
 
-        function getLivre(int $isbn) : Livre {
+        function getLivre(string $isbn) : Livre {
           try{
             $req = "SELECT * FROM livre WHERE ISBN=$isbn";
             $lignereq =($this->db)->query($req);
