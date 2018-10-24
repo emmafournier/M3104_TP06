@@ -73,16 +73,16 @@
 
 			</section>
 
-			<!-- FIN VUE PAR CATEGORIE ---------------------------------------------->
+			<form class="" action="categorie.ctrl.php" method="get">
+				<label for="idListe">Nombre de produits par page :</label>
+				<select class="" name="listeNbLibre">
+					<option value="5" selected>5</option>
+					<option value="0">Tout afficher</option>
+				</select>
+				<input type="hidden" name="idCategorie" value="<?=$idCategorie?>">
 
-			<!-- ==================== AFFICHAGE Total=============================== -->
-				<section>
-
-						<a href="?total=true"><input type="button" name="btnTotalCat" value="Tout Afficher"></a>
-
-				</section>
-
-			<!-- ================ FIN AFFICHAGE Total ============================== -->
+				<input type="submit" name="btnValider" value="Valider">
+			</form>
 
   </body>
 </html>
