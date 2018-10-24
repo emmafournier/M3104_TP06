@@ -94,7 +94,7 @@
             return $result;
         }
 
-        function getLivre(int $isbn) : Livre {
+        function getLivre(string $isbn) : Livre {
           try{
             $req = "SELECT * FROM livre WHERE ISBN=$isbn";
             $lignereq =($this->db)->query($req);
@@ -160,6 +160,7 @@
             return $result;
         }
 
+//---------------------------CHANGEMENT-----------------------------------------
         function firstNCateg(int $n, int $idCategorie) : array {
           try{
             $req = "SELECT * FROM livre WHERE idCategorie = $idCategorie ORDER BY ISBN ASC LIMIT $n";
@@ -194,6 +195,10 @@
             return $result;
         }
 
+<<<<<<< HEAD
+        //------------------FIN CHANGEMENT--------------------------------------
+
+=======
         //-------------------------CHANGEMENT-----------------------------------
 
         function getNBLivreCat(int $idCategorie) : int {
@@ -211,6 +216,7 @@
           }
             return $som;
         }
+>>>>>>> 4e4c4b939c254269f9b7fea2237c477acea30d2e
         //======================================================================
         // Format
         //======================================================================
