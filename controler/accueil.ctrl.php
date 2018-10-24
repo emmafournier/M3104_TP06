@@ -1,5 +1,7 @@
 <?php
 
+  session_start();
+  
   include_once("../model/DAO.class.php");
 
   $categories = $dao->getAllCat();

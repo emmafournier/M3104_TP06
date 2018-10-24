@@ -2,9 +2,8 @@
 
     // Un article en vente
     class ElementPanier {
-        private $idUtilisateur;
         private $ISBN;
-        private $nb_Exemplaires; 
+        private $nb_Exemplaires;
 
         public function __construct(array $tab = NULL){
           if($tab != NULL){

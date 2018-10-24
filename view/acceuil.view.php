@@ -94,6 +94,8 @@
 			<input type="submit" name="btnValider" value="Valider">
 		</form>
 
+		<a href="panier.ctrl.php"> <input type="button" name="btnPanier" value="Panier"> </a>
+
   </body>
   <footer></footer>
 </html>
