@@ -70,6 +70,7 @@
 
         }
 
+//
         // Acces à l'isbn qui suit l'isbn $isbn dans l'ordre des isbn
         function next(string $isbn) : string {
 
