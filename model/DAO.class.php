@@ -158,10 +158,7 @@
             return $result;
         }
 
-<<<<<<< HEAD
 //---------------------------CHANGEMENT-----------------------------------------
-=======
->>>>>>> 4e4c4b939c254269f9b7fea2237c477acea30d2e
         function firstNCateg(int $n, int $idCategorie) : array {
           try{
             $req = "SELECT * FROM livre WHERE idCategorie = $idCategorie ORDER BY ISBN ASC LIMIT $n";

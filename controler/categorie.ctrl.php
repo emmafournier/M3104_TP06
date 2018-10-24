@@ -21,9 +21,6 @@ if(isset($_GET['ISBN'])){
  $isbn = $_GET['ISBN'];
 }
 else{
-<<<<<<< HEAD
- $isbn = $dao->firstNCateg(1,$id)[0]->__get('ISBN');
-=======
  $isbn = $dao->firstNCateg(1,$idCategorie)[0]->__get('ISBN');
 }
 
@@ -34,7 +31,6 @@ if(isset($_GET['total'])){
 else{
   $nbLivres = 5;
   $total = false;
->>>>>>> 4e4c4b939c254269f9b7fea2237c477acea30d2e
 }
 
 $categorie = $dao->getCat($idCategorie);

@@ -53,17 +53,10 @@
 			<h2><?=$categorie->libelle?></h2>
 			<section>
 				<?php foreach ($livres as $value): ?>
-<<<<<<< HEAD
-					<article class="">
-						<h3><?=$value->__get("titre")?></h3>
-						<a href="livre.ctrl.php?ISBN=<?=$value->__get("ISBN")?>">
-							<img src="<?=$value->__get("photo")?>" alt="<?=$value->__get("photo")?>">
-=======
 					<article class="livres">
 						<h3><?=$value->__get("titre")?></h3>
 						<a href="produit.ctrl.php?ISBN=<?=$value->__get("ISBN")?>&idCategorie=<?=$value->__get("idCategorie")?>">
 							<img src="../view/images/<?=$value->__get("photo")?>" alt="<?=$value->__get("photo")?>">
->>>>>>> 4e4c4b939c254269f9b7fea2237c477acea30d2e
 						</a>
 						<p><?=$value->__get("prix")?></p>
 					</article>
@@ -82,8 +75,6 @@
 
 			<!-- FIN VUE PAR CATEGORIE ---------------------------------------------->
 
-<<<<<<< HEAD
-=======
 			<!-- ==================== AFFICHAGE Total=============================== -->
 				<section>
 
@@ -93,6 +84,5 @@
 
 			<!-- ================ FIN AFFICHAGE Total ============================== -->
 
->>>>>>> 4e4c4b939c254269f9b7fea2237c477acea30d2e
   </body>
 </html>
