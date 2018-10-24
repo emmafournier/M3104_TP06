@@ -6,6 +6,10 @@ $nbLivres = 5;
 $categories = $dao->getAllCat();
 $formats = $dao->getAllFormat();
 
+if (isset($_SESSION['utilisateur'])){
+  $utilisateur = $_SESSION['utilisateur'];
+}
+
 if(isset($_GET['departement'])){
   $departement = $_GET['departement'];
   $magasins = $dao->getMagaDepartement($departement);

@@ -7,6 +7,10 @@ include_once("../model/DAO.class.php");
 $categories = $dao->getAllCat();
 $formats = $dao->getAllFormat();
 
+if (isset($_SESSION['utilisateur'])){
+  $utilisateur = $_SESSION['utilisateur'];
+}
+
 //-------------CHANGEMENT-------------------------------------------------------
 
 if (isset($_GET['idCategorie'])) {

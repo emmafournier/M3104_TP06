@@ -7,6 +7,10 @@
   $categories = $dao->getAllCat();
   $formats = $dao->getAllFormat();
 
+  if (isset($_SESSION['utilisateur'])){
+    $utilisateur = $_SESSION['utilisateur'];
+  }
+
 //------------------------------ RECCUP FORMAT ---------------------------------
   if (isset($_GET['idFormat'])) {
 

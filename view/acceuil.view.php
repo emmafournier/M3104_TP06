@@ -7,8 +7,18 @@
 
 	</head>
   <header>
-    <img src="../view/logo-passerelles.png	" alt="Logo_Librairie">
-    <h1>La Librairie.com</h1>
+		<div class="">
+			<img src="../view/logo-passerelles.png	" alt="Logo_Librairie">
+			<h1>La Librairie.com</h1>
+		</div>
+    <div class="">
+			<?php if (isset($utilisateur)): ?>
+				<p><?=$utilisateur->__get('idUtilisateur')?></p>
+			<?php else: ?>
+				<a href="connexion.ctrl.php"> <input type="button" name="btnConnexion" value="Se connecter"> </a>
+			<?php endif; ?>
+			<a href="panier.ctrl.php"> <input type="button" name="btnPanier" value="Panier"> </a>
+    </div>
   </header>
 
   <body>
@@ -94,7 +104,7 @@
 			<input type="submit" name="btnValider" value="Valider">
 		</form>
 
-		<a href="panier.ctrl.php"> <input type="button" name="btnPanier" value="Panier"> </a>
+
 
   </body>
   <footer></footer>

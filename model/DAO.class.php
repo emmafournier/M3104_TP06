@@ -4,6 +4,7 @@
     require_once("../model/Categorie.class.php");
     require_once("../model/Format.class.php");
     require_once("../model/Magasin.class.php");
+    require_once("../model/Utilisateur.class.php");
 
 
     // Creation de l'unique objet DAO
@@ -379,6 +380,57 @@
           }
           else{
             return array();
+          }
+        }
+
+        //======================================================================
+        // Utilisateurs
+        //======================================================================
+        function getUtilisateurConnexion(string $idUtilisateur, string $mot_de_passe) : Utilisateur {
+          $req = "SELECT * FROM Utilisateur WHERE idUtilisateur = $idUtilisateur AND mot_de_passe = $mot_de_passe";
+          $lignereq =($this->db)->query($req);
+          if($lignereq){
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Utilisateur');
+            return $result[0];
+          }
+          else{
+            return new Utilisateur();
+          }
+        }
+
+        function ajouterPanierUtilisateur(string $idUtilisateur, string $ISBN, int $nbExemplaire) : int {
+          $req = "INSERT INTO panier VALUES($idUtilisateur,$ISBN,$nbExemplaire)";
+          $lignereq =($this->db)->exec($req);
+          return $lignereq;
+        }
+
+        function getPanierUtilisateur(string $idUtilisateur) : array {
+          $req = "SELECT * FROM panier WHERE idUtilisateur = $idUtilisateur";
+          $lignereq =($this->db)->query($req);
+          if($lignereq){
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'ElementPanier');
+            return $result;
+          }
+          else{
+            return array();
+          }
+        }
+
+        function creerUtilisateur(string $idUtilisateur, string $mot_de_passe, string $adresse) : int{
+          $req = "INSERT INTO panier VALUES($idUtilisateur,$ISBN,$nbExemplaire)";
+          $lignereq =($this->db)->exec($req);
+          return $lignereq;
+        }
+
+        function getUtilisateur(string $idUtilisateur) : Utilisateur {
+          $req = "SELECT * FROM Utilisateur WHERE idUtilisateur = $idUtilisateur";
+          $lignereq =($this->db)->query($req);
+          if($lignereq){
+            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Utilisateur');
+            return $result[0];
+          }
+          else{
+            return null;
           }
         }
 

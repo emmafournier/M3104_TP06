@@ -8,6 +8,10 @@ $nbLivres = 5;
 $categories = $dao->getAllCat();
 $formats = $dao->getAllFormat();
 
+if (isset($_SESSION['utilisateur'])){
+  $utilisateur = $_SESSION['utilisateur'];
+}
+
 //-------------CHANGEMENT-------------------------------------------------------
 
 
