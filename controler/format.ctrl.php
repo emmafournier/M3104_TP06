@@ -1,4 +1,6 @@
 <?php
+
+  session_start();
   include_once("../model/DAO.class.php");
 
   $nbLivres = 5;
@@ -25,15 +27,22 @@
  }
 
  //------------------------------ RECCUP TOTAL ---------------------------------
-
- if(isset($_GET['total'])){
-   $nbLivres = $dao->getNBLivreFormat($idFormat);
-   $total = true;
+ if(isset($_GET['listeNbLibre'])){
+   if($_GET['listeNbLibre'] == 0){
+     $nbLivres = $dao->getNBLivreFormat($idFormat);
+     $total = true;
+   }
+   else{
+     $nbLivres = $_GET['listeNbLibre'];
+     $total = false;
+   }
  }
  else{
    $nbLivres = 5;
    $total = false;
  }
+
+
 
  $format = $dao->getFormat($idFormat);
  $livres = $dao->getNFormat($isbn,$nbLivres,$idFormat);

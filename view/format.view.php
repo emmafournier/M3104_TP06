@@ -67,14 +67,17 @@
 
 			</section>
 
-			<!-- ==================== AFFICHAGE Total=============================== -->
-				<section>
-
-						<a href="?total=true"><input type="button" name="btnTotalFormat" value="Tout Afficher"></a>
-
-				</section>
-
-			<!-- ================ FIN AFFICHAGE Total ============================== -->
+			<form class="" action="format.ctrl.php" method="get">
+				<label for="idListe">Nombre de produits par page :</label>
+				<select class="" name="listeNbLibre">
+					<option value="5" selected>5</option>
+					<option value="10">10</option>
+					<option value="15">15</option>
+					<option value="0">Tout afficher</option>
+				</select>
+				<input type="hidden" name="idFormat" value="<?=$idFormat?>">
+				<input type="submit" name="btnValider" value="Valider">
+			</form>
 
 
   </body>

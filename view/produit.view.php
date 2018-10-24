@@ -76,5 +76,23 @@
 
     	</section>
 
+			<section>
+				<form class="" action="produit.ctrl.php" method="get">
+					<label for="">Nombre d'exemplaires : </label>
+					<input type="number" name="nb_Exemplaires" value="1" min="1">
+					<input type="hidden" name="ISBN" value="<?=$livre->__get("ISBN")?>">
+					<?php if (isset($idFormatQuery)): ?>
+						<input type="hidden" name="idFormat" value="<?=$livre->__get("idFormat")?>">
+					<?php endif; ?>
+					<?php if (isset($idCatQuery)): ?>
+						<input type="hidden" name="idCategorie" value="<?=$livre->__get("idCategorie")?>">
+					<?php endif; ?>
+					<input type="submit" name="btnPanier" value="Ajouter au panier">
+				</form>
+				<?php if (isset($_GET['btnPanier'])): ?>
+					<p>Votre produit a bien été ajouté au panier</p>
+				<?php endif; ?>
+			</section>
+
     </body>
 </html>

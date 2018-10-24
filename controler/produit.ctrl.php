@@ -1,6 +1,8 @@
 <?php
 
+session_start();
 include_once("../model/DAO.class.php");
+include_once("../model/ElementPanier.class.php");
 
 $nbLivres = 5;
 $categories = $dao->getAllCat();
@@ -13,7 +15,7 @@ if(isset($_GET['ISBN'])){
  $isbn = $_GET['ISBN'];
 }
 else{
- echo "Erreur : livre inconnu";
+ $isbn = (string)$dao->firstN(1)[0]->__get("ISBN");
 }
 
 if(isset($_GET['idFormat'])){
@@ -43,6 +45,15 @@ $idFormatLivre = $livre->__get("idFormat");
 $formatLivre = $dao->getFormat($idFormatLivre);
 
 //-----------FIN CHANGEMENT-----------------------------------------------------
+
+if(isset($_GET['btnPanier'])){
+  $elementPanier = new ElementPanier($tab = array("ISBN" => $isbn, "nb_Exemplaires" => $_GET['nb_Exemplaires']));
+  var_dump($elementPanier);
+  $_SESSION['panier'][] = $elementPanier;
+  var_dump($_SESSION);
+}
+
+
 
 include("../view/produit.view.php");
 ?>

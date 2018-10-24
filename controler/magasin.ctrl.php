@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include_once("../model/DAO.class.php");
 
 $nbLivres = 5;

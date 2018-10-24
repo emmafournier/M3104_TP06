@@ -69,26 +69,32 @@
 
 				<?php if ($total==false){ ?>
 					<?php if (count($pred) > 0): ?>
-					<a href="?ISBN=<?=$pred[0]->__get("ISBN")?>"><input type="button" name="btnPred" value="<="></a>
+					<a href="?ISBN=<?=$pred[0]->__get("ISBN")?>&listeNbLibre=<?=$nbLivres?>"><input type="button" name="btnPred" value="<="></a>
 					<?php endif; ?>
 					<?php if (count($next) > 0): ?>
-					<a href="?ISBN=<?=$next[0]->__get("ISBN")?>"><input type="button" name="btnSuiv" value="=>"></a>
+					<a href="?ISBN=<?=$next[0]->__get("ISBN")?>&listeNbLibre=<?=$nbLivres?>"><input type="button" name="btnSuiv" value="=>"></a>
 					<?php endif;
 				}?>
 
 
 			</section>
 
-		<!-- ================ FIN AFFICHAGE FLECHES============================= -->
 
-		<!-- ==================== AFFICHAGE Total=============================== -->
-			<section>
 
-					<a href="?total=true"><input type="button" name="btnTotalAccueil" value="Tout Afficher"></a>
+		<form class="" action="accueil.ctrl.php" method="get">
+			<label for="idListe">Nombre de produits par page :</label>
+			<select class="" name="listeNbLibre">
+				<option value="5" selected>5</option>
+				<option value="10">10</option>
+				<option value="15">15</option>
+				<option value="20">20</option>
+				<option value="0">Tout afficher</option>
+			</select>
 
-			</section>
+			<input type="submit" name="btnValider" value="Valider">
+		</form>
 
-		<!-- ================ FIN AFFICHAGE Total ============================== -->
+		<a href="panier.ctrl.php"> <input type="button" name="btnPanier" value="Panier"> </a>
 
   </body>
   <footer></footer>

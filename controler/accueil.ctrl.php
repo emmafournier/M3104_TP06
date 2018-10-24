@@ -1,5 +1,7 @@
 <?php
 
+  session_start();
+  
   include_once("../model/DAO.class.php");
 
   $categories = $dao->getAllCat();
@@ -13,9 +15,15 @@
     $isbn = (string)$dao->firstN(1)[0]->__get("ISBN");
   }
 
-  if(isset($_GET['total'])){
-    $nbLivres = $dao->getNBLivre();
-    $total = true;
+  if(isset($_GET['listeNbLibre'])){
+    if($_GET['listeNbLibre'] == 0){
+      $nbLivres = $dao->getNBLivre();
+      $total = true;
+    }
+    else{
+      $nbLivres = $_GET['listeNbLibre'];
+      $total = false;
+    }
   }
   else{
     $nbLivres = 5;
