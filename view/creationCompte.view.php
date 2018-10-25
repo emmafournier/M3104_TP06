@@ -20,6 +20,10 @@
         <label for="idAddr">Adresse : </label>
         <input type="text" name="adresse" value="1 allée du soleil 38000 Grenoble" id="idAddr">
         <input type="submit" name="btnConnextion" value="Créer un compte">
+
+        <?php if (isset($_GET['commande'])): ?>
+          <input type="hidden" name="commande" value="true">
+        <?php endif; ?>
     </form>
     <section>
       <a href="accueil.ctrl.php"> <input type="button" name="btnRetour" value="Retour"> </a>

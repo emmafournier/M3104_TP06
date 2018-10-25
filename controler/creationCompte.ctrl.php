@@ -57,7 +57,7 @@
         }
 
         if(isset($_GET['commande'])){
-          include("commande.ctrl.php");
+          include("panier.ctrl.php");
         }
         else{
           include("accueil.ctrl.php");

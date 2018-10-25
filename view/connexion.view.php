@@ -18,6 +18,10 @@
         <label for="idMpd">Mot de passe : </label>
         <input type="password" name="mot_de_passe" value="" id="idMpd">
         <input type="submit" name="btnConnection" value="Se connecter">
+
+        <?php if (isset($_GET['commande'])): ?>
+          <input type="hidden" name="commande" value="true">
+        <?php endif; ?>
     </form>
     <section>
 

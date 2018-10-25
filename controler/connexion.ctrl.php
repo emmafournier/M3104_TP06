@@ -49,7 +49,7 @@ else{
         include("commande.ctrl.php");
       }
       else{
-        include("accueil.ctrl.php");
+        include("panier.ctrl.php");
       }
 
 
