@@ -5,7 +5,17 @@ include_once("../model/DAO.class.php");
 include_once("../model/Utilisateur.class.php");
 include_once("../model/ElementPanier.class.php");
 
-session_start();
+if(!isset($_SESSION)){
+  session_start();
+}
+
+
+if(isset($_GET['btnDeconnexion'])){
+  session_destroy();
+  session_start();
+  $_SESSION['panier'] = array();
+}
+
 $categories = $dao->getAllCat();
 $formats = $dao->getAllFormat();
 

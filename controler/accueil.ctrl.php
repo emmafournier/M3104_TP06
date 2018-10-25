@@ -7,12 +7,23 @@
   include_once("../model/Utilisateur.class.php");
   include_once("../model/ElementPanier.class.php");
 
+  if(!isset($_SESSION)){
+    session_start();
+  }
+
+
+  if(isset($_GET['btnDeconnexion'])){
+    session_destroy();
+    session_start();
+    $_SESSION['panier'] = array();
+  }
+
+
   $categories = $dao->getAllCat();
   $formats = $dao->getAllFormat();
 
   if (isset($_SESSION['utilisateur'])){
     $utilisateur = $_SESSION['utilisateur'];
-    var_dump($utilisateur);
 
   }
 

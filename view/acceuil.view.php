@@ -14,6 +14,7 @@
     <div class="">
 			<?php if (isset($utilisateur)): ?>
 				<p><?=$utilisateur->__get('idUtilisateur')?></p>
+				<a href="accueil.ctrl.php?btnDeconnexion=true"> <input type="button" name="btnDeconnexion" value="Se déconnecter"> </a>
 			<?php else: ?>
 				<a href="connexion.ctrl.php"> <input type="button" name="btnConnexion" value="Se connecter"> </a>
 			<?php endif; ?>
@@ -79,10 +80,10 @@
 
 				<?php if ($total==false){ ?>
 					<?php if (count($pred) > 0): ?>
-					<a href="?ISBN=<?=$pred[0]->__get("ISBN")?>&listeNbLibre=<?=$nbLivres?>"><input type="button" name="btnPred" value="<="></a>
+					<a href="accueil.ctrl.php?ISBN=<?=$pred[0]->__get("ISBN")?>&listeNbLibre=<?=$nbLivres?>"><input type="button" name="btnPred" value="<="></a>
 					<?php endif; ?>
 					<?php if (count($next) > 0): ?>
-					<a href="?ISBN=<?=$next[0]->__get("ISBN")?>&listeNbLibre=<?=$nbLivres?>"><input type="button" name="btnSuiv" value="=>"></a>
+					<a href="accueil.ctrl.php?ISBN=<?=$next[0]->__get("ISBN")?>&listeNbLibre=<?=$nbLivres?>"><input type="button" name="btnSuiv" value="=>"></a>
 					<?php endif;
 				}?>
 

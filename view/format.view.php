@@ -14,6 +14,7 @@
     <div class="">
 			<?php if (isset($utilisateur)): ?>
 				<p><?=$utilisateur->__get('idUtilisateur')?></p>
+				<a href="format.ctrl.php?btnDeconnexion=true&idFormat=<?=$idFormat?>&ISBN=<?=$livres[0]->__get("ISBN")?>"> <input type="button" name="btnDeconnexion" value="Se déconnecter"> </a>
 			<?php else: ?>
 				<a href="connexion.ctrl.php"> <input type="button" name="btnConnexion" value="Se connecter"> </a>
 			<?php endif; ?>

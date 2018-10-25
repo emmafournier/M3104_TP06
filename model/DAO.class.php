@@ -406,13 +406,13 @@
         }
 
         function ajouterPanierUtilisateur(string $idUtilisateur, string $ISBN, int $nbExemplaire) : int {
-          $req = "INSERT INTO panier VALUES(\"$idUtilisateur\",$ISBN,$nbExemplaire)";
+          $req = "INSERT INTO elementPanier(idUtilisateur,ISBN,nb_Exemplaires) VALUES('$idUtilisateur','$ISBN','$nbExemplaire')";
           $lignereq =($this->db)->exec($req);
           return $lignereq;
         }
 
         function getPanierUtilisateur(string $idUtilisateur) : array {
-          $req = "SELECT * FROM panier WHERE idUtilisateur = $idUtilisateur";
+          $req = "SELECT * FROM elementPanier WHERE idUtilisateur = '$idUtilisateur'";
           $lignereq =($this->db)->query($req);
           if($lignereq){
             $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'ElementPanier');
@@ -425,14 +425,12 @@
 
         function creerUtilisateur(string $idUtilisateur, string $mot_de_passe, string $adresse) : int{
           $req = "INSERT INTO utilisateur(idUtilisateur,mot_de_passe,adresse) VALUES ('$idUtilisateur','$mot_de_passe','$adresse')";
-          var_dump($req);
-          $lignereq =($this->db)->exec($req);
-          var_dump($lignereq);
+          $lignereq =($this->db)->exec($req);;
           return $lignereq;
         }
 
         function getUtilisateur(string $idUtilisateur) : Utilisateur {
-          $req = "SELECT * FROM Utilisateur WHERE idUtilisateur = $idUtilisateur";
+          $req = "SELECT * FROM Utilisateur WHERE idUtilisateur = ''$idUtilisateur'";
           $lignereq =($this->db)->query($req);
           if($lignereq){
             $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Utilisateur');
@@ -441,6 +439,12 @@
           else{
             return null;
           }
+        }
+
+        function viderPanier(string $idUtilisateur){
+          $req = "DELETE FROM elementPanier WHERE idUtilisateur = '$idUtilisateur'";
+          $lignereq =($this->db)->exec($req);
+          return $lignereq;
         }
 
     }
