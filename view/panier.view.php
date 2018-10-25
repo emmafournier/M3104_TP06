@@ -11,6 +11,15 @@
   <body>
 
     <section>
+      <?php if (isset($utilisateur)): ?>
+        <p><?=$utilisateur->__get('idUtilisateur')?>, voici votre panier : </p>
+      <?php else: ?>
+        <p>Voici votre panier (attention il faudra vous connecter pour commander!) : </p>
+      <?php endif; ?>
+    </section>
+
+
+    <section>
       <?php foreach ($panier as $elementPanier): ?>
         <article class="">
             <p><?=$dao->getLivre($elementPanier->__get('ISBN'))->__get('titre')?></p>

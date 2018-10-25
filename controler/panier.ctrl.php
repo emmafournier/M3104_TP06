@@ -10,6 +10,9 @@
 
   if(isset($_SESSION)){
     $panier = $_SESSION['panier'];
+    if(isset($_SESSION['utilisateur'])){
+      $utilisateur = $_SESSION['utilisateur'];
+    }
   }
 
 
