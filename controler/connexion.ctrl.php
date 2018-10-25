@@ -51,7 +51,7 @@ else{
         include("panier.ctrl.php");
       }
       else{
-        include("panier.ctrl.php");
+        include("accueil.ctrl.php");
       }
 
 
