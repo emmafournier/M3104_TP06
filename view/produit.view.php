@@ -14,9 +14,23 @@
     <div class="">
 			<?php if (isset($utilisateur)): ?>
 				<p><?=$utilisateur->__get('idUtilisateur')?></p>
-				<a href="produit.ctrl.php?ISBN=<?=$isbn?>&btnDeconnexion=true"> <input type="button" name="btnDeconnexion" value="Se déconnecter"> </a>
+
+				<?php if (isset($idFormatQuery)): ?>
+					<a href="produit.ctrl.php?ISBN=<?=$isbn?>&btnDeconnexion=true&idFormat=<?=$livre->__get("idFormat")?>"> <input type="button" name="btnDeconnexion" value="Se déconnecter"> </a>
+				<?php else if (isset($idCatQuery)): ?>
+					<a href="produit.ctrl.php?ISBN=<?=$isbn?>&btnDeconnexion=true&idCategorie=<?=$livre->__get("idFormat")?>"> <input type="button" name="btnDeconnexion" value="Se déconnecter"> </a>
+				<?php else: ?>
+					<a href="produit.ctrl.php?ISBN=<?=$isbn?>&btnDeconnexion=true"> <input type="button" name="btnDeconnexion" value="Se déconnecter"> </a>
+				<?php endif; ?>
+
+
+
 			<?php else: ?>
+
+
 				<a href="connexion.ctrl.php"> <input type="button" name="btnConnexion" value="Se connecter"> </a>
+
+
 			<?php endif; ?>
 			<a href="panier.ctrl.php"> <input type="button" name="btnPanier" value="Panier"> </a>
     </div>
@@ -92,12 +106,16 @@
 					<label for="">Nombre d'exemplaires : </label>
 					<input type="number" name="nb_Exemplaires" value="1" min="1">
 					<input type="hidden" name="ISBN" value="<?=$livre->__get("ISBN")?>">
+
+
 					<?php if (isset($idFormatQuery)): ?>
 						<input type="hidden" name="idFormat" value="<?=$livre->__get("idFormat")?>">
 					<?php endif; ?>
+
 					<?php if (isset($idCatQuery)): ?>
 						<input type="hidden" name="idCategorie" value="<?=$livre->__get("idCategorie")?>">
 					<?php endif; ?>
+
 					<input type="submit" name="btnPanier" value="Ajouter au panier">
 				</form>
 				<?php if (isset($_GET['btnPanier'])): ?>
