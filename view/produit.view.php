@@ -17,7 +17,7 @@
 
 				<?php if (isset($idFormatQuery)): ?>
 					<a href="produit.ctrl.php?ISBN=<?=$isbn?>&btnDeconnexion=true&idFormat=<?=$livre->__get("idFormat")?>"> <input type="button" name="btnDeconnexion" value="Se déconnecter"> </a>
-				<?php else if (isset($idCatQuery)): ?>
+				<?php elseif (isset($idCatQuery)): ?>
 					<a href="produit.ctrl.php?ISBN=<?=$isbn?>&btnDeconnexion=true&idCategorie=<?=$livre->__get("idFormat")?>"> <input type="button" name="btnDeconnexion" value="Se déconnecter"> </a>
 				<?php else: ?>
 					<a href="produit.ctrl.php?ISBN=<?=$isbn?>&btnDeconnexion=true"> <input type="button" name="btnDeconnexion" value="Se déconnecter"> </a>
