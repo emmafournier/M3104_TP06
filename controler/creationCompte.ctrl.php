@@ -52,7 +52,7 @@
         $_SESSION['utilisateur'] = $utilisateur;
         var_dump($_SESSION['panier']);
         foreach ($_SESSION['panier'] as $elementPanier) {
-          $dao->ajouterPanierUtilisateur($idUtilisateur,$elementPanier->_get('ISBN'),$elementPanier->__get('nb_Exemplaires'));
+          $dao->ajouterPanierUtilisateur($idUtilisateur,$elementPanier->__get('ISBN'),$elementPanier->__get('nb_Exemplaires'));
           $_SESSION['panier'] = $dao->getPanierUtilisateur($idUtilisateur);
         }
 
