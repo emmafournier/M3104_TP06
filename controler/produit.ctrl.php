@@ -4,7 +4,16 @@ include_once("../model/DAO.class.php");
 include_once("../model/Utilisateur.class.php");
 include_once("../model/ElementPanier.class.php");
 
-session_start();
+if(!isset($_SESSION)){
+  session_start();
+}
+
+
+if(isset($_GET['btnDeconnexion'])){
+  session_destroy();
+  session_start();
+  $_SESSION['panier'] = array();
+}
 
 $nbLivres = 5;
 $categories = $dao->getAllCat();
@@ -54,9 +63,13 @@ $formatLivre = $dao->getFormat($idFormatLivre);
 
 if(isset($_GET['btnPanier'])){
   $elementPanier = new ElementPanier($tab = array("ISBN" => $isbn, "nb_Exemplaires" => $_GET['nb_Exemplaires']));
-  var_dump($elementPanier);
+
   $_SESSION['panier'][] = $elementPanier;
-  var_dump($_SESSION);
+
+  if(isset($_SESSION['utilisateur'])){
+    $dao->ajouterPanierUtilisateur($utilisateur->__get('idUtilisateur'),$isbn,$_GET['nb_Exemplaires']);
+  }
+
 }
 
 

@@ -14,6 +14,7 @@
     <div class="">
 			<?php if (isset($utilisateur)): ?>
 				<p><?=$utilisateur->__get('idUtilisateur')?></p>
+				<a href="categorie.ctrl.php?btnDeconnexion=true&idCategorie=<?=$idCategorie?>&ISBN=<?=$livres[0]->__get("ISBN")?>"> <input type="button" name="btnDeconnexion" value="Se déconnecter"> </a>
 			<?php else: ?>
 				<a href="connexion.ctrl.php"> <input type="button" name="btnConnexion" value="Se connecter"> </a>
 			<?php endif; ?>
@@ -77,10 +78,10 @@
 			</section>
 			<section>
 				<?php if (count($pred) > 0): ?>
-					<a href="?idCategorie=<?=$idCategorie?>&ISBN=<?=$pred[0]->__get("ISBN")?>"><input type="button" name="btnPred" value="<="></a>
+					<a href="categorie.ctrl.php?idCategorie=<?=$idCategorie?>&ISBN=<?=$pred[0]->__get("ISBN")?>"><input type="button" name="btnPred" value="<="></a>
 				<?php endif; ?>
 				<?php if (count($next) > 0): ?>
-					<a href="?idCategorie=<?=$idCategorie?>&ISBN=<?=$next[0]->__get("ISBN")?>"><input type="button" name="btnSuiv" value="=>"></a>
+					<a href="categorie.ctrl.php?idCategorie=<?=$idCategorie?>&ISBN=<?=$next[0]->__get("ISBN")?>"><input type="button" name="btnSuiv" value="=>"></a>
 				<?php endif; ?>
 
 			</section>

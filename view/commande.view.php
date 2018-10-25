@@ -2,14 +2,13 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Panier</title>
+    <title>Commande</title>
   </head>
   <header>
-    <h1>Mon panier</h1>
-    <a href="accueil.ctrl.php"> <input type="button" name="btnRetour" value="Retour à l'accueil"> </a>
+    <h1>Votre commande</h1>
   </header>
   <body>
-
+    <h2>Aujourd'hui c'est gratuit ! Merci pour votre commande :) </h2>
     <section>
       <?php foreach ($panier as $elementPanier): ?>
         <article class="">
@@ -23,23 +22,8 @@
     </section>
 
     <section>
-
-      <?php if (count($panier) > 0): ?>
-        <?php if (isset($_SESSION['utilisateur'])): ?>
-          <a href="commande.ctrl.php"> <input type="button" name="btnRetour" value="Commander"> </a>
-        <?php else: ?>
-          <a href="connexion.ctrl.php"> <input type="button" name="btnRetour" value="Commander"> </a>
-        <?php endif; ?>
-
-      <?php else: ?>
-          <p>Votre panier est vide ! </p>
-      <?php endif; ?>
-
-
-
+        <a href="accueil.ctrl.php"> <input type="button" name="btnRetour" value="Retour à l'accueil"> </a>
     </section>
-
-
 
   </body>
 </html>
