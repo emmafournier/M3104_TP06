@@ -54,7 +54,14 @@
           $dao->ajouterPanierUtilisateur($idUtilisateur,$elementPanier->_get('ISBN'),$elementPanier->__get('nb_Exemplaires'));
           $_SESSION['panier'] = $dao->getPanierUtilisateur($idUtilisateur);
         }
-        include("accueil.ctrl.php");
+
+        if(isset($_GET['commande'])){
+          include("panier.ctrl.php");
+        }
+        else{
+          include("accueil.ctrl.php");
+        }
+
       }
       else{
         $erreur = true;

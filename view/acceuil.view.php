@@ -59,7 +59,10 @@
 		<!-- ======================== FIN MENU ================================= -->
 
 		<!-- ======================== AFFICHAGE DES LIVRES ===================== -->
-
+			<section>
+				<h2>Nos produits : </h2>
+				<p>Si vous souhaitez trouver plus rapidement votre produit, utilisez les menus Categorie et Format !</p>
+			</section>
 			<section>
 				<?php foreach ($livres as $value): ?>
 					<article class="livres">

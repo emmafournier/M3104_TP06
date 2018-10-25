@@ -42,7 +42,7 @@
         <?php if (isset($_SESSION['utilisateur'])): ?>
           <a href="commande.ctrl.php"> <input type="button" name="btnRetour" value="Commander"> </a>
         <?php else: ?>
-          <a href="connexion.ctrl.php"> <input type="button" name="btnRetour" value="Commander"> </a>
+          <a href="connexion.ctrl.php?commande=true"> <input type="button" name="btnRetour" value="Commander"> </a>
         <?php endif; ?>
 
       <?php else: ?>

@@ -20,7 +20,13 @@
         <input type="submit" name="btnConnection" value="Se connecter">
     </form>
     <section>
-    <a href="creationCompte.ctrl.php"> <input type="button" name="btnCreation" value="Creer un compte"> </a>
+
+    <?php if (isset($_GET['commande'])): ?>
+      <a href="creationCompte.ctrl.php?commande=true"> <input type="button" name="btnCreation" value="Creer un compte"> </a>
+    <?php else: ?>
+      <a href="creationCompte.ctrl.php"> <input type="button" name="btnCreation" value="Creer un compte"> </a>
+    <?php endif; ?>
+
     <a href="accueil.ctrl.php"> <input type="button" name="btnRetour" value="Retour"> </a>
     </section>
 
