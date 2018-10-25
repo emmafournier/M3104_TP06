@@ -393,8 +393,9 @@
         // Utilisateurs
         //======================================================================
         function getUtilisateurConnexion(string $idUtilisateur, string $mot_de_passe) : Utilisateur {
-          $req = "SELECT * FROM Utilisateur WHERE idUtilisateur = $idUtilisateur AND mot_de_passe = $mot_de_passe";
+          $req = "SELECT * FROM utilisateur WHERE idUtilisateur = \"$idUtilisateur\" AND mot_de_passe = \"$mot_de_passe\"";
           $lignereq =($this->db)->query($req);
+          var_dump($lignereq);
           if($lignereq){
             $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Utilisateur');
             return $result[0];
@@ -405,7 +406,7 @@
         }
 
         function ajouterPanierUtilisateur(string $idUtilisateur, string $ISBN, int $nbExemplaire) : int {
-          $req = "INSERT INTO panier VALUES($idUtilisateur,$ISBN,$nbExemplaire)";
+          $req = "INSERT INTO panier VALUES(\"$idUtilisateur\",$ISBN,$nbExemplaire)";
           $lignereq =($this->db)->exec($req);
           return $lignereq;
         }
@@ -423,8 +424,10 @@
         }
 
         function creerUtilisateur(string $idUtilisateur, string $mot_de_passe, string $adresse) : int{
-          $req = "INSERT INTO panier VALUES($idUtilisateur,$ISBN,$nbExemplaire)";
+          $req = "INSERT INTO utilisateur(idUtilisateur,mot_de_passe,adresse) VALUES ('$idUtilisateur','$mot_de_passe','$adresse')";
+          var_dump($req);
           $lignereq =($this->db)->exec($req);
+          var_dump($lignereq);
           return $lignereq;
         }
 

@@ -2,28 +2,32 @@
 
   include("../model/DAO.class.php");
   include_once("../model/ElementPanier.class.php");
+  include_once("../model/Utilisateur.class.php");
   session_start();
 
   $erreur = false;
 
-  if(isset($_POST['idUtilisateur'])){
+  if(isset($_GET['idUtilisateur'])){
 
-    $idUtilisateur = $_POST['idUtilisateur'];
+    $idUtilisateur = $_GET['idUtilisateur'];
   }
   else{
     $erreur = true;
   }
 
-  if(isset($_POST['mot_de_passe'])){
+  if(isset($_GET['mot_de_passe'])){
 
-    $mot_de_passe = $_POST['mot_de_passe'];
+    $mot_de_passe = $_GET['mot_de_passe'];
   }
   else{
     $erreur = true;
   }
+
+
 
   if(!$erreur){
     $utilisateur = $dao->getUtilisateurConnexion($idUtilisateur,$mot_de_passe);
+    var_dump($utilisateur);
 
     if($utilisateur->__get('idUtilisateur') != null){
       $_SESSION['utilisateur'] = $utilisateur;
@@ -31,7 +35,7 @@
         $dao->ajouterPanierUtilisateur($idUtilisateur,$elementPanier->__get('ISBN'),$elementPanier->__get('nb_Exemplaires'));
         $_SESSION['panier'] = $dao->getPanierUtilisateur($idUtilisateur);
       }
-      //include($_SESSION['path']);
+      include("accueil.ctrl.php");
 
     }
     else{

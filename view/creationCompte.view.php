@@ -12,7 +12,7 @@
   <p>identifiant ou mot de passe erroné : réessayez ! </p>
 <?php endif; ?>
 
-    <form class="" action="creationCompte.ctrl.php" method="post">
+    <form class="" action="creationCompte.ctrl.php" method="get">
       <label for="idLogin">identifiant : </label>
         <input type="text" name="idUtilisateur" value="votre identifiant" id="idLogin">
         <label for="idMpd">Mot de passe : </label>

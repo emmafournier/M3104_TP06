@@ -1,6 +1,7 @@
 <?php
 
-  session_start();
+
+
 
   include_once("../model/DAO.class.php");
   include_once("../model/Utilisateur.class.php");
@@ -12,6 +13,7 @@
   if (isset($_SESSION['utilisateur'])){
     $utilisateur = $_SESSION['utilisateur'];
     var_dump($utilisateur);
+
   }
 
 

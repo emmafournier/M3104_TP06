@@ -1,9 +1,11 @@
 <?php
-session_start();
+
 
 include_once("../model/DAO.class.php");
+include_once("../model/Utilisateur.class.php");
+include_once("../model/ElementPanier.class.php");
 
-
+session_start();
 $categories = $dao->getAllCat();
 $formats = $dao->getAllFormat();
 

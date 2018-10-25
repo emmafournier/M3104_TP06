@@ -40,15 +40,15 @@ CREATE TABLE disponibilite(
 
 );
 
-CREATE TABLE utilisateur{
+CREATE TABLE utilisateur(
   idUtilisateur varchar primary key,
   mot_de_passe varchar,
   adresse varchar
-};
+);
 
-CREATE TABLE elementPanier{
+CREATE TABLE elementPanier(
   idUtilisateur varchar references utilisateur(idUtilisateur),
   ISBN char(13) references Livre(ISBN),
   nb_Exemplaires integer,
   primary key(idUtilisateur,ISBN)
-};
+);

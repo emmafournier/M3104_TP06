@@ -16,7 +16,7 @@ INSERT INTO categorie VALUES (7,"Adolescent");
 /*Table Livre */
 INSERT INTO livre VALUES ("1000000000011","Fondation","La base de la SF!",7.25,"photo_fondation","Isaac Asimov","Gallimard",256,'1957-01-01',1,1);
 INSERT INTO livre VALUES ("1000000000012","Felicidad","Ce roman va vous surprendre !",7.25,"photo_felicidad","Jean Molas","Gallimard",100,'1999-01-01',1,1);
-INSERT INTO livre VALUES ("1000000000013","La zone du Dehors","Ce roman va vous transporter !"18.0"photo_ZoneDuDehors","Alain Damasio","La volte",493,'2014-06-01',1,1);
+INSERT INTO livre VALUES ("1000000000013","La zone du Dehors","Ce roman va vous transporter !",18.0,"photo_ZoneDuDehors","Alain Damasio","La volte",493,'2014-06-01',1,1);
 
 
 INSERT INTO livre VALUES ("1000000000014","Le Transperceneige","bd de SF",25.00,"photo_Transperceneige","Jacques Lob","casterman",100,'1990-01-01',1,2);
