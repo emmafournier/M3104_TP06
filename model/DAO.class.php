@@ -235,7 +235,13 @@
             $req = "SELECT * FROM format WHERE idFormat=$id";
             $lignereq =($this->db)->query($req);
             $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Format');
-            return $result[0];
+            if(count($result) == 0){
+                return new Format();
+            }
+            else{
+              return $result[0];
+            }
+
         }
 
 
