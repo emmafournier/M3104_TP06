@@ -50,6 +50,7 @@
       if($utilisateur->__get('idUtilisateur') != null){
 
         $_SESSION['utilisateur'] = $utilisateur;
+        var_dump($_SESSION['panier']);
         foreach ($_SESSION['panier'] as $elementPanier) {
           $dao->ajouterPanierUtilisateur($idUtilisateur,$elementPanier->_get('ISBN'),$elementPanier->__get('nb_Exemplaires'));
           $_SESSION['panier'] = $dao->getPanierUtilisateur($idUtilisateur);
@@ -77,7 +78,7 @@
 
 
   if($erreur || $firstCo){
-    
+
     include("../view/creationCompte.view.php");
   }
 
