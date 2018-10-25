@@ -3,7 +3,9 @@
   include_once("../model/ElementPanier.class.php");
 
 
-  session_start();
+  if(!isset($_SESSION)){
+    session_start();
+  }
   $panier = array();
 
 
