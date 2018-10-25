@@ -32,7 +32,7 @@
 
   foreach ($panier as $value) {
     $produit = $dao->getLivre($value->__get('ISBN'));
-    $prixTotal = $prixTotal + $produit->__get('prix');
+    $prixTotal = $prixTotal + $produit->__get('prix')*$value->__get('nb_Exemplaires');
   }
 
 
