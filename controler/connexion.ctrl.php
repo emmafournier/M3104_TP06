@@ -46,7 +46,7 @@ else{
       $_SESSION['panier'] = $dao->getPanierUtilisateur($idUtilisateur);
 
       if(isset($_GET['commande'])){
-        include("panier.ctrl.php");
+        include("commande.ctrl.php");
       }
       else{
         include("accueil.ctrl.php");
