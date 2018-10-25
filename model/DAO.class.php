@@ -395,10 +395,15 @@
         function getUtilisateurConnexion(string $idUtilisateur, string $mot_de_passe) : Utilisateur {
           $req = "SELECT * FROM utilisateur WHERE idUtilisateur = \"$idUtilisateur\" AND mot_de_passe = \"$mot_de_passe\"";
           $lignereq =($this->db)->query($req);
-          var_dump($lignereq);
+
           if($lignereq){
             $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Utilisateur');
-            return $result[0];
+            if(count($result)>0){
+              return $result[0];
+            }
+            else{
+              return new Utilisateur();
+            }
           }
           else{
             return new Utilisateur();
@@ -443,6 +448,12 @@
 
         function viderPanier(string $idUtilisateur){
           $req = "DELETE FROM elementPanier WHERE idUtilisateur = '$idUtilisateur'";
+          $lignereq =($this->db)->exec($req);
+          return $lignereq;
+        }
+
+        function enleverPanier(string $idUtilisateur, string $isbn){
+          $req = "DELETE FROM elementPanier WHERE idUtilisateur = '$idUtilisateur' AND ISBN = '$isbn'";
           $lignereq =($this->db)->exec($req);
           return $lignereq;
         }

@@ -17,10 +17,12 @@
         <input type="text" name="idUtilisateur" value="votre identifiant" id="idLogin">
         <label for="idMpd">Mot de passe : </label>
         <input type="password" name="mot_de_passe" value="" id="idMpd">
-        <input type="submit" name="btnConnextion" value="Se connecter">
+        <input type="submit" name="btnConnection" value="Se connecter">
     </form>
-
+    <section>
     <a href="creationCompte.ctrl.php"> <input type="button" name="btnCreation" value="Creer un compte"> </a>
+    <a href="accueil.ctrl.php"> <input type="button" name="btnRetour" value="Retour"> </a>
+    </section>
 
   </body>
 </html>

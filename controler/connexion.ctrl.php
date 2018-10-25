@@ -6,7 +6,9 @@
   session_start();
 
   $erreur = false;
+  $firstCo = false;
 
+if(isset($_GET['btnConnection'])){
   if(isset($_GET['idUtilisateur'])){
 
     $idUtilisateur = $_GET['idUtilisateur'];
@@ -22,10 +24,15 @@
   else{
     $erreur = true;
   }
+}
+else{
+  $firstCo = true;
+}
 
 
 
-  if(!$erreur){
+
+  if(!$erreur && !$firstCo){
     $utilisateur = $dao->getUtilisateurConnexion($idUtilisateur,$mot_de_passe);
 
 
@@ -46,7 +53,7 @@
   }
 
 
-  if($erreur){
+  if($erreur || $firstCo){
     include("../view/connexion.view.php");
   }
 
