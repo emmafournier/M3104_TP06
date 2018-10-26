@@ -32,7 +32,7 @@ else{
 }
 
 
-
+//hello
 
   if(!$erreur && !$firstCo){
     $utilisateur = $dao->getUtilisateurConnexion($idUtilisateur,$mot_de_passe);

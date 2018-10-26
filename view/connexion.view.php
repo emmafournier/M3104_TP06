@@ -7,9 +7,11 @@
   <header>
     <h1>Connexion</h1>
   </header>
+
+
   <body>
 <?php if (isset($erreur) && $erreur): ?>
-  <p>identifiant ou mot de passe erroné : réessayez ! </p>
+  <p>Identifiant ou mot de passe erroné : réessayez ! </p>
 <?php endif; ?>
 
     <form class="" action="connexion.ctrl.php" method="get">
