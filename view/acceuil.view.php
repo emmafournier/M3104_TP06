@@ -7,11 +7,11 @@
 
 	</head>
   <header>
-		<div class="">
+		<div id="conteneurLogo">
 			<img src="../view/logo-passerelles.png	" alt="Logo_Librairie">
 			<h1>La Librairie.com</h1>
 		</div>
-    <div class="">
+     <div id="conteneurBoutonHeader">
 			<?php if (isset($utilisateur)): ?>
 				<p><?=$utilisateur->__get('idUtilisateur')?></p>
 				<a href="accueil.ctrl.php?btnDeconnexion=true"> <input type="button" name="btnDeconnexion" value="Se déconnecter"> </a>
@@ -24,6 +24,7 @@
 
   <body>
 		<!-- ======================== MENU ===================================== -->
+			<div id="conteneurMenu">
       <nav>
        	<ul id="menu_horizontale">
           <li class="menu_acceuil"> <a href="accueil.ctrl.php">Accueil</a></li>
@@ -55,10 +56,11 @@
 
         </ul>
       </nav>
-
+		</div>
 		<!-- ======================== FIN MENU ================================= -->
 
 		<!-- ======================== AFFICHAGE DES LIVRES ===================== -->
+		<div id="conteneurProduit">
 			<section>
 				<h2>Nos produits : </h2>
 				<p>Si vous souhaitez trouver plus rapidement votre produit, utilisez les menus Categorie et Format !</p>
@@ -75,10 +77,11 @@
 
 				<?php endforeach; ?>
 			</section>
-
+		</div>
 		<!-- ==================== FIN AFFICHAGE DES LIVRES ===================== -->
 
 		<!-- ==================== AFFICHAGE FLECHES============================= -->
+		<div id="conteneurFleche">
 			<section>
 
 				<?php if ($total==false){ ?>
@@ -107,7 +110,7 @@
 
 			<input type="submit" name="btnValider" value="Valider">
 		</form>
-
+		</div>
 
 
   </body>

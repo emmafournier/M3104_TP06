@@ -1,9 +1,15 @@
+
 body
 {
   color: black;
   font-family: Arial, sans-serif;
-  width:90%;
+  width:70%;
   margin: auto;
+
+
+  display:flex;
+  flex-direction: column;
+  justify-content:  space-between;
 }
 
 header{
@@ -13,8 +19,24 @@ header{
 }
 
 
+#conteneurBoutonHeader{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#conteneurMenu{
+  padding: 1em 2em 1em 2em;
+}
+
+nav {
+  background-color: #c2e3f3;
+}
+
 ul{
   width : 90%;
+  padding: 0;
+  margin: 0;
   list-style-type : none;
   display: flex;
   flex-direction: row;
@@ -40,8 +62,6 @@ nav li a:hover{
   display: none;
 }
 
-
-
 nav li:hover .sous-menu{
   display: flex;
   flex-direction: column;
@@ -59,8 +79,6 @@ section{
   justify-content: space-around;
 }
 
-
-
 h2{
   color : #6894A9;
   font-size: 0.9 em;
@@ -72,4 +90,12 @@ h3{
 
 .livres{
   width: 200px;
+}
+
+#conteneurProduit{
+padding: 1em 2em 1em 2em;
+}
+
+#conteneurFleche{
+  padding: 1em 2em 1em 2em;
 }
