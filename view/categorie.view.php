@@ -7,11 +7,11 @@
 
 	</head>
 	<header>
-		<div class="">
+		<div id="conteneurLogo">
 			<img src="../view/logo-passerelles.png	" alt="Logo_Librairie">
 			<h1>La Librairie.com</h1>
 		</div>
-    <div class="">
+   <div id="conteneurBoutonHeader">
 			<?php if (isset($utilisateur)): ?>
 				<p><?=$utilisateur->__get('idUtilisateur')?></p>
 				<a href="categorie.ctrl.php?btnDeconnexion=true&idCategorie=<?=$idCategorie?>&ISBN=<?=$livres[0]->__get("ISBN")?>"> <input type="button" name="btnDeconnexion" value="Se déconnecter"> </a>
@@ -27,6 +27,7 @@
 
 
 		<!-- MENU ----------------------------------------------------------------->
+		<div id="conteneurMenu">
       <nav>
        	<ul id="menu_horizontale">
           <li class="menu_acceuil"> <a href="accueil.ctrl.php">Accueil</a></li>
@@ -58,11 +59,11 @@
 
         </ul>
       </nav>
-
+</div>
 			<!-- FIN MENU ----------------------------------------------------------->
 
 			<!-- VUE PAR CATEGORIE -------------------------------------------------->
-
+	<div id="conteneurProduit">
 			<h2><?=$categorie->libelle?></h2>
 			<section>
 				<?php foreach ($livres as $value): ?>
@@ -76,6 +77,8 @@
 
 				<?php endforeach; ?>
 			</section>
+		</div>
+		<div id="conteneurFleche">
 			<section>
 				<?php if (count($pred) > 0): ?>
 					<a href="categorie.ctrl.php?idCategorie=<?=$idCategorie?>&ISBN=<?=$pred[0]->__get("ISBN")?>"><input type="button" name="btnPred" value="<="></a>
@@ -96,6 +99,6 @@
 
 				<input type="submit" name="btnValider" value="Valider">
 			</form>
-
+		</div>
   </body>
 </html>
