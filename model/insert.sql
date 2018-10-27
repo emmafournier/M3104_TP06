@@ -49,7 +49,6 @@ INSERT INTO livre VALUES ("1000000000031"," Tous les secrets du IIIe Reich ","Ro
 INSERT INTO livre VALUES ("1000000000032","Azteca","Roman historique!",10.0,"photo_Azteca","Garry Jennings","Le Livre de Poche",1050,'1991-01-01',3,1);
 INSERT INTO livre VALUES ("1000000000033","La guerre et la paix ","Roman historique!",9.40,"photo_GuerreEtPaix","Leon Tolstoi","Gallimard",800,'2002-07-01',3,1);
 
-INSERT INTO livre VALUES ("1000000000034","Alix Senator Tome 1","Bande dessinnée historique ",13.95,"photo_AlixSenator","Valérie Mangin","Casterman",148,'2017-11-21',3,2);
 INSERT INTO livre VALUES ("1000000000035","14-18 La lune en héritage","Bande dessinnée historique ",14.55,"photo_1418","Loic Chevallier","Delcourt",56,'2018-10-10',3,2);
 INSERT INTO livre VALUES ("1000000000036","Les révolutionnaires","Bande dessinnée historique ",19.95,"photo_Revo","Benoist Simmat","Hachette",136,'2018-10-10',3,2);
 
