@@ -44,7 +44,6 @@ else{
         $dao->ajouterPanierUtilisateur($idUtilisateur,$elementPanier->__get('ISBN'),$elementPanier->__get('nb_Exemplaires'));
 
       }
-      var_dump($dao->getPanierUtilisateur($idUtilisateur));
       $_SESSION['panier'] = $dao->getPanierUtilisateur($idUtilisateur);
 
       if(isset($_GET['commande'])){

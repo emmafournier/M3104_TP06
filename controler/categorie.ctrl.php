@@ -44,7 +44,6 @@ else{
 if(isset($_GET['listeNbLibre'])){
   if($_GET['listeNbLibre'] == 0){
     $nbLivres =  $dao->getNBLivreCat($idCategorie);
-    var_dump($nbLivres);
     $total = true;
   }
   else{
