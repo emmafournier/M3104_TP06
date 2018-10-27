@@ -7,11 +7,11 @@
 
 	</head>
 	<header>
-		<div class="">
+		<div id="conteneurLogo">
 			<img src="../view/logo-passerelles.png	" alt="Logo_Librairie">
 			<h1>La Librairie.com</h1>
 		</div>
-    <div class="">
+     <div id="conteneurBoutonHeader">
 			<?php if (isset($utilisateur)): ?>
 				<p><?=$utilisateur->__get('idUtilisateur')?></p>
 				<a href="format.ctrl.php?btnDeconnexion=true&idFormat=<?=$idFormat?>&ISBN=<?=$livres[0]->__get("ISBN")?>"> <input type="button" name="btnDeconnexion" value="Se déconnecter"> </a>
@@ -23,6 +23,7 @@
   </header>
 
   <body>
+		<div id="conteneurMenu">
       <nav>
        	<ul id="menu_horizontale">
           <li class="menu_acceuil"> <a href="accueil.ctrl.php">Accueil</a></li>
@@ -54,7 +55,8 @@
 
         </ul>
       </nav>
-
+  </div>
+	<div id="conteneurProduit">
       <h2><?=$format->libelle?></h2>
       <section>
         <?php foreach ($livres as $value): ?>
@@ -68,6 +70,8 @@
 
         <?php endforeach; ?>
       </section>
+
+		</div>
       <section>
 				<?php if (count($pred) > 0): ?>
 					<a href="?idFormat=<?=$idFormat?>&ISBN=<?=$pred[0]->__get("ISBN")?>"><input type="button" name="btnPred" value="<="></a>
@@ -77,7 +81,7 @@
 				<?php endif; ?>
 
 			</section>
-
+	<div id="conteneurFleche">
 			<form class="" action="format.ctrl.php" method="get">
 				<label for="idListe">Nombre de produits par page :</label>
 				<select class="" name="listeNbLibre">
@@ -89,7 +93,7 @@
 				<input type="hidden" name="idFormat" value="<?=$idFormat?>">
 				<input type="submit" name="btnValider" value="Valider">
 			</form>
-
+	</div>
 
   </body>
 </html>

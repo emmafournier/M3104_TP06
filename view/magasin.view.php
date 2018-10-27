@@ -7,11 +7,11 @@
 
 	</head>
 	<header>
-		<div class="">
+		<div id="conteneurLogo">
 			<img src="../view/logo-passerelles.png	" alt="Logo_Librairie">
 			<h1>La Librairie.com</h1>
 		</div>
-    <div class="">
+   <div id="conteneurBoutonHeader">
 			<?php if (isset($utilisateur)): ?>
 				<p><?=$utilisateur->__get('idUtilisateur')?></p>
 				<a href="magasin.ctrl.php?btnDeconnexion=true"> <input type="button" name="btnDeconnexion" value="Se déconnecter"> </a>
@@ -23,6 +23,7 @@
   </header>
 
   <body>
+			<div id="conteneurMenu">
       <nav>
        	<ul id="menu_horizontale">
           <li class="menu_acceuil"> <a href="accueil.ctrl.php">Accueil</a></li>
@@ -54,6 +55,7 @@
 
         </ul>
       </nav>
+	</div>
       <h2>Nos Magasins</h2>
       <form class="" action="magasin.ctrl.php" method="get">
         <label for="idDep">Choisir un code postal : </label>
