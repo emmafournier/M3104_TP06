@@ -89,12 +89,15 @@
 
 		<div id="conteneurFleche">
 			<section>
-				<?php if (count($pred) > 0): ?>
-					<a href="categorie.ctrl.php?idCategorie=<?=$idCategorie?>&ISBN=<?=$pred[0]->__get("ISBN")?>&listeNbLibre=<?=$nbLivres?>"><input type="button" name="btnPred" value="<="></a>
+				<?php if ($total==false): ?>
+					<?php if (count($pred) > 0): ?>
+						<a href="categorie.ctrl.php?idCategorie=<?=$idCategorie?>&ISBN=<?=$pred[0]->__get("ISBN")?>&listeNbLibre=<?=$nbLivres?>"><input type="button" name="btnPred" value="<="></a>
+					<?php endif; ?>
+					<?php if (count($next) > 0): ?>
+						<a href="categorie.ctrl.php?idCategorie=<?=$idCategorie?>&ISBN=<?=$next[0]->__get("ISBN")?>&listeNbLibre=<?=$nbLivres?>"><input type="button" name="btnSuiv" value="=>"></a>
+					<?php endif; ?>				
 				<?php endif; ?>
-				<?php if (count($next) > 0): ?>
-					<a href="categorie.ctrl.php?idCategorie=<?=$idCategorie?>&ISBN=<?=$next[0]->__get("ISBN")?>&listeNbLibre=<?=$nbLivres?>"><input type="button" name="btnSuiv" value="=>"></a>
-				<?php endif; ?>
+
 
 			</section>
 			<!-- ==================== formulaire pour le nombre de produits par page ============================= -->
