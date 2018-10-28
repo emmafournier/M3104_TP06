@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="../view/LaLibrairie.css" />
 
 	</head>
+	<!-- ======================== HEADER ===================================== -->
 	<header>
 		<div class="">
 			<img src="../view/logo-passerelles.png	" alt="Logo_Librairie">
@@ -14,6 +15,8 @@
     <div class="">
 			<?php if (isset($utilisateur)): ?>
 				<p><?=$utilisateur->__get('idUtilisateur')?></p>
+				<!-- si un utilisateur est connecté -->
+				<!-- pour gérer les boutons retour en cas de déconnexion -->
 
 				<?php if (isset($idFormatQuery)): ?>
 					<a href="produit.ctrl.php?ISBN=<?=$isbn?>&btnDeconnexion=true&idFormat=<?=$livre->__get("idFormat")?>"> <input type="button" name="btnDeconnexion" value="Se déconnecter"> </a>
@@ -26,12 +29,14 @@
 
 
 			<?php else: ?>
+				<!-- si pas d'utilisateur connecté -->
 
 
 				<a href="connexion.ctrl.php"> <input type="button" name="btnConnexion" value="Se connecter"> </a>
 
 
 			<?php endif; ?>
+			<!-- bouton panier -->
 			<a href="panier.ctrl.php"> <input type="button" name="btnPanier" value="Panier"> </a>
     </div>
   </header>
@@ -41,10 +46,11 @@
 		<!-- MENU ----------------------------------------------------------------->
       <nav>
        	<ul id="menu_horizontale">
+					<!-- accueil -->
           <li class="menu_acceuil"> <a href="accueil.ctrl.php">Accueil</a></li>
 
 
-
+					<!-- catégorie -->
           <li class="menu_categorie"> <a href="#">Catégorie</a>
             <ul class="sous-menu">
 							<?php foreach ($categories as $value): ?>
@@ -54,7 +60,7 @@
             </ul>
 					</li>
 
-
+					<!-- format -->
           <li class="menu_format">
 						<a href="#">Format</a>
 						<ul class="sous-menu">
@@ -63,6 +69,7 @@
 							<?php endforeach; ?>
             </ul>
 					</li>
+					<!-- magasin -->
 
           <li class="menu_magasin">
 						<a href="magasin.ctrl.php">Nos Magasins</a>
@@ -72,6 +79,7 @@
       </nav>
 
 			<!-- FIN MENU ----------------------------------------------------------->
+			<!-- ======================== AFFICHAGE DU DETAIL DU LIVRE ===================== -->
 
       <section>
         <article class="">
@@ -88,18 +96,26 @@
             <p>Date de parution : <?=$livre->__get("date_parution")?></p>
             <p>Informations : <?=$livre->__get("comp_info")?></p>
 
+						<!-- ======================== voir les disponibilités d'un livre ===================== -->
+
             <a href="disponibilite.ctrl.php?ISBN=<?=$livre->__get("ISBN")?>"><input type="button" name="btnPred" value="Voir les disponibilités : <?=$nbExemplaire?> exemplaires disponibles"></a>
 
 
 
           </article>
 
+					<!-- ======================== bouon retour ===================== -->
+
           <a href="<?=$query ?>"><input type="button" name="btnRetour" value="<?=$valBouton?>"></a>
+
+					<!-- ========================retour au magasin si l'utilisateur vient de la page magasin ===================== -->
+
 					<?php if (isset($_GET['idMagasin'])): ?>
 						  <a href="livreDispo.ctrl.php?idMagasin=<?=$_GET['idMagasin']?>"><input type="button" name="btnRetour" value="Retour au magasin"></a>
 					<?php endif; ?>
 
     	</section>
+			<!-- ======================== POUR AJOUTER UN PRODUIT A SON PANIER ===================== -->
 
 			<section>
 				<form class="" action="produit.ctrl.php" method="get">
@@ -107,17 +123,20 @@
 					<input type="number" name="nb_Exemplaires" value="1" min="1">
 					<input type="hidden" name="ISBN" value="<?=$livre->__get("ISBN")?>">
 
-
+						<!-- ======================== pour le fonctionnement du bouton retour format si l'utilisateur vient de format ===================== -->
 					<?php if (isset($idFormatQuery)): ?>
 						<input type="hidden" name="idFormat" value="<?=$livre->__get("idFormat")?>">
 					<?php endif; ?>
-
+					<!-- ======================== pour le fonctionnement du bouton retour categorie si l'utilisateur vient de catégorie ===================== -->
 					<?php if (isset($idCatQuery)): ?>
 						<input type="hidden" name="idCategorie" value="<?=$livre->__get("idCategorie")?>">
 					<?php endif; ?>
 
 					<input type="submit" name="btnPanier" value="Ajouter au panier">
 				</form>
+
+				<!-- ======================== mesage de confirmation d'ajout au panier ===================== -->
+
 				<?php if (isset($_GET['btnPanier'])): ?>
 					<p>Votre produit a bien été ajouté au panier</p>
 				<?php endif; ?>

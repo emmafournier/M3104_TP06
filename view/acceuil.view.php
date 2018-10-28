@@ -6,18 +6,22 @@
 		<link rel="stylesheet" type="text/css" href="../view/LaLibrairie.css" />
 
 	</head>
+		<!-- ======================== HEADER ===================================== -->
   <header>
 		<div id="conteneurLogo">
 			<img src="../view/logo-passerelles.png	" alt="Logo_Librairie">
 			<h1>La Librairie.com</h1>
 		</div>
      <div id="conteneurBoutonHeader">
+			 	<!-- si un utilisateur est connecté -->
 			<?php if (isset($utilisateur)): ?>
 				<p><?=$utilisateur->__get('idUtilisateur')?></p>
 				<a href="accueil.ctrl.php?btnDeconnexion=true"> <input type="button" name="btnDeconnexion" value="Se déconnecter"> </a>
 			<?php else: ?>
+				<!-- si pas d'utilisateur connecté -->
 				<a href="connexion.ctrl.php"> <input type="button" name="btnConnexion" value="Se connecter"> </a>
 			<?php endif; ?>
+			<!-- bouton panier -->
 			<a href="panier.ctrl.php"> <input type="button" name="btnPanier" value="Panier"> </a>
     </div>
   </header>
@@ -26,11 +30,12 @@
 		<!-- ======================== MENU ===================================== -->
 			<div id="conteneurMenu">
       <nav>
+				<!-- accueil -->
        	<ul id="menu_horizontale">
           <li class="menu_acceuil"> <a href="accueil.ctrl.php">Accueil</a></li>
 
 
-
+						<!-- catégorie -->
           <li class="menu_categorie"> <a href="#">Catégorie</a>
             <ul class="sous-menu">
 							<?php foreach ($categories as $value): ?>
@@ -40,7 +45,7 @@
             </ul>
 					</li>
 
-
+					<!-- format -->
           <li class="menu_format">
 						<a href="#">Format</a>
 						<ul class="sous-menu">
@@ -49,7 +54,7 @@
 							<?php endforeach; ?>
             </ul>
 					</li>
-
+						<!-- magasin -->
           <li class="menu_magasin">
 						<a href="magasin.ctrl.php">Nos Magasins</a>
 					</li>
@@ -80,7 +85,7 @@
 		</div>
 		<!-- ==================== FIN AFFICHAGE DES LIVRES ===================== -->
 
-		<!-- ==================== AFFICHAGE FLECHES============================= -->
+		<!-- ==================== AFFICHAGE FLECHES SUIVANT / PRECEDENT ============================= -->
 		<div id="conteneurFleche">
 			<section>
 
@@ -97,7 +102,7 @@
 			</section>
 
 
-
+<!-- ==================== formulaire pour le nombre de produits par page ============================= -->
 		<form class="" action="accueil.ctrl.php" method="get">
 			<label for="idListe">Nombre de produits par page :</label>
 			<select class="" name="listeNbLibre">

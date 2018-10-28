@@ -5,13 +5,15 @@
     <title>LaLibrairie</title>
   </head>
   <body>
-
+    <!--retour au magasin -->
       <article>
         <a href="magasin.ctrl.php"> <input type="button" name="btnRetour" value="Revenir aux magasins"> </a>
       </article>
       <h2>Disponibilite pour : <?=$magasin->__get('nom')?></h2>
       <p><?=$magasin->__get('adresse')?> <?=$magasin->__get('departement')?> <?=$magasin->__get('ville')?></p>
       <article>
+
+        <!--affichage des livres disponibles pour le magasin choisi -->
         <?php foreach ($livres as $value): ?>
 
           <h3><?=$value->__get('titre')?></h3>

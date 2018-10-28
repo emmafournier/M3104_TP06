@@ -5,12 +5,15 @@
     <title>LaLibrairie</title>
   </head>
   <body>
+    <!--retour à l'accueil -->
 
       <article>
         <a href="produit.ctrl.php?ISBN=<?=$livre->__get('ISBN')?>"> <input type="button" name="btnRetour" value="Revenir au livre"> </a>
       </article>
       <h2>Disponibilite pour : <?=$livre->__get('titre')?></h2>
       <article>
+        <!--affichage des magasins où le produit est disponible -->
+
         <?php foreach ($magasins as $value): ?>
 
           <h3><?=$value->__get('nom')?></h3>

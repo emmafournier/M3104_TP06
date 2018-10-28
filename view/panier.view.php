@@ -5,20 +5,23 @@
     <title>Panier</title>
   </head>
   <header>
+    <!--retour à l'accueil -->
+
     <h1>Mon panier</h1>
     <a href="accueil.ctrl.php"> <input type="button" name="btnRetour" value="Retour à l'accueil"> </a>
   </header>
   <body>
-
+  <!--si l'utiisateur est connecté -->
     <section>
       <?php if (isset($utilisateur)): ?>
         <p><?=$utilisateur->__get('idUtilisateur')?>, voici votre panier : </p>
       <?php else: ?>
+        <!--si l'utiisateur n'est pas connecté -->
         <p>Voici votre panier (attention il faudra vous connecter pour commander!) : </p>
       <?php endif; ?>
     </section>
 
-
+    <!--affichage des éléments du panier -->
     <section>
       <?php foreach ($panier as $elementPanier): ?>
         <article class="">
@@ -32,10 +35,13 @@
 
       <?php endforeach; ?>
     </section>
+
+    <!--affichage du prix total -->
     <section>
       <h2>Total : <?=$prixTotal?> euros</h2>
     </section>
 
+    <!--affichage du bouton commander si le panier n'est pas vide -->
     <section>
 
       <?php if (count($panier) > 0): ?>

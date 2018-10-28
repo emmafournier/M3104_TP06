@@ -6,29 +6,42 @@
 		<link rel="stylesheet" type="text/css" href="../view/LaLibrairie.css" />
 
 	</head>
+	<!-- ======================== HEADER ===================================== -->
+
 	<header>
 		<div id="conteneurLogo">
 			<img src="../view/logo-passerelles.png	" alt="Logo_Librairie">
 			<h1>La Librairie.com</h1>
 		</div>
+		<!-- si un utilisateur est connecté -->
+
      <div id="conteneurBoutonHeader">
 			<?php if (isset($utilisateur)): ?>
 				<p><?=$utilisateur->__get('idUtilisateur')?></p>
 				<a href="format.ctrl.php?btnDeconnexion=true&idFormat=<?=$idFormat?>&ISBN=<?=$livres[0]->__get("ISBN")?>"> <input type="button" name="btnDeconnexion" value="Se déconnecter"> </a>
 			<?php else: ?>
+				<!-- si pas d'utilisateur connecté -->
+
 				<a href="connexion.ctrl.php"> <input type="button" name="btnConnexion" value="Se connecter"> </a>
 			<?php endif; ?>
+			<!-- bouton panier -->
+
 			<a href="panier.ctrl.php"> <input type="button" name="btnPanier" value="Panier"> </a>
     </div>
   </header>
 
   <body>
+		<!-- ======================== MENU ===================================== -->
+
 		<div id="conteneurMenu">
       <nav>
+				<!-- accueil -->
+
        	<ul id="menu_horizontale">
           <li class="menu_acceuil"> <a href="accueil.ctrl.php">Accueil</a></li>
 
 
+					<!-- catégorie -->
 
           <li class="menu_categorie"> <a href="#">Catégorie</a>
             <ul class="sous-menu">
@@ -39,6 +52,7 @@
             </ul>
 					</li>
 
+					<!-- format -->
 
           <li class="menu_format">
 						<a href="#">Format</a>
@@ -48,6 +62,7 @@
 							<?php endforeach; ?>
             </ul>
 					</li>
+					<!-- magasin -->
 
           <li class="menu_magasin">
 						<a href="magasin.ctrl.php">Nos Magasins</a>
@@ -55,7 +70,12 @@
 
         </ul>
       </nav>
+			<!-- ======================== FIN MENU ================================= -->
+
   </div>
+
+	<!-- ======================== AFFICHAGE DES LIVRES ===================== -->
+
 	<div id="conteneurProduit">
       <h2><?=$format->libelle?></h2>
       <section>
@@ -70,6 +90,9 @@
 
         <?php endforeach; ?>
       </section>
+			<!-- ==================== FIN AFFICHAGE DES LIVRES ===================== -->
+
+			<!-- ==================== AFFICHAGE FLECHES SUIVANT / PRECEDENT ============================= -->
 
 		</div>
       <section>
@@ -81,6 +104,9 @@
 				<?php endif; ?>
 
 			</section>
+
+			<!-- ==================== formulaire pour le nombre de produits par page ============================= -->
+
 	<div id="conteneurFleche">
 			<form class="" action="format.ctrl.php" method="get">
 				<label for="idListe">Nombre de produits par page :</label>
