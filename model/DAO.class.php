@@ -416,13 +416,19 @@
           $req = "SELECT * FROM utilisateur WHERE idUtilisateur = \"$idUtilisateur\" AND mot_de_passe = \"$mot_de_passe\"";
           $lignereq =($this->db)->query($req);
           if($lignereq){
-            $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Utilisateur');
-            return $result[0];
+              $result =$lignereq->fetchAll(PDO::FETCH_CLASS,'Utilisateur');
+              if(count($result)>0){
+                return $result[0];
+              }
+              else{
+                return new Utilisateur();
+              }
+              return $result[0];
+            }
+            else{
+              return new Utilisateur();
+            }
           }
-          else{
-            return new Utilisateur();
-          }
-        }
 
         // ajoute dans la base de donnée, à la table elementPanier,
         // un element d'id Utilisateur $idUtilisateur, d'ISBN $isbn et d'exemplaire
@@ -471,6 +477,14 @@
         // d'id $idUtilisateur
         function viderPanier(string $idUtilisateur){
           $req = "DELETE FROM elementPanier WHERE idUtilisateur = '$idUtilisateur'";
+          $lignereq =($this->db)->exec($req);
+          return $lignereq;
+        }
+
+        // enlève dans la base de donnée un elementPanier de l'Utilisateur
+        // d'id $idUtilisateur
+        function enleverPanier(string $idUtilisateur, string $isbn){
+          $req = "DELETE FROM elementPanier WHERE idUtilisateur = '$idUtilisateur' AND ISBN = '$isbn'";
           $lignereq =($this->db)->exec($req);
           return $lignereq;
         }
