@@ -69,7 +69,7 @@
       <h2>Nos Magasins</h2>
       <form class="" action="magasin.ctrl.php" method="get">
         <label for="idDep">Choisir un code postal : </label>
-        <input type="text" name="departement" value="38000" id="idDep">
+        <input type="text" name="departement" value="" id="idDep" placeholder="38000">
         <input type="submit" name="btnVal" value="Valider">
       </form>
       <article>

@@ -18,7 +18,7 @@
     <!--formulaire de connexion -->
     <form class="" action="connexion.ctrl.php" method="get">
       <label for="idLogin">identifiant : </label>
-        <input type="text" name="idUtilisateur" value="" id="idLogin" required placeholder="votre identifian">
+        <input type="text" name="idUtilisateur" value="" id="idLogin" required placeholder="votre identifiant">
         <label for="idMpd">Mot de passe : </label>
         <input type="password" name="mot_de_passe" value="" id="idMpd" required>
         <input type="submit" name="btnConnection" value="Se connecter">
