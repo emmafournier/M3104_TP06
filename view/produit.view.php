@@ -98,7 +98,7 @@
 
 						<!-- ======================== voir les disponibilités d'un livre ===================== -->
 
-            <a href="disponibilite.ctrl.php?ISBN=<?=$livre->__get("ISBN")?>"><input type="button" name="btnPred" value="Voir les disponibilités : <?=$nbExemplaire?> exemplaires disponibles"></a>
+            <a href="disponibilite.ctrl.php?ISBN=<?=$livre->__get("ISBN")?>"><input type="button" name="btnPred" value="Voir les disponibilités en magasin : <?=$nbExemplaire?> exemplaires disponibles"></a>
 
 
 
