@@ -118,7 +118,7 @@
 			<!-- ======================== POUR AJOUTER UN PRODUIT A SON PANIER ===================== -->
 
 			<section>
-				<form class="" action="produit.ctrl.php" method="get">
+				<form class="" action="produit.ctrl.php" method="get" style="margin : 10px">
 					<label for="">Nombre d'exemplaires : </label>
 					<input type="number" name="nb_Exemplaires" value="1" min="1">
 					<input type="hidden" name="ISBN" value="<?=$livre->__get("ISBN")?>">
