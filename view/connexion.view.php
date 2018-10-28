@@ -18,9 +18,9 @@
     <!--formulaire de connexion -->
     <form class="" action="connexion.ctrl.php" method="get">
       <label for="idLogin">identifiant : </label>
-        <input type="text" name="idUtilisateur" value="votre identifiant" id="idLogin">
+        <input type="text" name="idUtilisateur" value="" id="idLogin" required placeholder="votre identifian">
         <label for="idMpd">Mot de passe : </label>
-        <input type="password" name="mot_de_passe" value="" id="idMpd">
+        <input type="password" name="mot_de_passe" value="" id="idMpd" required>
         <input type="submit" name="btnConnection" value="Se connecter">
           <!--si l'utilisateur se connexte pour commander -->
         <?php if (isset($_GET['commande'])): ?>
