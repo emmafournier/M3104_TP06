@@ -20,7 +20,7 @@
         <label for="idMpd">Mot de passe : </label>
         <input type="password" name="mot_de_passe" value="" id="idMpd" required>
         <label for="idAddr">Adresse : </label>
-        <input type="text" name="adresse" value="1 allée du soleil 38000 Grenoble" id="idAddr">
+        <input type="text" name="adresse" value="" id="idAddr" placeholder="1 allée du soleil 38000 Grenoble">
         <input type="submit" name="btnConnextion" value="Créer un compte">
         <!--si l'utilisateur doit créer un compte pour commander -->
 
