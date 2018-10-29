@@ -30,9 +30,9 @@
           <article class="">
               <p><?=$dao->getLivre($elementPanier->__get('ISBN'))->__get('titre')?></p>
               <img src="../view/images/<?=$dao->getLivre($elementPanier->__get('ISBN'))->__get('photo')?>" alt="">
-              <p><?=$elementPanier->__get('nb_Exemplaires')?></p>
-              <p>Prix : <?=$dao->getLivre($elementPanier->__get('ISBN'))->__get('prix')?></p>
-              <a href="panier.ctrl.php?ISBN=<?=$elementPanier->__get('ISBN')?>&enleverPanier=true"> <input type="button" name="btnEnlever" value="Enelever du panier"> </a>
+              <p>Quantité : <?=$elementPanier->__get('nb_Exemplaires')?></p>
+              <p>Prix : <?=$dao->getLivre($elementPanier->__get('ISBN'))->__get('prix')?> euros</p>
+              <a href="panier.ctrl.php?ISBN=<?=$elementPanier->__get('ISBN')?>&enleverPanier=true"> <input type="button" name="btnEnlever" value="Enlever du panier"> </a>
               <hr>
           </article>
         <?php endforeach; ?>

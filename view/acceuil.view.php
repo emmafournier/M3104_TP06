@@ -76,7 +76,7 @@
 						<a href="produit.ctrl.php?ISBN=<?=$value->__get("ISBN")?>">
 							<img src="../view/images/<?=$value->__get("photo")?>" alt="<?=$value->__get("photo")?>">
 						</a>
-						<p><?=$value->__get("prix")?></p>
+						<p><?=$value->__get("prix")?> euros</p>
 					</article>
 				<?php endforeach; ?>
 			</section>

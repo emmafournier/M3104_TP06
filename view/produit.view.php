@@ -94,7 +94,7 @@
 						</div>
 
 						<div id="Details">
-	            <p>Prix : <?=$livre->__get("prix")?></p>
+	            <p>Prix : <?=$livre->__get("prix")?> euros</p>
 	            <p>Categorie : <?=$catLivre->__get("libelle")?></p>
 	            <p>Format : <?=$formatLivre->__get("libelle")?></p>
 	            <p>Auteur : <?=$livre->__get("auteur")?></p>
