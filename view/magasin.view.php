@@ -29,7 +29,7 @@
 
   <body>
 		<!-- ======================== MENU ===================================== -->
-			<div id="conteneurMenu">
+		<div id="conteneurMenu">
       <nav>
 				<!-- accueil -->
        	<ul id="menu_horizontale">
@@ -63,9 +63,10 @@
         </ul>
       </nav>
 			<!-- ======================== FIN MENU ================================= -->
-			<!-- ======================== AFFICHAGE DES MAGASINS ===================== -->
+		</div>
 
-	</div>
+		<!-- ======================== AFFICHAGE DES MAGASINS ===================== -->
+		<div id="lesMagasins">
       <h2>Nos Magasins</h2>
       <form class="" action="magasin.ctrl.php" method="get">
         <label for="idDep">Choisir un code postal : </label>
@@ -86,6 +87,7 @@
           <hr>
         <?php endforeach; ?>
       </article>
+		</div>
 
   </body>
 </html>

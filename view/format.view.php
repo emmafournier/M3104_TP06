@@ -90,11 +90,25 @@
 
         <?php endforeach; ?>
       </section>
-			<!-- ==================== FIN AFFICHAGE DES LIVRES ===================== -->
+		</div>
+		<!-- ==================== FIN AFFICHAGE DES LIVRES ===================== -->
+
+
+		<div id="conteneurFleche">
+			<!-- ==================== formulaire pour le nombre de produits par page ============================= -->
+			<form class="" action="format.ctrl.php" method="get">
+				<label for="idListe">Nombre de produits par page :</label>
+				<select class="" name="listeNbLibre">
+					<option value="5" selected>5</option>
+					<option value="10">10</option>
+					<option value="15">15</option>
+					<option value="0">Tout afficher</option>
+				</select>
+				<input type="hidden" name="idFormat" value="<?=$idFormat?>"> <br>
+				<input type="submit" name="btnValider" value="Valider">
+			</form>
 
 			<!-- ==================== AFFICHAGE FLECHES SUIVANT / PRECEDENT ============================= -->
-
-		</div>
       <section>
 				<?php if ($total==false): ?>
 					<?php if (count($pred) > 0): ?>
@@ -104,25 +118,8 @@
 						<a href="?idFormat=<?=$idFormat?>&ISBN=<?=$next[0]->__get("ISBN")?>&listeNbLibre=<?=$nbLivres?>"><input type="button" name="btnSuiv" value="=>"></a>
 					<?php endif; ?>
 				<?php endif; ?>
-
-
 			</section>
-
-			<!-- ==================== formulaire pour le nombre de produits par page ============================= -->
-
-	<div id="conteneurFleche">
-			<form class="" action="format.ctrl.php" method="get">
-				<label for="idListe">Nombre de produits par page :</label>
-				<select class="" name="listeNbLibre">
-					<option value="5" selected>5</option>
-					<option value="10">10</option>
-					<option value="15">15</option>
-					<option value="0">Tout afficher</option>
-				</select>
-				<input type="hidden" name="idFormat" value="<?=$idFormat?>">
-				<input type="submit" name="btnValider" value="Valider">
-			</form>
-	</div>
+		</div>
 
   </body>
 </html>

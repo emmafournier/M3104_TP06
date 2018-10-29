@@ -66,10 +66,9 @@
 
 		<!-- ======================== AFFICHAGE DES LIVRES ===================== -->
 		<div id="conteneurProduit">
-			<section>
-				<h2>Nos produits : </h2>
-				<p>Si vous souhaitez trouver plus rapidement votre produit, utilisez les menus Categorie et Format !</p>
-			</section>
+			<h2>Nos produits : </h2>
+			<p>Si vous souhaitez trouver plus rapidement votre produit, utilisez les menus Categorie et Format !</p>
+
 			<section>
 				<?php foreach ($livres as $value): ?>
 					<article class="livres">
@@ -79,14 +78,29 @@
 						</a>
 						<p><?=$value->__get("prix")?></p>
 					</article>
-
 				<?php endforeach; ?>
 			</section>
 		</div>
 		<!-- ==================== FIN AFFICHAGE DES LIVRES ===================== -->
 
-		<!-- ==================== AFFICHAGE FLECHES SUIVANT / PRECEDENT ============================= -->
+
 		<div id="conteneurFleche">
+			<!-- ==================== formulaire pour le nombre de produits par page ============================= -->
+			<form class="" action="accueil.ctrl.php" method="get">
+				<label for="idListe">Nombre de produits par page :</label>
+				<select class="" name="listeNbLibre">
+					<option value="5" selected>5</option>
+					<option value="10">10</option>
+					<option value="15">15</option>
+					<option value="20">20</option>
+					<option value="0">Tout afficher</option>
+				</select>
+
+				<br>
+				<input type="submit" name="btnValider" value="Valider">
+			</form>
+
+			<!-- ==================== AFFICHAGE FLECHES SUIVANT / PRECEDENT ============================= -->
 			<section>
 					<?php if ($total==false): ?>
 						<?php if (count($pred) > 0): ?>
@@ -96,27 +110,8 @@
 						<a href="accueil.ctrl.php?ISBN=<?=$next[0]->__get("ISBN")?>&listeNbLibre=<?=$nbLivres?>"><input type="button" name="btnSuiv" value="=>"></a>
 						<?php endif;?>
 					<?php endif; ?>
-
-
 			</section>
-
-
-<!-- ==================== formulaire pour le nombre de produits par page ============================= -->
-		<form class="" action="accueil.ctrl.php" method="get">
-			<label for="idListe">Nombre de produits par page :</label>
-			<select class="" name="listeNbLibre">
-				<option value="5" selected>5</option>
-				<option value="10">10</option>
-				<option value="15">15</option>
-				<option value="20">20</option>
-				<option value="0">Tout afficher</option>
-			</select>
-
-			<input type="submit" name="btnValider" value="Valider">
-		</form>
 		</div>
-
-
-  </body>
-  <footer></footer>
+	</body>
+	<footer></footer>
 </html>

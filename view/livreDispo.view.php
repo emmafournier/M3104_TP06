@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>LaLibrairie</title>
+    <link rel="stylesheet" type="text/css" href="../view/LaLibrairie.css" />
   </head>
   <body>
     <!--retour au magasin -->

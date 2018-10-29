@@ -14,6 +14,7 @@ body
 
 header{
   padding: 1em 2em 1em 2em;
+  padding-bottom: 0em;
   display: flex;
   justify-content: space-between;
 }
@@ -25,8 +26,12 @@ header{
   align-items: flex-end;
 }
 
+#conteneurBoutonHeader p {
+  margin : 1em;
+}
 #conteneurMenu{
   padding: 1em 2em 1em 2em;
+  padding-top: 1em;
 }
 
 nav {
@@ -76,7 +81,14 @@ section{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
+}
+
+section{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 h2{
@@ -92,10 +104,246 @@ h3{
   width: 200px;
 }
 
-#conteneurProduit{
+#conteneurProduitInfo article{
+padding: 1em 2em 1em 2em;
+display:flex;
+flex-direction: row;
+}
+
+
+#btn{
 padding: 1em 2em 1em 2em;
 }
 
+
+header a{
+  margin: 1em;
+  text-decoration: none;
+}
+
+header input[type="button"] {
+    width: 100%;
+    background-color: #f2f2f2;
+    color: black;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+#conteneurFleche input[type="button"] {
+    width: 100%;
+    background-color: #f2f2f2;
+    color: black;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#conteneurFleche a {
+    text-decoration: none;
+}
+
+
+#btn input[type="button"] {
+    width: auto;
+    background-color: #f2f2f2;
+    color: black;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#achat input[type="button"] {
+    width: auto;
+    background-color: #f2f2f2;
+    color: black;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#conteneurFormPanier input[type="submit"] {
+    width: auto;
+    background-color: #f2f2f2;
+    color: black;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+#conteneurFleche input[type="submit"] {
+    width: auto;
+    background-color: #f2f2f2;
+    color: black;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+#achat a {
+  text-decoration: none;
+}
+
+#achat{
+  margin:2em;
+}
+#btn a{
+  text-decoration: none;
+}
+
+#conteneurProduitInfo h2{
+display: flex;
+justify-content: flex-start;
+}
+
+#conteneurProduitInfo {
+  display: flex;
+  flex-direction: row;
+}
+
+#conteneurProduit{
+  padding: 1em 2em 1em 2em;
+}
+
+
 #conteneurFleche{
   padding: 1em 2em 1em 2em;
+  margin-bottom: 20px;
+  padding-top: 0em;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+}
+
+#lesMagasins{
+  padding: 1em 2em 1em 2em;
+}
+
+#lesMagasins a{
+  text-decoration: none;
+}
+
+#lesMagasins input[type="submit"] {
+    width: auto;
+    background-color: #f2f2f2;
+    color: black;
+    padding: 5px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#lesMagasins  input[type="button"] {
+    width: auto;
+    background-color: #f2f2f2;
+    color: black;
+    padding: 5px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="button"] {
+    width: auto;
+    background-color: #f2f2f2;
+    color: black;
+    padding: 5px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+a{
+  text-decoration: none;
+}
+
+#Details {
+  margin-top: 4px;
+}
+
+#conteneurConnexion{
+  padding: 1em 2em 1em 2em;
+}
+
+
+#conteneurConnexion form{
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  border: 2px solid black;
+  border-radius: 5px;
+  width : 50%;
+}
+
+#conteneurConnexion form input{
+  width: 50%;
+  background-color: #f2f2f2;
+  color: black;
+  margin: 5px 16px;
+  margin-left:0px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#panier{
+  padding: 1em 2em 1em 2em;
+}
+
+#panier a{
+  text-decoration: none;
+}
+
+#commande{
+  padding: 1em 2em 1em 2em;
+}
+
+#commande a{
+  text-decoration: none;
+}
+
+#creationCompte{
+  padding: 1em 2em 1em 2em;
+}
+
+#creationCompte a{
+  text-decoration: none;
+}
+
+
+#creationCompte form{
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  border: 2px solid black;
+  border-radius: 5px;
+  width : 50%;
+}
+
+#creationCompte form input{
+  width: 50%;
+  background-color: #f2f2f2;
+  color: black;
+  margin: 5px 16px;
+  margin-left:0px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#disponibilite{
+  padding: 1em 2em 1em 2em;
+}
+
+#disponibilite a{
+  text-decoration: none;
 }
