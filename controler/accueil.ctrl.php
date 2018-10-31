@@ -56,8 +56,16 @@
 
   // on récupère les livres à afficher
   $livres = $dao->getN($isbn,$nbLivres);
-  //on récupère les livres de la page suivantes
-  $next = $dao->getN($dao->next(end($livres)->__get("ISBN")),$nbLivres);
+
+  //on récupère les livres de la page suivante s'il y en a
+  if($dao->next(end($livres)->__get("ISBN")) > 0){
+      $next = $dao->getN($dao->next(end($livres)->__get("ISBN")),$nbLivres);
+  }
+  else{
+    $next = array();
+  }
+
+
   //on récupère les livres de la page précédentes
   $pred = $dao->prevN($livres[0]->__get("ISBN"),$nbLivres);
 

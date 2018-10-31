@@ -72,8 +72,13 @@ else{
 // on récupère les livres à afficher et la catégorie correspondante
 $categorie = $dao->getCat($idCategorie);
 $livres = $dao->getNCateg($isbn,$nbLivres,$idCategorie);
-//on récupère les livres de la page suivantes
-$next = $dao->getNCateg($dao->next(end($livres)->__get("ISBN")),$nbLivres,$idCategorie);
+//on récupère les livres de la page suivante s'il y en a
+if($dao->next(end($livres)->__get("ISBN")) > 0){
+  $next = $dao->getNCateg($dao->next(end($livres)->__get("ISBN")),$nbLivres,$idCategorie);
+}
+else{
+  $next = array();
+}
 //on récupère les livres de la page précédentes
 $pred = $dao->prevNCateg($livres[0]->__get("ISBN"),$nbLivres,$idCategorie);
 
